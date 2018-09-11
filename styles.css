@@ -1,8 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=IBM+Plex+Serif:400,400i,600');
 @import url('https://fonts.googleapis.com/css?family=IBM+Plex+Mono:400,400i,600');
 
-/* @import url('https://fonts.googleapis.com/css?family=Gaegu|Lora:400,400i|Merriweather'); */
-
 html {
 	font-size: 100%;
 
@@ -23,8 +21,8 @@ body {
 	padding: var(--space-11);
 
 	color: var(--color-13);
-	/* font-family: 'IBM Plex Serif', 'Helvetica', 'Arial', sans-serif; */
-	font-family: 'IBM Plex Mono', monospace;
+	
+	font-family: 'IBM Plex Mono', 'Arial', monospace;
 	font-weight: 400;
 	font-size: 1.5rem;
 	line-height: 2.25rem;
