@@ -3,6 +3,14 @@
 /* @import url('https://fonts.googleapis.com/css?family=Fira+Mono:400,500,700'); */
 @import url('https://fonts.googleapis.com/css?family=Fira+Sans+Condensed:400,400i,600,800,900');
 @import url('https://fonts.googleapis.com/css?family=Fira+Sans:300,300i,400,400i,500,500i,600,700,800,900');
+@import url('https://fonts.googleapis.com/css?family=IBM+Plex+Sans+Condensed:300,300i,400,400i,500,600,700');
+@import url('https://fonts.googleapis.com/css?family=Libre+Franklin:400,400i,500,500i,700,800,900');
+
+@font-face {
+	font-family: local;
+	src: url(font/ScalaSans.otf);
+}
+
 
 :root {
 	/* --color-10: #fff;
@@ -13,8 +21,9 @@
 	--color-20: #03f; */
 
 	/* --color-10: #fff; */
-	--color-11: rgba(255,255,255,.97);
-	--color-12: #00f;
+	/* --color-11: rgba(255,255,255,.96); */
+	--color-11: #eee;
+	--color-12: #03f;
 	--color-13: #222;
 	/* --color-14: rgba(240,240,240,1); */
 	/* --color-20: #03f; */
@@ -36,10 +45,13 @@ body {
 	padding: var(--spacing-10);
 	color: var(--color-13);
 
-	/* font-family: 'IBM Plex Serif', 'Times New Roman', serif; */
-	font-family: 'IBM Plex Mono', 'Arial', monospace;
+	font-family: 'IBM Plex Serif', 'Times New Roman', serif;
+	/* font-family: 'IBM Plex Sans Condensed', 'Arial', sans-serif; */
+	/* font-family: 'IBM Plex Mono', 'Arial', monospace; */
 	/* font-family: 'Fira Sans Condensed', 'Arial', sans-serif; */
 	/* font-family: 'Fira Sans', 'Arial', sans-serif; */
+	/* font-family: 'Libre Franklin', 'Arial', sans-serif; */
+	/* font-family: 'local'; */
 	font-weight: var(--font-weight-10);
 	
 	font-size: 1.5rem;
