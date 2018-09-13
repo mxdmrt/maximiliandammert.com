@@ -1,16 +1,10 @@
-@import url('https://fonts.googleapis.com/css?family=IBM+Plex+Serif:400,400i,600');
+@import url('https://fonts.googleapis.com/css?family=IBM+Plex+Serif:400,400i,500,600,700');
 @import url('https://fonts.googleapis.com/css?family=IBM+Plex+Mono:400,400i,600');
 /* @import url('https://fonts.googleapis.com/css?family=Fira+Mono:400,500,700'); */
 @import url('https://fonts.googleapis.com/css?family=Fira+Sans+Condensed:400,400i,600,800,900');
 @import url('https://fonts.googleapis.com/css?family=Fira+Sans:300,300i,400,400i,500,500i,600,700,800,900');
 @import url('https://fonts.googleapis.com/css?family=IBM+Plex+Sans+Condensed:300,300i,400,400i,500,600,700');
 @import url('https://fonts.googleapis.com/css?family=Libre+Franklin:400,400i,500,500i,700,800,900');
-
-@font-face {
-	font-family: local;
-	src: url(font/ScalaSans.otf);
-}
-
 
 :root {
 	/* --color-10: #fff;
@@ -33,6 +27,7 @@
 	--spacing-20: 4rem;
 
 	--font-weight-10: 400;
+	--font-weight-11: 600;
 	--font-weight-20: 600;
 }
 
@@ -139,6 +134,10 @@ a:hover {
 
 .copy-10:last-child {
 	margin-bottom: 0;
+}
+
+strong {
+	font-weight: var(--font-weight-11);
 }
 
 section:last-child {
