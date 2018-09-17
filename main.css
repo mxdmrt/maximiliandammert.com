@@ -114,7 +114,7 @@ body::after {
 	/* background-blend-mode: overlay; */
 	background-size: cover;
 	background-position: center;
-	filter: grayscale(1) contrast(2) blur(1.5rem) opacity(0.4);
+	filter: grayscale(1) contrast(2) blur(1.5rem) opacity(0.3);
 }
 
 h1, h2, h3, h4, h5, p {
