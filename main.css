@@ -5,6 +5,36 @@
 @import url('https://fonts.googleapis.com/css?family=Fira+Sans:300,300i,400,400i,500,500i,600,700,800,900');
 @import url('https://fonts.googleapis.com/css?family=IBM+Plex+Sans+Condensed:300,300i,400,400i,500,600,700');
 @import url('https://fonts.googleapis.com/css?family=Libre+Franklin:400,400i,500,500i,700,800,900');
+@import url('https://fonts.googleapis.com/css?family=PT+Serif:400,400i,700,700i');
+@import url('https://fonts.googleapis.com/css?family=PT+Sans:400,400i,700,700i');
+@import url('https://fonts.googleapis.com/css?family=Old+Standard+TT:400,400i,700');
+@import url('https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i');
+@import url('https://fonts.googleapis.com/css?family=Cardo:400,400i,700');
+@import url('https://fonts.googleapis.com/css?family=Alegreya:100,100i,300,300i,400,400i,500,500i,700,700i,800,800i,900,900i');
+
+@font-face {
+	font-family: "Charter";
+	src: url("font/charter_regular-webfont.woff") format('woff');
+	font-weight: normal;
+	/* font-style: italic; */
+}
+
+@font-face {
+	font-family: "Charter";
+	src: url("font/charter_italic-webfont.woff") format('woff');
+	font-weight: normal;
+	font-style: italic;
+}
+
+@font-face {
+	font-family: "Charter";
+	src: url("font/charter_bold-webfont.woff") format('woff');
+	font-weight: bold;
+	/* font-style: italic; */
+}
+
+
+
 
 :root {
 	/* --color-10: #fff;
@@ -26,9 +56,9 @@
 	--spacing-11: 2rem;
 	--spacing-20: 4rem;
 
-	--font-weight-10: 400;
-	--font-weight-11: 600;
-	--font-weight-20: 600;
+	--font-weight-10: normal;
+	--font-weight-11: bold;
+	--font-weight-20: bold;
 }
 
 html {
@@ -40,11 +70,18 @@ body {
 	padding: var(--spacing-10);
 	color: var(--color-13);
 
-	font-family: 'IBM Plex Serif', 'Times New Roman', serif;
+	font-family: 'Charter', 'Times New Roman', serif;
+	/* font-family: 'IBM Plex Serif', 'Times New Roman', serif; */
+	/* font-family: 'PT Sans', 'Arial', sans-serif; */
+	/* font-family: 'PT Serif', 'Times New Roman', serif; */
+	/* font-family: 'IBM Plex Sans Condensed', 'Arial', sans-serif; */
 	/* font-family: 'IBM Plex Sans Condensed', 'Arial', sans-serif; */
 	/* font-family: 'IBM Plex Mono', 'Arial', monospace; */
 	/* font-family: 'Fira Sans Condensed', 'Arial', sans-serif; */
-	/* font-family: 'Fira Sans', 'Arial', sans-serif; */
+	/* font-family: 'Old Standard TT', 'Times New Roman', serif; */
+	/* font-family: 'Lora', 'Times New Roman', serif; */
+	/* font-family: 'Cardo', 'Times New Roman', serif; */
+	/* font-family: 'Alegreya', 'Times New Roman', serif; */
 	/* font-family: 'Libre Franklin', 'Arial', sans-serif; */
 	/* font-family: 'local'; */
 	font-weight: var(--font-weight-10);
@@ -86,6 +123,7 @@ h1, h2, h3, h4, h5, p {
 
 a {
 	color: var(--color-12);
+	/* font-weight: var(--font-weight-20); */
 	font-style: italic;
 	text-decoration: none;
 	transition: all .25s ease;
