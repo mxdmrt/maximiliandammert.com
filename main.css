@@ -1,22 +1,7 @@
-@import url('https://fonts.googleapis.com/css?family=IBM+Plex+Serif:400,400i,500,600,700');
-@import url('https://fonts.googleapis.com/css?family=IBM+Plex+Mono:400,400i,600');
-/* @import url('https://fonts.googleapis.com/css?family=Fira+Mono:400,500,700'); */
-@import url('https://fonts.googleapis.com/css?family=Fira+Sans+Condensed:400,400i,600,800,900');
-@import url('https://fonts.googleapis.com/css?family=Fira+Sans:300,300i,400,400i,500,500i,600,700,800,900');
-@import url('https://fonts.googleapis.com/css?family=IBM+Plex+Sans+Condensed:300,300i,400,400i,500,600,700');
-@import url('https://fonts.googleapis.com/css?family=Libre+Franklin:400,400i,500,500i,700,800,900');
-@import url('https://fonts.googleapis.com/css?family=PT+Serif:400,400i,700,700i');
-@import url('https://fonts.googleapis.com/css?family=PT+Sans:400,400i,700,700i');
-@import url('https://fonts.googleapis.com/css?family=Old+Standard+TT:400,400i,700');
-@import url('https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i');
-@import url('https://fonts.googleapis.com/css?family=Cardo:400,400i,700');
-@import url('https://fonts.googleapis.com/css?family=Alegreya:100,100i,300,300i,400,400i,500,500i,700,700i,800,800i,900,900i');
-
 @font-face {
 	font-family: "Charter";
 	src: url("font/charter_regular-webfont.woff") format('woff');
 	font-weight: normal;
-	/* font-style: italic; */
 }
 
 @font-face {
@@ -30,27 +15,12 @@
 	font-family: "Charter";
 	src: url("font/charter_bold-webfont.woff") format('woff');
 	font-weight: bold;
-	/* font-style: italic; */
 }
 
-
-
-
 :root {
-	/* --color-10: #fff;
-	--color-11: rgba(255,255,255,.95);
-	--color-12: #999;
-	--color-13: #333;
-	--color-14: rgba(240,240,240,1);
-	--color-20: #03f; */
-
-	/* --color-10: #fff; */
-	/* --color-11: rgba(255,255,255,.96); */
 	--color-11: #eee;
 	--color-12: #03f;
 	--color-13: #222;
-	/* --color-14: rgba(240,240,240,1); */
-	/* --color-20: #03f; */
 
 	--spacing-10: 2rem;
 	--spacing-11: 2rem;
@@ -71,19 +41,6 @@ body {
 	color: var(--color-13);
 
 	font-family: 'Charter', 'Times New Roman', serif;
-	/* font-family: 'IBM Plex Serif', 'Times New Roman', serif; */
-	/* font-family: 'PT Sans', 'Arial', sans-serif; */
-	/* font-family: 'PT Serif', 'Times New Roman', serif; */
-	/* font-family: 'IBM Plex Sans Condensed', 'Arial', sans-serif; */
-	/* font-family: 'IBM Plex Sans Condensed', 'Arial', sans-serif; */
-	/* font-family: 'IBM Plex Mono', 'Arial', monospace; */
-	/* font-family: 'Fira Sans Condensed', 'Arial', sans-serif; */
-	/* font-family: 'Old Standard TT', 'Times New Roman', serif; */
-	/* font-family: 'Lora', 'Times New Roman', serif; */
-	/* font-family: 'Cardo', 'Times New Roman', serif; */
-	/* font-family: 'Alegreya', 'Times New Roman', serif; */
-	/* font-family: 'Libre Franklin', 'Arial', sans-serif; */
-	/* font-family: 'local'; */
 	font-weight: var(--font-weight-10);
 	
 	font-size: 1.5rem;
@@ -107,24 +64,11 @@ body::after {
 	left: -10vw;
 	width: 120vw;
 	height: 120vh;
-
-	/* background-image: url(img/fluid_180418_03.gif); */
-	/* background-image: url(https://media.giphy.com/media/3oEduTFaW1r47UWhTq/giphy.gif); */
-	/* background-image: url(https://media.giphy.com/media/l41Yzb8h4VGMJt7Nu/giphy.gif); */
-	/* background-image: url(https://media.giphy.com/media/8SfQXavE1fC0g/giphy.gif); */
-	/* background-image: url(img/Thale-2017_171120_05.jpg); */
-	background-image: url(img/giphy-04.gif);
-	/* background-image: url(img/151201_Material_02.png); */
-	/* background-image: url(https://media.giphy.com/media/3ov9k1173PdfJWRsoE/giphy.gif); */
-	/* background-image: url(https://media.giphy.com/media/3ohs7RWixV9PpQt5eg/giphy.gif); */
-	/* background-image: url(https://media.giphy.com/media/TIDF5zjF4QYKI/giphy.gif); */
-	/* background-color: var(--color-11); */
-	/* background-blend-mode: overlay; */
+	background-image: url(img/backdrop-01.gif);
 	background-size: cover;
 	background-repeat: no-repeat;
 	background-position: center;
 	filter: grayscale(1) contrast(2) blur(.75rem) opacity(0.2);
-	/* filter: grayscale(1) opacity(0.2); */
 }
 
 h1, h2, h3, h4, h5, p {
@@ -133,23 +77,15 @@ h1, h2, h3, h4, h5, p {
 
 a {
 	color: var(--color-12);
-	/* font-weight: var(--font-weight-20); */
 	font-style: italic;
 	text-decoration: none;
 	transition: all .25s ease;
 	letter-spacing: calc(1rem / 128);
-
-	/* border-bottom: .125rem dotted var(--color-12); */
-
-	/* font-family: 'IBM Plex Mono', 'Arial', monospace; */
-
 }
 
 a:hover {
-	/* color: var(--color-13); */
 	transition: all .25s ease;
 	text-decoration: underline;
-	/* border-bottom: .125rem dotted var(--color-13); */
 }
 
 .headline-10 {
@@ -158,7 +94,6 @@ a:hover {
 	font-weight: var(--font-weight-20);
 	margin-bottom: var(--spacing-10);
 	letter-spacing: calc(-1rem / 32);
-	/* border-bottom: .5rem solid var(--color-13); */
 }
 
 .headline-20 {
@@ -201,7 +136,6 @@ section:last-child {
 }
 
 .cv {
-	/* margin-bottom: var(--spacing-11); */
 	flex-basis: 100vw;
 }
 
@@ -209,8 +143,6 @@ section:last-child {
 	display: flex;
 	flex-direction: row;
 	flex-wrap: wrap;
-
-	/* margin-top: var(--spacing-11); */
 }
 
 .footer a {
