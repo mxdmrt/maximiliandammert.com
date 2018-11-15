@@ -18,10 +18,16 @@
 }
 
 :root {
-	--color-11: #eee;
-	--color-12: #03f;
-	--color-13: #222;
+	/* --color-11: #eee; */
+	/* --color-12: #03f; */
+	/* --color-13: #222; */
 
+	--color-10: #070707;
+	--color-11: #202020;
+	--color-12: #949494;
+	--color-20: #072094;
+	--color-30: #942007;
+	
 	--spacing-10: 2rem;
 	--spacing-11: 2rem;
 	--spacing-20: 4rem;
@@ -38,7 +44,7 @@ html {
 body {
 	margin: 0;
 	padding: var(--spacing-10);
-	color: var(--color-13);
+	color: var(--color-10);
 
 	font-family: 'Charter', 'Times New Roman', serif;
 	font-weight: var(--font-weight-10);
@@ -76,7 +82,7 @@ h1, h2, h3, h4, h5, p {
 }
 
 a {
-	color: var(--color-12);
+	color: var(--color-20);
 	font-style: italic;
 	text-decoration: none;
 	transition: all .25s ease;
