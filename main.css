@@ -1,32 +1,11 @@
-@font-face {
-	font-family: "Charter";
-	src: url("font/charter_regular-webfont.woff") format('woff');
-	font-weight: normal;
-}
+@import url('https://fonts.googleapis.com/css?family=IBM+Plex+Mono:400,400i,600');
 
-@font-face {
-	font-family: "Charter";
-	src: url("font/charter_italic-webfont.woff") format('woff');
-	font-weight: normal;
-	font-style: italic;
-}
-
-@font-face {
-	font-family: "Charter";
-	src: url("font/charter_bold-webfont.woff") format('woff');
-	font-weight: bold;
-}
+@import url('https://fonts.googleapis.com/css?family=IBM+Plex+Serif:400,400i,600');
 
 :root {
-	/* --color-11: #eee; */
-	/* --color-12: #03f; */
-	/* --color-13: #222; */
-
-	--color-10: #070707;
-	--color-11: #202020;
-	--color-12: #949494;
-	--color-20: #072094;
-	--color-30: #942007;
+	--color-10: #fff;
+	--color-20: #000;
+	--color-30: #03c;
 	
 	--spacing-10: 2rem;
 	--spacing-11: 2rem;
@@ -44,14 +23,14 @@ html {
 body {
 	margin: 0;
 	padding: var(--spacing-10);
-	color: var(--color-10);
+	color: var(--color-20);
 
-	font-family: 'Charter', 'Times New Roman', serif;
+	font-family: 'IBM Plex Serif', 'Charter', 'Times New Roman', serif;
 	font-weight: var(--font-weight-10);
 	
-	font-size: 1.5rem;
-	line-height: 2.25rem;
-	letter-spacing: calc(-1rem / 128);
+	font-size: 1.75rem;
+	line-height: 2.75rem;
+	letter-spacing: calc(-1rem / 64);
 
 	min-height: calc(100vh - var(--spacing-10) - var(--spacing-10));
 
@@ -82,11 +61,10 @@ h1, h2, h3, h4, h5, p {
 }
 
 a {
-	color: var(--color-20);
+	color: var(--color-30);
 	font-style: italic;
 	text-decoration: none;
 	transition: all .25s ease;
-	letter-spacing: calc(1rem / 128);
 }
 
 a:hover {
@@ -99,7 +77,7 @@ a:hover {
 	line-height: 2.75rem;
 	font-weight: var(--font-weight-20);
 	margin-bottom: var(--spacing-10);
-	letter-spacing: calc(-1rem / 32);
+	letter-spacing: calc(-1rem / 16);
 }
 
 .headline-20 {
