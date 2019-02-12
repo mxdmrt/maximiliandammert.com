@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css?family=IBM+Plex+Mono:400,400i,600');
-
 @import url('https://fonts.googleapis.com/css?family=IBM+Plex+Serif:400,400i,600');
 
 :root {
@@ -30,6 +28,7 @@ body {
 	padding: var(--spacing-dynamic);
 	color: var(--color-20);
 
+	font-display: auto;
 	font-family: 'IBM Plex Serif', 'Charter', 'Times New Roman', serif;
 	font-weight: var(--font-weight-10);
 	
