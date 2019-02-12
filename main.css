@@ -28,8 +28,8 @@ body {
 	padding: var(--spacing-dynamic);
 	color: var(--color-20);
 
-	font-display: auto;
-	font-family: 'IBM Plex Serif', 'Charter', 'Times New Roman', serif;
+	font-display: swap;
+	font-family: 'IBM Plex Serif', 'Times New Roman', serif;
 	font-weight: var(--font-weight-10);
 	
 	font-size: var(--font-size-10);
