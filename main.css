@@ -30,6 +30,9 @@ body {
 
 	font-family: 'IBM Plex Serif', 'Times New Roman', serif;
 	font-weight: var(--font-weight-10);
+
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
 	
 	font-size: var(--font-size-10);
 	line-height: var(--line-height-copy);
