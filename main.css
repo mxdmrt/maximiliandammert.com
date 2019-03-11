@@ -19,14 +19,6 @@
 	--font-weight-20: bold;
 }
 
-@media (prefers-color-scheme: dark) {
-	:root {
-	--color-10: #000;
-	--color-20: #fff;
-	--color-30: #03c;
-	}
-}
-
 html {
 	font-size: 100%;
 }
