@@ -186,3 +186,16 @@ section:last-child {
 	}
 
 }
+
+@media (prefers-color-scheme: dark) {
+
+	:root {
+		--color-10: #000;
+		--color-20: #fff;
+	}
+
+	.img {
+		filter: invert(1);
+	}
+
+}
