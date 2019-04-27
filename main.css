@@ -15,8 +15,8 @@
 	--line-height-copy: 1.5;
 	--line-height-headline: 1.25;
 
-	--font-weight-10: normal;
-	--font-weight-20: bold;
+	--font-weight-10: 400;
+	--font-weight-20: 600;
 }
 
 html {
@@ -45,6 +45,7 @@ body {
 	flex-wrap: nowrap;
 	justify-content: space-between;
 	align-content: space-between;
+	background-color: var(--color-10);
 }
 
 body::after {
@@ -55,11 +56,14 @@ body::after {
 	left: -10vw;
 	width: 120vw;
 	height: 120vh;
-	background-image: url(img/backdrop.gif);
+	background-color: var(--color-10);
+	background-image: url(img/backdrop-01.gif);
 	background-size: cover;
 	background-repeat: no-repeat;
 	background-position: center;
-	filter: grayscale(1) contrast(2) blur(.75rem) opacity(0.2);
+	background-blend-mode: darken;
+	filter: contrast(2) blur(1.5rem);
+	opacity: .3;
 }
 
 .header {
@@ -77,13 +81,16 @@ h1, h2, h3, h4, h5, p {
 }
 
 a {
-	color: var(--color-30);
+	color: var(--color-20);
 	font-style: italic;
 	text-decoration: none;
+	border-bottom: .0625rem solid var(--color-20);
+	transition: opacity 200ms ease;
 }
 
 a:hover {
-	text-decoration: underline;
+	opacity: .7;
+	transition: opacity 100ms ease;
 }
 
 .copy-10 {
@@ -95,7 +102,8 @@ a:hover {
 }
 
 strong {
-	font-weight: var(--font-weight-20);
+	font-style: italic;
+	font-weight: var(--font-weight-10);
 }
 
 .headline-10, .headline-20, .headline-30 {
@@ -146,7 +154,7 @@ section:last-child {
 }
 
 .footer a {
-	margin: var(--spacing-static) var(--spacing-static) 0 0;
+	margin: var(--spacing-static) calc(var(--spacing-static)*1.5) 0 0;
 }
 
 .footer a:last-child {
