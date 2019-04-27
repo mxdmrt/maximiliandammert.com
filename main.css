@@ -17,6 +17,8 @@
 
 	--font-weight-10: 400;
 	--font-weight-20: 600;
+
+	--transition-duration-10: 100ms;
 }
 
 html {
@@ -85,12 +87,12 @@ a {
 	font-style: italic;
 	text-decoration: none;
 	border-bottom: .0625rem solid var(--color-20);
-	transition: opacity 200ms ease;
+	transition: opacity var(--transition-duration-10) ease;
 }
 
 a:hover {
 	opacity: .7;
-	transition: opacity 100ms ease;
+	transition: opacity var(--transition-duration-10) ease;
 }
 
 .copy-10 {
