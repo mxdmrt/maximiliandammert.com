@@ -200,7 +200,11 @@ section:last-child {
 		--color-20: #fff;
 	}
 
-	.img {
+	body::after {
+		background-blend-mode: lighten;
+	}
+
+	.logo {
 		-webkit-filter: invert(1);
 		        filter: invert(1);
 	}
