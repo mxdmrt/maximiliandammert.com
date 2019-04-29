@@ -33,9 +33,11 @@ body {
 	font-family: 'IBM Plex Serif', 'Times New Roman', serif;
 	font-weight: var(--font-weight-10);
 
-	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
-	font-feature-settings: "liga" 1, "dlig" 1, "onum" 1;
+	 -webkit-font-smoothing: antialiased;
+	-webkit-font-feature-settings: "liga" 1, "dlig" 1, "onum" 1;
+	   -moz-font-feature-settings: "liga" 1, "dlig" 1, "onum" 1;
+	        font-feature-settings: "liga" 1, "dlig" 1, "onum" 1;
 	
 	font-size: var(--font-size-10);
 	line-height: var(--line-height-copy);
@@ -65,7 +67,8 @@ body::after {
 	background-repeat: no-repeat;
 	background-position: center;
 	background-blend-mode: darken;
-	filter: contrast(2) blur(1.5rem);
+	-webkit-filter: contrast(2) blur(1.5rem);
+	        filter: contrast(2) blur(1.5rem);
 	opacity: .3;
 }
 
@@ -198,7 +201,8 @@ section:last-child {
 	}
 
 	.img {
-		filter: invert(1);
+		-webkit-filter: invert(1);
+		        filter: invert(1);
 	}
 
 }
