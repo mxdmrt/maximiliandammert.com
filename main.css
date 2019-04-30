@@ -19,6 +19,8 @@
 	--font-weight-20: 600;
 
 	--transition-duration-10: 100ms;
+
+	--background-image: none;
 }
 
 html {
@@ -62,7 +64,7 @@ body::after {
 	width: 120vw;
 	height: 120vh;
 	background-color: var(--color-10);
-	background-image: url(img/backdrop-01.gif);
+	background-image: var(--background-image);
 	background-size: cover;
 	background-repeat: no-repeat;
 	background-position: center;
@@ -176,6 +178,10 @@ section:last-child {
 }
 
 @media screen and (min-width: 64rem) {
+
+	:root {
+		--background-image: url(img/backdrop-01.gif);
+	}
 
 	.cv {
 		margin-bottom: 0;
