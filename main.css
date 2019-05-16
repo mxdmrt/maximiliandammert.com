@@ -103,7 +103,7 @@ section:last-child {
 	flex-basis: 100vw;
 }
 
-@media screen and (min-width: 48rem) {
+@media screen and (min-width: 64rem) {
 
     .cv {
         margin-bottom: 0;
