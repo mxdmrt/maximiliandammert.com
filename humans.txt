@@ -1,0 +1,7 @@
+/* TEAM */                        
+Your title: Maximilian A. Dammert
+
+/* SITE */
+Last update: 2019/04/30 
+Standards: HTML5, CSS3
+Software: Visual Studio Code
