@@ -1,31 +1,23 @@
 @import url('https://fonts.googleapis.com/css?family=IBM+Plex+Serif:400,400i,600&display=swap');
-
 :root {
 	--colorBg: #fff;
 	--colorTxt: #000;
-
 	--baseValue: 1.25rem;
-
 	--fontSize10: var(--baseValue);
 	--fontSize20: calc(var(--fontSize10) * 1.25);
 	--fontSize30: calc(var(--fontSize20) * 1.25);
-
 	--lineHeightCopy: 1.6;
 	--lineHeightHeadline: 1.25;
-
 	--size10: calc(var(--fontSize10)*var(--lineHeightCopy));
 	--size20: calc(var(--size10)*1);
-
 	--fontWeight10: 400;
 	--fontWeight20: 600;
-
 	--transitionDur10: 100ms;
 	--bgImg: none;
 }
 
 @media screen and (min-width: 48rem) {
 	:root {
-		/* --baseValue: 1.5rem; */
 		--size20: calc(var(--size10)*2);
 		--lineHeightCopy: 1.8;
 	}
@@ -167,7 +159,6 @@ strong {
 .headline-30 {
 	font-size: var(--fontSize30);
 	font-weight: var(--fontWeight20);
-	/* margin-top: var(--size20); */
 	margin-bottom: var(--size10);
 	letter-spacing: calc(-1rem / 16);
 }
