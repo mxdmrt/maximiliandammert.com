@@ -44,7 +44,7 @@ body {
 	--paddingBody: var(--spacing20);
 	margin: 0;
 	padding: var(--paddingBody);
-	min-height: calc(100vh - (var(--paddingBody) * 2));
+	/* min-height: calc(100vh - (var(--paddingBody) * 2)); */
 	color: var(--colorTxt);
 	font-family: 'IBM Plex Serif', 'Times New Roman', serif;
 	font-weight: var(--fontWeight10);
@@ -62,6 +62,12 @@ body {
 	justify-content: space-between;
 	align-content: space-between;
 	background-color: var(--colorBg);
+}
+
+@media screen and (min-width: 48rem) {
+	body {
+		min-height: calc(100vh - (var(--paddingBody) * 2));
+	}
 }
 
 body::before {
