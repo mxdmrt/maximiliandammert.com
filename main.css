@@ -23,12 +23,6 @@
 	}
 }
 
-@media screen and (min-width: 64rem) {
-	:root {
-		--bgImg: url(img/backdrop-01.gif);
-	}
-}
-
 @media (prefers-color-scheme: dark) {
 	:root {
 		--colorBg: #000;
@@ -44,7 +38,6 @@ body {
 	--paddingBody: var(--spacing20);
 	margin: 0;
 	padding: var(--paddingBody);
-	/* min-height: calc(100vh - (var(--paddingBody) * 2)); */
 	color: var(--colorTxt);
 	font-family: 'IBM Plex Serif', 'Times New Roman', serif;
 	font-weight: var(--fontWeight10);
@@ -70,28 +63,22 @@ body {
 	}
 }
 
-body::before {
-	z-index: -1;
-	position: fixed;
-	content: '';
-	top: -10vh;
-	left: -10vw;
-	width: 120vw;
-	height: 120vh;
-	background-color: var(--colorBg);
-	background-image: var(--bgImg);
-	background-size: cover;
-	background-repeat: no-repeat;
-	background-position: center;
-	background-blend-mode: darken;
-	-webkit-filter: contrast(2) blur(1.5rem);
-	filter: contrast(2) blur(1.5rem);
-	opacity: .2;
+video {
+	display: none;
 }
 
-@media (prefers-color-scheme: dark) {
-	body::before {
-		background-blend-mode: lighten;
+@media screen and (min-width: 64rem) {
+	video {
+		display: block;
+		position: fixed;
+		top: -10vh;
+		left: -10vw;
+		width: 120vw;
+		height: 120vh;
+		object-fit: cover;
+		-webkit-filter: contrast(2) blur(1.5rem);
+		filter: contrast(2) blur(1.5rem);
+		opacity: .2;
 	}
 }
 
