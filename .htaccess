@@ -1,4 +1,4 @@
-# 60 Seconds for most static assets
-<filesMatch ".(css|jpg|jpeg|png|gif|js|ico|svg)$">
-Header set Cache-Control "max-age=604800, public"
+# 60 * 60 * 24 * 2 = 172800 / 2 days
+<filesMatch ".(css|jpg|jpeg|png|gif|js|ico|svg|mp4)$">
+Header set Cache-Control "max-age=172800, public"
 </filesMatch>
