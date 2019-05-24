@@ -77,9 +77,8 @@ video {
 		width: 120vw;
 		height: 120vh;
 		object-fit: cover;
-		-webkit-filter: contrast(2) blur(1.5rem);
-		filter: contrast(2) blur(1.5rem);
-		opacity: .2;
+		-webkit-filter: contrast(2) opacity(.2) blur(1.5rem);
+		filter: contrast(2) opacity(.2) blur(1.5rem);
 	}
 }
 
