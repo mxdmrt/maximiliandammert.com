@@ -69,6 +69,7 @@ video {
 
 @media screen and (min-width: 64rem) {
 	video {
+        z-index: -1;
 		display: block;
 		position: fixed;
 		top: -10vh;
