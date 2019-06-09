@@ -93,7 +93,7 @@ a {
 	color: var(--colorTxt);
 	font-style: italic;
 	text-decoration: none;
-	transition: opacity var(--transitionDur10) ease;
+	transition: color var(--transitionDur10) ease, opacity var(--transitionDur10) ease;
 }
 
 a::after {
@@ -103,7 +103,8 @@ a::after {
 	right: 0;
 	width: 100%;
 	height: .0625rem;
-	background-color: var(--colorTxt);
+    background-color: var(--colorTxt);
+    transition: background-color var(--transitionDur10) ease;
 }
 
 a:hover {
@@ -165,7 +166,8 @@ header {
 	fill: currentColor;
 	height: calc(var(--fontSize10)*var(--lineHeightCopy));
 	width: auto;
-	margin-bottom: var(--spacing10);
+    margin-bottom: var(--spacing10);
+    cursor: pointer;
 }
 
 main {
