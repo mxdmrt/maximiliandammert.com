@@ -54,7 +54,8 @@ body {
 	flex-wrap: nowrap;
 	justify-content: space-between;
 	align-content: space-between;
-	background-color: var(--colorBg);
+    background-color: var(--colorBg);
+    transition: background-color var(--transitionDur10) ease, color var(--transitionDur10) ease;
 }
 
 @media screen and (min-width: 48rem) {
