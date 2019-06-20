@@ -75,7 +75,6 @@ body {
 	grid-gap: var(--spacing10);
 
 	overflow-wrap: break-word;
-
 }
 
 body {
@@ -195,7 +194,6 @@ header {
 	fill: currentColor;
 	height: calc(var(--fontSize10)*var(--lineHeightCopy));
 	width: auto;
-	cursor: pointer;
 }
 
 main {
