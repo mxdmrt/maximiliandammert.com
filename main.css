@@ -118,7 +118,7 @@ strong {
 
 a {
 	position: relative;
-	display: inline;
+	display: inline-flex;
 	color: var(--colorTxt);
 	font-style: italic;
 	text-decoration: none;
