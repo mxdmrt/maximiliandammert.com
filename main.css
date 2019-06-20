@@ -18,6 +18,8 @@
 	--fontWeight10: 400;
 	--fontWeight20: 600;
 	--transitionDur10: 100ms;
+	--animationDur10: 1000ms;
+	--animationDel10: 10s;
 }
 
 @media screen and (min-width: 36rem) {
@@ -190,10 +192,33 @@ header {
 	align-self: flex-start;
 }
 
+@keyframes jiggle {
+	0% {
+		transform: rotate(0)
+	}
+
+	15% {
+		transform: rotate(-5deg)
+	}
+
+	30% {
+		transform: rotate(5deg)
+	}
+
+	45% {
+		transform: rotate(-5deg)
+	}
+
+	60% {
+		transform: rotate(0)
+	}
+}
+
 .logo {
 	fill: currentColor;
 	height: calc(var(--fontSize10)*var(--lineHeightCopy));
 	width: auto;
+	animation: var(--animationDur10) ease var(--animationDel10) 3 jiggle;
 }
 
 main {
