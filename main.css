@@ -29,7 +29,7 @@
 	}
 }
 
-@media screen and (min-width: 90rem) {
+@media screen and (min-width: 80rem) {
 	:root {
 		--spacing20: calc(var(--spacing10) * 3);
 	}
