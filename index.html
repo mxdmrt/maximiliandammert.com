@@ -40,13 +40,9 @@
 
 <body>
 	<script>
-		// First we get the viewport height and we multiple it by 1% to get a value for a vh unit
 		let vh = window.innerHeight * 0.01;
-		// Then we set the value in the --vh custom property to the root of the document
 		document.documentElement.style.setProperty('--vh', `${vh}px`);
-
 		window.addEventListener('resize', () => {
-			// We execute the same script as before
 			let vh = window.innerHeight * 0.01;
 			document.documentElement.style.setProperty('--vh', `${vh}px`);
 		});
@@ -61,20 +57,18 @@
 		</svg>
 	</header>
 	<main>
-		<section class="cv">
-			<p class="copy-10">I am Maximilian, a <strong>digital product designer</strong> based in Hamburg and my main
-				focus is the <strong>crossfunctional product development</strong>. I offer a wide creative skill set
-				including <strong>interface design</strong> and <strong>user experience design</strong>. In addition I
-				am very familiar with agile processes such as scrum.</p>
-			<p>Currently I am employed at <a href="https://sinnerschrader.com/" title="SinnerSchrader"
-					target="_blank">SinnerSchrader</a>.</p>
-		</section>
-		<footer>
-			<a href="mailto:mail@maximiliandammert.com">E-Mail</a>
-			<a href="https://www.xing.com/profile/Maximilian_Dammert" target="_blank" title="Xing">Xing</a>
-			<a href="imprint.html" title="Imprint">Legal notice</a>
-		</footer>
+		<p class="copy-10">I am Maximilian, a <strong>digital product designer</strong> based in Hamburg and my main
+			focus is the <strong>crossfunctional product development</strong>. I offer a wide creative skill set
+			including <strong>interface design</strong> and <strong>user experience design</strong>. In addition I
+			am very familiar with agile processes such as scrum.</p>
+		<p class="copy-10">Currently I am employed at <a href="https://sinnerschrader.com/" title="SinnerSchrader"
+				target="_blank">SinnerSchrader</a>.</p>
 	</main>
+	<footer>
+		<a href="mailto:mail@maximiliandammert.com">E-Mail</a>
+		<a href="https://www.xing.com/profile/Maximilian_Dammert" target="_blank" title="Xing">Xing</a>
+		<a href="legal-notice.html" title="Legal notice">Legal notice</a>
+	</footer>
 </body>
 
 </html>
