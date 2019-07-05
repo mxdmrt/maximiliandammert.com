@@ -31,7 +31,8 @@
 
 @media screen and (min-width: 80rem) {
 	:root {
-		--spacing20: calc(var(--spacing10) * 3);
+		--baseValue: 1.5rem;
+		--spacing20: calc(var(--spacing10) * 2);
 	}
 }
 
