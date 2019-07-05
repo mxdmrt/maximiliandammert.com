@@ -3,3 +3,11 @@
 body {
 	display: block;
 }
+
+.copy-10+.headline-10 {
+	margin-top: calc(var(--spacing10) * 1.75);
+}
+
+.copy-10+.headline-20 {
+	margin-top: calc(var(--spacing10) * 1.75);
+}
