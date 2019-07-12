@@ -31,7 +31,7 @@
 
 @media screen and (min-width: 80rem) {
 	:root {
-		--baseValue: 1.5rem;
+		--baseValue: 1.4rem;
 		--spacing20: calc(var(--spacing10) * 2);
 	}
 }
@@ -152,28 +152,28 @@ a:hover {
 	transition: opacity var(--transitionDur10) ease;
 }
 
-.copy-10 {
+.copy10 {
 	margin-bottom: var(--spacing10);
 }
 
-.copy-10:last-child {
+.copy10:last-child {
 	margin-bottom: 0;
 }
 
-.headline-10,
-.headline-20,
-.headline-30 {
+.headline10,
+.headline20,
+.headline30 {
 	line-height: var(--lineHeightHeadline);
 }
 
-.copy-10,
-.headline-10,
-.headline-20,
-.headline-30 {
+.copy10,
+.headline10,
+.headline20,
+.headline30 {
 	max-width: 60ch;
 }
 
-.headline-10 {
+.headline10 {
 	font-size: var(--fontSize10);
 	font-weight: var(--fontWeight20);
 	margin-top: var(--spacing10);
@@ -181,7 +181,7 @@ a:hover {
 	letter-spacing: calc(-1rem / 64);
 }
 
-.headline-20 {
+.headline20 {
 	font-size: var(--fontSize20);
 	font-weight: var(--fontWeight20);
 	margin-top: var(--spacing10);
@@ -189,7 +189,7 @@ a:hover {
 	letter-spacing: calc(-1rem / 32);
 }
 
-.headline-30 {
+.headline30 {
 	font-size: var(--fontSize30);
 	font-weight: var(--fontWeight20);
 	margin-bottom: var(--spacing10);
@@ -198,7 +198,6 @@ a:hover {
 
 header {
 	display: inline-flex;
-
 	grid-area: header;
 	align-self: flex-start;
 }

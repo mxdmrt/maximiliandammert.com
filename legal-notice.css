@@ -4,10 +4,10 @@ body {
 	display: block;
 }
 
-.copy-10+.headline-10 {
+.copy10+.headline10 {
 	margin-top: calc(var(--spacing10) * 1.75);
 }
 
-.copy-10+.headline-20 {
+.copy10+.headline20 {
 	margin-top: calc(var(--spacing10) * 1.75);
 }
