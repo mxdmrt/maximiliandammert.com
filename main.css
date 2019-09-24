@@ -142,7 +142,7 @@ a::after {
 	bottom: 0;
 	right: 0;
 	width: 100%;
-	height: .0625rem;
+	height: .0625em;
 	background-color: var(--colorTxt);
 	transition: background-color var(--transitionDur10) ease;
 }
