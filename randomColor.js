@@ -17,7 +17,7 @@ function getCorrectTextColor(hex) {
 	function cutHex(h) { return (h.charAt(0) == "#") ? h.substring(1, 7) : h }
 
 	cBrightness = ((hRed * 299) + (hGreen * 587) + (hBlue * 114)) / 1000;
-	if (cBrightness > threshold) { return "#000000"; } else { return "#ffffff"; }
+	if (cBrightness > threshold) { return "rgba(0,0,0, 0.9)"; } else { return "rgba(255, 255, 255, 0.9)"; }
 }
 
 function setRandomColor() {

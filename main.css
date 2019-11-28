@@ -1,8 +1,8 @@
-@import url('https://fonts.googleapis.com/css?family=IBM+Plex+Serif:400,400i,600&display=swap');
+@import url("https://fonts.googleapis.com/css?family=IBM+Plex+Serif:400,400i,600&display=swap");
 
 :root {
-	--colorBg: #fff;
-	--colorTxt: #000;
+	--colorBg: rgba(255, 255, 255, 0.9);
+	--colorTxt: rgba(0, 0, 0, 0.9);
 
 	--baseValue: 1.25rem;
 
@@ -17,7 +17,7 @@
 
 	--fontWeight10: 400;
 	--fontWeight20: 600;
-	--transitionDur10: 100ms;
+	--transitionDur10: 200ms;
 	--animationDur10: 1000ms;
 	--animationDel10: 10s;
 }
@@ -56,18 +56,19 @@ body {
 	color: var(--colorTxt);
 	background-color: var(--colorBg);
 
-	font-family: 'IBM Plex Serif', 'Times New Roman', serif;
+	font-family: "IBM Plex Serif", "Times New Roman", serif;
 	font-weight: var(--fontWeight10);
 	font-size: var(--fontSize10);
 	line-height: var(--lineHeightCopy);
 	letter-spacing: calc(-1rem / 128);
 	-moz-osx-font-smoothing: grayscale;
 	-webkit-font-smoothing: antialiased;
-	-webkit-font-feature-settings: "liga"1, "dlig"1, "onum"1;
-	-moz-font-feature-settings: "liga"1, "dlig"1, "onum"1;
-	font-feature-settings: "liga"1, "dlig"1, "onum"1;
+	-webkit-font-feature-settings: "liga" 1, "dlig" 1, "onum" 1;
+	-moz-font-feature-settings: "liga" 1, "dlig" 1, "onum" 1;
+	font-feature-settings: "liga" 1, "dlig" 1, "onum" 1;
 
-	transition: background-color var(--transitionDur10) ease, color var(--transitionDur10) ease;
+	transition: background-color var(--transitionDur10) ease,
+		color var(--transitionDur10) ease;
 
 	display: grid;
 	grid-template-areas:
@@ -108,8 +109,8 @@ video {
 		width: 120vw;
 		height: 120vh;
 		object-fit: cover;
-		-webkit-filter: opacity(.2);
-		filter: opacity(.2);
+		-webkit-filter: opacity(0.1);
+		filter: opacity(0.1);
 	}
 }
 
@@ -133,22 +134,27 @@ a {
 	color: var(--colorTxt);
 	font-style: italic;
 	text-decoration: none;
-	transition: color var(--transitionDur10) ease, opacity var(--transitionDur10) ease;
+	transition: color var(--transitionDur10) ease,
+		opacity var(--transitionDur10) ease;
 }
 
 a::after {
 	position: absolute;
-	content: '';
+	content: "";
 	bottom: 0;
 	right: 0;
 	width: 100%;
-	height: .0625em;
+	height: 0.0625rem;
 	background-color: var(--colorTxt);
-	transition: background-color var(--transitionDur10) ease;
+	transition: background-color var(--transitionDur10) ease,
+		bottom var(--transitionDur10) ease;
+}
+a:hover::after {
+	bottom: 0.125rem;
 }
 
 a:hover {
-	opacity: .6;
+	opacity: 0.5;
 	transition: opacity var(--transitionDur10) ease;
 }
 
@@ -204,29 +210,29 @@ header {
 
 @keyframes jiggle {
 	0% {
-		transform: rotate(0)
+		transform: rotate(0);
 	}
 
 	15% {
-		transform: rotate(-5deg)
+		transform: rotate(-5deg);
 	}
 
 	30% {
-		transform: rotate(5deg)
+		transform: rotate(5deg);
 	}
 
 	45% {
-		transform: rotate(-5deg)
+		transform: rotate(-5deg);
 	}
 
 	60% {
-		transform: rotate(0)
+		transform: rotate(0);
 	}
 }
 
 .logo {
 	fill: currentColor;
-	height: calc(var(--fontSize10)*var(--lineHeightCopy));
+	height: calc(var(--fontSize10) * var(--lineHeightCopy));
 	width: auto;
 	animation: var(--animationDur10) ease var(--animationDel10) 3 jiggle;
 }
