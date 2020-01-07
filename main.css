@@ -38,8 +38,8 @@
 
 @media (prefers-color-scheme: dark) {
 	:root {
-		--colorBg: #000;
-		--colorTxt: #fff;
+		--colorBg: rgba(0, 0, 0, 0.9);
+		--colorTxt: rgba(255, 255, 255, 0.9);
 	}
 }
 
@@ -80,9 +80,7 @@ body {
 	grid-gap: var(--spacing10);
 
 	overflow-wrap: break-word;
-}
-
-body {
+	
 	min-height: calc((var(--vh, 1vh) * 100) - (var(--paddingBody) * 2));
 }
 
@@ -123,6 +121,14 @@ p {
 	margin: 0;
 }
 
+::selection {
+	background-color: transparent;
+}
+
+::-moz-selection {
+	background-color: transparent;
+}
+
 strong {
 	font-style: italic;
 	font-weight: var(--fontWeight10);
@@ -144,13 +150,13 @@ a::after {
 	bottom: 0;
 	right: 0;
 	width: 100%;
-	height: 0.0625rem;
+	height: calc(1rem / 16);
 	background-color: var(--colorTxt);
 	transition: background-color var(--transitionDur10) ease,
 		bottom var(--transitionDur10) ease;
 }
 a:hover::after {
-	bottom: 0.125rem;
+	bottom: calc(1rem / 8);
 }
 
 a:hover {
@@ -235,6 +241,10 @@ header {
 	height: calc(var(--fontSize10) * var(--lineHeightCopy));
 	width: auto;
 	animation: var(--animationDur10) ease var(--animationDel10) 3 jiggle;
+}
+
+.logo:hover {
+	cursor: pointer;
 }
 
 main {
