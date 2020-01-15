@@ -1,10 +1,10 @@
-@import url("https://fonts.googleapis.com/css?family=IBM+Plex+Serif:400,400i,600&display=swap");
+@import url(fonts/ibm-plex.css);
 
 :root {
 	--colorBg: rgba(255, 255, 255, 0.9);
 	--colorTxt: rgba(0, 0, 0, 0.9);
 
-	--baseValue: 1.25rem;
+	--baseValue: 1.3rem;
 
 	--fontSize10: var(--baseValue);
 	--fontSize20: calc(var(--fontSize10) * 1.25);
@@ -25,13 +25,14 @@
 @media screen and (min-width: 36rem) {
 	:root {
 		--spacing20: calc(var(--spacing10) * 2);
-		--lineHeightCopy: 1.8;
+		--baseValue: 1.5rem;
+		--lineHeightCopy: 1.7;
 	}
 }
 
 @media screen and (min-width: 80rem) {
 	:root {
-		--baseValue: 1.4rem;
+		--baseValue: 1.6rem;
 		--spacing20: calc(var(--spacing10) * 2);
 	}
 }
