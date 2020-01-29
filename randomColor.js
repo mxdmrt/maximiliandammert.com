@@ -24,4 +24,5 @@ function setRandomColor() {
 	bgColor = randomHex();
 	$(":root").css("--colorBg", bgColor);
 	$(":root").css("--colorTxt", getCorrectTextColor(bgColor));
+	$('meta[name=theme-color]').attr('content', bgColor);
 }
