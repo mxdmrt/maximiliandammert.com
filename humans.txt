@@ -2,6 +2,6 @@
 Your title: Maximilian A. Dammert
 
 /* SITE */
-Last update: 2020/01/15
+Last update: 2020/01/29
 Standards: HTML5, CSS3
 Software: Visual Studio Code
