@@ -18,3 +18,10 @@
 	font-weight: 600;
 	src: local("IBM Plex Serif SemiBold"), local("IBMPlexSerif-SemiBold"), url("IBMPlexSerif-SemiBold.woff2") format("woff2"), url("IBMPlexSerif-SemiBold.woff") format("woff"), url("IBMPlexSerif-SemiBold.ttf") format("ttf");
 }
+
+@font-face {
+	font-family: 'IBM Plex Sans';
+	font-style: normal;
+	font-weight: 600;
+	src: local("IBM Plex Sans SemiBold"), local("IBMPlexSans-SemiBold"), url("IBMPlexSans-SemiBold.woff2") format("woff2"), url("IBMPlexSans-SemiBold.woff") format("woff"), url("IBMPlexSans-SemiBold.ttf") format("ttf");
+}

@@ -9,7 +9,7 @@
 	--fontSize10: var(--baseValue);
 	--fontSize20: calc(var(--fontSize10) * 1.25);
 	--fontSize30: calc(var(--fontSize20) * 1.25);
-	--lineHeightCopy: 1.6;
+	--lineHeightCopy: 1.5;
 	--lineHeightHeadline: 1.25;
 
 	--spacing10: calc(var(--fontSize10) * var(--lineHeightCopy));
@@ -26,7 +26,7 @@
 	:root {
 		--spacing20: calc(var(--spacing10) * 2);
 		--baseValue: 1.5rem;
-		--lineHeightCopy: 1.7;
+		--lineHeightCopy: 1.55;
 	}
 }
 
@@ -145,7 +145,7 @@ a {
 		opacity var(--transitionDur10) ease;
 }
 
-a::after {
+a::before {
 	position: absolute;
 	content: "";
 	bottom: 0;
@@ -156,8 +156,19 @@ a::after {
 	transition: background-color var(--transitionDur10) ease,
 		bottom var(--transitionDur10) ease;
 }
-a:hover::after {
+
+a:hover::before {
 	bottom: calc(1rem / 8);
+}
+
+a::after {
+	content: "↗";
+	padding-left: calc(1rem / 4);
+	display: inline;
+}
+
+a[title="Legal notice"]::after {
+	content: none;
 }
 
 a:hover {
@@ -176,6 +187,7 @@ a:hover {
 .headline10,
 .headline20,
 .headline30 {
+	font-family: "IBM Plex Sans", "Times New Roman", serif;
 	line-height: var(--lineHeightHeadline);
 }
 
@@ -183,7 +195,7 @@ a:hover {
 .headline10,
 .headline20,
 .headline30 {
-	max-width: 60ch;
+	max-width: 56ch;
 }
 
 .headline10 {
@@ -275,6 +287,7 @@ footer {
 	footer {
 		justify-self: flex-end;
 		justify-content: flex-end;
+		/* flex-direction: column; */
 	}
 }
 
