@@ -276,7 +276,6 @@ footer {
 	align-self: flex-end;
 	justify-self: flex-start;
 
-	margin-top: calc(var(--spacing10) * -1);
 	margin-right: calc(var(--spacing10) * -1);
 
 	justify-items: flex-start;
@@ -285,9 +284,9 @@ footer {
 
 @media screen and (min-width: 64rem) {
 	footer {
+		margin-top: calc(var(--spacing10) * -1);
 		justify-self: flex-end;
 		justify-content: flex-end;
-		/* flex-direction: column; */
 	}
 }
 
