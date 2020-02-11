@@ -4,19 +4,22 @@
 	--colorBg: rgba(255, 255, 255, 0.9);
 	--colorTxt: rgba(0, 0, 0, 0.9);
 
-	--baseValue: 1.3rem;
+	--baseValue: .8rem;
 
-	--fontSize10: var(--baseValue);
-	--fontSize20: calc(var(--fontSize10) * 1.25);
-	--fontSize30: calc(var(--fontSize20) * 1.25);
-	--lineHeightCopy: 1.5;
-	--lineHeightHeadline: 1.25;
+	--lineHeight10: calc(var(--baseValue) * 2);
+	--lineHeight20: calc(var(--baseValue) * 3);
+	--lineHeight30: calc(var(--baseValue) * 4);
 
-	--spacing10: calc(var(--fontSize10) * var(--lineHeightCopy));
-	--spacing20: calc(var(--spacing10) * 1);
+	--fontSizeCopy10: calc(var(--lineHeight10) * .62);
+	--fontSizeCopy20: calc(var(--lineHeight20) * .62);
+
+	--fontSizeHeadline10: calc(var(--lineHeight10) * .65);
+	--fontSizeHeadline20: calc(var(--lineHeight20) * .65);
+	--fontSizeHeadline30: calc(var(--lineHeight30) * .65);
 
 	--fontWeight10: 400;
 	--fontWeight20: 600;
+
 	--transitionDur10: 200ms;
 	--animationDur10: 1000ms;
 	--animationDel10: 10s;
@@ -24,16 +27,15 @@
 
 @media screen and (min-width: 36rem) {
 	:root {
-		--spacing20: calc(var(--spacing10) * 2);
-		--baseValue: 1.5rem;
-		--lineHeightCopy: 1.55;
+		--baseValue: .95rem;
 	}
 }
 
+@media screen and (min-width: 64rem) {}
+
 @media screen and (min-width: 80rem) {
 	:root {
-		--baseValue: 1.6rem;
-		--spacing20: calc(var(--spacing10) * 2);
+		--baseValue: 1.1rem;
 	}
 }
 
@@ -49,7 +51,7 @@ html {
 }
 
 body {
-	--paddingBody: var(--spacing20);
+	--paddingBody: calc(var(--baseValue) * 3);
 
 	margin: 0;
 	padding: var(--paddingBody);
@@ -59,14 +61,15 @@ body {
 
 	font-family: "IBM Plex Serif", "Times New Roman", serif;
 	font-weight: var(--fontWeight10);
-	font-size: var(--fontSize10);
-	line-height: var(--lineHeightCopy);
+	font-size: var(--fontSizeCopy10);
+	line-height: var(--lineHeight10);
 	letter-spacing: calc(-1rem / 128);
+
 	-moz-osx-font-smoothing: grayscale;
 	-webkit-font-smoothing: antialiased;
-	-webkit-font-feature-settings: "liga" 1, "dlig" 1, "onum" 1;
-	-moz-font-feature-settings: "liga" 1, "dlig" 1, "onum" 1;
-	font-feature-settings: "liga" 1, "dlig" 1, "onum" 1;
+	-webkit-font-feature-settings: "liga"1, "dlig"1, "onum"1;
+	-moz-font-feature-settings: "liga"1, "dlig"1, "onum"1;
+	font-feature-settings: "liga"1, "dlig"1, "onum"1;
 
 	transition: background-color var(--transitionDur10) ease,
 		color var(--transitionDur10) ease;
@@ -77,20 +80,28 @@ body {
 		"main main"
 		"footer footer";
 	grid-template-rows: auto 1fr auto;
-	grid-template-columns: 2fr 1fr;
-	grid-gap: var(--spacing10);
+	
+	grid-gap: var(--paddingBody);
 
 	overflow-wrap: break-word;
-	
+
 	min-height: calc((var(--vh, 1vh) * 100) - (var(--paddingBody) * 2));
 }
 
 @media screen and (min-width: 64rem) {
 	body {
+		--paddingBody: calc(var(--baseValue) * 4);
 		grid-template-rows: auto 1fr;
+		grid-template-columns: auto 1fr;
 		grid-template-areas:
 			"header header"
 			"main footer";
+	}
+}
+
+@media screen and (min-width: 80rem) {
+	body {
+		--paddingBody: calc(var(--baseValue) * 5);
 	}
 }
 
@@ -151,7 +162,7 @@ a::before {
 	bottom: 0;
 	right: 0;
 	width: 100%;
-	height: calc(1rem / 16);
+	height: calc(1em / 16);
 	background-color: var(--colorTxt);
 	transition: background-color var(--transitionDur10) ease,
 		bottom var(--transitionDur10) ease;
@@ -161,14 +172,10 @@ a:hover::before {
 	bottom: calc(1rem / 8);
 }
 
-a::after {
+a:not([title="Legal notice"])::after {
 	content: "↗";
 	padding-left: calc(1rem / 4);
 	display: inline;
-}
-
-a[title="Legal notice"]::after {
-	content: none;
 }
 
 a:hover {
@@ -177,7 +184,7 @@ a:hover {
 }
 
 .copy10 {
-	margin-bottom: var(--spacing10);
+	margin-bottom: calc(var(--baseValue) * 1);
 }
 
 .copy10:last-child {
@@ -188,7 +195,6 @@ a:hover {
 .headline20,
 .headline30 {
 	font-family: "IBM Plex Sans", "Times New Roman", serif;
-	line-height: var(--lineHeightHeadline);
 }
 
 .copy10,
@@ -199,25 +205,38 @@ a:hover {
 }
 
 .headline10 {
-	font-size: var(--fontSize10);
+	font-size: var(--fontSizeHeadline10);
+	line-height: var(--lineHeight10);
 	font-weight: var(--fontWeight20);
-	margin-top: var(--spacing10);
-	margin-bottom: var(--spacing10);
+
+	margin-top: calc(var(--baseValue) * 1);
+	margin-bottom: calc(var(--baseValue) * 1);
+
 	letter-spacing: calc(-1rem / 64);
 }
 
+.headline10:first-of-type {
+	margin-top: 0;
+}
+
 .headline20 {
-	font-size: var(--fontSize20);
+	font-size: var(--fontSizeHeadline20);
+	line-height: var(--lineHeight20);
 	font-weight: var(--fontWeight20);
-	margin-top: var(--spacing10);
-	margin-bottom: var(--spacing10);
+
+	margin-top: calc(var(--baseValue) * 1);
+	margin-bottom: calc(var(--baseValue) * 1);
+
 	letter-spacing: calc(-1rem / 32);
 }
 
 .headline30 {
-	font-size: var(--fontSize30);
+	font-size: var(--fontSizeHeadline30);
+	line-height: var(--lineHeight30);
 	font-weight: var(--fontWeight20);
-	margin-bottom: var(--spacing10);
+
+	margin-bottom: calc(var(--baseValue) * 1);
+
 	letter-spacing: calc(-1rem / 16);
 }
 
@@ -251,7 +270,7 @@ header {
 
 .logo {
 	fill: currentColor;
-	height: calc(var(--fontSize10) * var(--lineHeightCopy));
+	height: calc(var(--baseValue) * 2);
 	width: auto;
 	animation: var(--animationDur10) ease var(--animationDel10) 3 jiggle;
 }
@@ -266,6 +285,9 @@ main {
 }
 
 footer {
+	--elementPaddingTop: calc(var(--baseValue) * 1);
+	--elementPaddingSide: calc(var(--baseValue) * 2);
+
 	grid-area: footer;
 
 	display: flex;
@@ -276,7 +298,8 @@ footer {
 	align-self: flex-end;
 	justify-self: flex-start;
 
-	margin-right: calc(var(--spacing10) * -1);
+	margin-top: calc(var(--elementPaddingTop) * -1);
+	margin-right: calc(var(--elementPaddingSide) * -1);
 
 	justify-items: flex-start;
 	align-items: flex-end;
@@ -284,12 +307,12 @@ footer {
 
 @media screen and (min-width: 64rem) {
 	footer {
-		margin-top: calc(var(--spacing10) * -1);
+		margin-top: calc(var(--elementPaddingTop) * -1);
 		justify-self: flex-end;
 		justify-content: flex-end;
 	}
 }
 
 footer a {
-	margin: var(--spacing10) var(--spacing10) 0 0;
+	margin: var(--elementPaddingTop) var(--elementPaddingSide) 0 0;
 }
