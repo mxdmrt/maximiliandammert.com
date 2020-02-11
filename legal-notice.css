@@ -5,9 +5,13 @@ body {
 }
 
 .copy10+.headline10 {
-	margin-top: calc(var(--spacing10) * 1.75);
+	margin-top: calc(var(--baseValue) * 3);
 }
 
 .copy10+.headline20 {
-	margin-top: calc(var(--spacing10) * 1.75);
+	margin-top: calc(var(--baseValue) * 3);
+}
+
+.headline30:first-of-type {
+	margin-bottom: calc(var(--baseValue) * 3);
 }
