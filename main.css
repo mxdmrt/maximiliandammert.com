@@ -4,7 +4,7 @@
 	--colorBg: rgba(255, 255, 255, 0.9);
 	--colorTxt: rgba(0, 0, 0, 0.9);
 
-	--baseValue: .8rem;
+	--baseValue: .9rem;
 
 	--lineHeight10: calc(var(--baseValue) * 2);
 	--lineHeight20: calc(var(--baseValue) * 3);
@@ -27,7 +27,7 @@
 
 @media screen and (min-width: 36rem) {
 	:root {
-		--baseValue: .95rem;
+		--baseValue: 1rem;
 	}
 }
 
@@ -35,7 +35,7 @@
 
 @media screen and (min-width: 80rem) {
 	:root {
-		--baseValue: 1.1rem;
+		--baseValue: 1.2rem;
 	}
 }
 
@@ -51,7 +51,7 @@ html {
 }
 
 body {
-	--paddingBody: calc(var(--baseValue) * 3);
+	--paddingBody: calc(var(--baseValue) * 2);
 
 	margin: 0;
 	padding: var(--paddingBody);
@@ -86,6 +86,12 @@ body {
 	overflow-wrap: break-word;
 
 	min-height: calc((var(--vh, 1vh) * 100) - (var(--paddingBody) * 2));
+}
+
+@media screen and (min-width: 36rem) {
+	body {
+		--paddingBody: calc(var(--baseValue) * 3);
+	}
 }
 
 @media screen and (min-width: 64rem) {
