@@ -168,7 +168,7 @@ a::before {
 	bottom: 0;
 	right: 0;
 	width: 100%;
-	height: calc(1em / 16);
+	height: calc(1rem / 16);
 	background-color: var(--colorTxt);
 	transition: background-color var(--transitionDur10) ease,
 		bottom var(--transitionDur10) ease;
@@ -187,6 +187,12 @@ a:not([title="Legal notice"])::after {
 a:hover {
 	opacity: 0.5;
 	transition: opacity var(--transitionDur10) ease;
+}
+
+a:focus {
+	outline: none;
+	background-color: var(--colorTxt);
+	color: var(--colorBg);
 }
 
 .copy10 {
