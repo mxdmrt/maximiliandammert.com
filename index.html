@@ -1,80 +1,120 @@
 <!DOCTYPE html>
 
 <html lang="en">
+	<head>
+		<!-- Global site tag (gtag.js) - Google Analytics -->
+		<script
+			async
+			src="https://www.googletagmanager.com/gtag/js?id=UA-68669423-1"
+		></script>
+		<script>
+			window.dataLayer = window.dataLayer || [];
+			function gtag() {
+				dataLayer.push(arguments);
+			}
+			gtag("js", new Date());
 
-<head>
-	<!-- Global site tag (gtag.js) - Google Analytics -->
-	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-68669423-1"></script>
-	<script>
-		window.dataLayer = window.dataLayer || [];
-		function gtag() { dataLayer.push(arguments); }
-		gtag('js', new Date());
+			gtag("config", "UA-68669423-1");
+		</script>
 
-		gtag('config', 'UA-68669423-1');
-	</script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+		<script src="randomColor.js"></script>
 
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-	<script src="randomColor.js"></script>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="language" content="en" />
 
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<meta name="language" content="en" />
+		<title>Maximilian A. Dammert</title>
+		<meta
+			name="description"
+			content="I am a digital product designer based in Hamburg and my main focus is the crossfunctional product development. I offer a wide creative skill set including interface design and user experience design. In addition I am very familiar with agile processes such as scrum."
+		/>
+		<meta
+			name="keywords"
+			content="creative, interaction, design, user, interface, information, architecture, experience, scrum, process"
+		/>
+		<meta name="author" content="Maximilian A. Dammert" />
 
-	<title>Maximilian A. Dammert</title>
-	<meta name="description"
-		content="I am a digital product designer based in Hamburg and my main focus is the crossfunctional product development. I offer a wide creative skill set including interface design and user experience design. In addition I am very familiar with agile processes such as scrum." />
-	<meta name="keywords"
-		content="creative, interaction, design, user, interface, information, architecture, experience, scrum, process" />
-	<meta name="author" content="Maximilian A. Dammert" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link href="main.css" type="text/css" rel="stylesheet" />
 
-	<link href="main.css" type="text/css" rel="stylesheet" />
+		<link rel="icon" type="image/png" href="favicon-32.png" sizes="32x32" />
+		<link
+			rel="icon"
+			type="image/png"
+			href="favicon-256.png"
+			sizes="256x256"
+		/>
+		<link rel="icon" type="image/svg+xml" href="favicon.svg" sizes="any" />
 
-	<link rel="icon" type="image/png" href="favicon-32.png" sizes="32x32" />
-	<link rel="icon" type="image/png" href="favicon-256.png" sizes="256x256" />
-	<link rel="icon" type="image/svg+xml" href="favicon.svg" sizes="any" />
+		<meta name="theme-color" content="#000" />
+	</head>
 
-	<meta name="theme-color" content="#000" />
-
-</head>
-
-<body>
-	<video autoplay muted loop>
-		<source src="img/bg-191021.mp4" type="video/mp4">
-	</video>
-	<header>
-		<svg onclick="setRandomColor()" class="logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 125 91">
-			<path d="M112,13V78H13V13h99m5-5H8V83H117V8Z" />
-			<path d="M79.5,18H53L42.5,39,32,18H18V73H42.5l17-34,17,34h3a27.5,27.5,0,0,0,0-55Z" />
-		</svg>
-	</header>
-	<main>
-		<h1 class="headline20">Hi, I am Maximilian.</h1>
-		<p class="copy10">I am a <strong>digital product designer</strong> based in Hamburg and my main
-			focus is the <strong>crossfunctional product development</strong>. I offer a wide creative skill
-			set&mdash;including <strong>interface design</strong> and <strong>user experience design</strong>. In
-			addition I
-			am very familiar with agile processes such as Scrum.</p>
-		<p class="copy10">Currently I am employed at <a href="https://sinnerschrader.com/" title="SinnerSchrader"
-				target="_self">SinnerSchrader</a>.</p>
-	</main>
-
-	<footer>
-		<a href="mailto:mail@maximiliandammert.com">E-Mail</a>
-		<a href="https://www.xing.com/profile/Maximilian_Dammert" target="_self" title="Xing">Xing</a>
-		<a href="https://codepen.io/madammert/pens/public" target="_self" title="Codepen">Codepen</a>
-		<!-- <a href="https://dribbble.com/madammert" target="_self" title="Dribbble">Dribbble</a> -->
-		<a href="https://github.com/madammert" target="_self" title="GitHub">GitHub</a>
-		<a href="legal-notice.html" title="Legal notice">Legal notice</a>
-	</footer>
-	<script>
-		let vh = window.innerHeight * 0.01;
-		document.documentElement.style.setProperty('--vh', `${vh}px`);
-		window.addEventListener('resize', () => {
+	<body>
+		<video autoplay muted loop>
+			<source src="img/bg-191021.mp4" type="video/mp4" />
+		</video>
+		<header>
+			<svg
+				onclick="setRandomColor()"
+				class="logo"
+				xmlns="http://www.w3.org/2000/svg"
+				viewBox="0 0 125 91"
+			>
+				<path d="M112,13V78H13V13h99m5-5H8V83H117V8Z" />
+				<path
+					d="M79.5,18H53L42.5,39,32,18H18V73H42.5l17-34,17,34h3a27.5,27.5,0,0,0,0-55Z"
+				/>
+			</svg>
+		</header>
+		<main class="stackS">
+			<h1 class="size50 copy">Hi, I am Maximilian.</h1>
+			<p class="size50 copy">
+				I am a <strong>digital product designer</strong> based in
+				Hamburg and my main focus is the
+				<strong>crossfunctional product development</strong>. I offer a
+				wide creative skill set&mdash;including
+				<strong>interface design</strong> and
+				<strong>user experience design</strong>. In addition I am very
+				familiar with agile processes such as Scrum.
+			</p>
+			<p class="size50 copy">
+				Currently I am employed at
+				<a
+					href="https://sinnerschrader.com/"
+					title="SinnerSchrader"
+					target="_self"
+					>SinnerSchrader</a
+				>.
+			</p>
+		</main>
+		<footer>
+			<a href="mailto:mail@maximiliandammert.com">E-Mail</a>
+			<a
+				href="https://www.xing.com/profile/Maximilian_Dammert"
+				target="_self"
+				title="Xing"
+				>Xing</a
+			>
+			<a
+				href="https://codepen.io/madammert/pens/public"
+				target="_self"
+				title="Codepen"
+				>Codepen</a
+			>
+			<!-- <a href="https://dribbble.com/madammert" target="_self" title="Dribbble">Dribbble</a> -->
+			<a href="https://github.com/madammert" target="_self" title="GitHub"
+				>GitHub</a
+			>
+			<a href="legal-notice.html" title="Legal notice">Legal notice</a>
+		</footer>
+		<script>
 			let vh = window.innerHeight * 0.01;
-			document.documentElement.style.setProperty('--vh', `${vh}px`);
-		});
-	</script>
-</body>
-
+			document.documentElement.style.setProperty("--vh", `${vh}px`);
+			window.addEventListener("resize", () => {
+				let vh = window.innerHeight * 0.01;
+				document.documentElement.style.setProperty("--vh", `${vh}px`);
+			});
+		</script>
+	</body>
 </html>
