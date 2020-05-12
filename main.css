@@ -83,7 +83,7 @@ body {
 		"main main"
 		"footer footer";
 	grid-template-rows: auto 1fr auto;
-	grid-gap: var(--paddingBody);
+	gap: var(--paddingBody);
 
 	min-height: calc((var(--vh, 1vh) * 100) - (var(--paddingBody) * 2));
 }
@@ -225,17 +225,17 @@ a:focus {
 
 .stackS {
 	display: grid;
-	grid-row-gap: calc(var(--baseValue) * 1);
+	row-gap: calc(var(--baseValue) * 1);
 }
 
 .stackM {
 	display: grid;
-	grid-row-gap: calc(var(--baseValue) * 2);
+	row-gap: calc(var(--baseValue) * 2);
 }
 
 .stackL {
 	display: grid;
-	grid-row-gap: calc(var(--baseValue) * 4);
+	row-gap: calc(var(--baseValue) * 4);
 }
 
 header {
