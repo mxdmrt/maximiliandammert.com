@@ -1,4 +1,5 @@
-@import url(fonts/ibm-plex/ibm-plex.css);
+@import url(fonts/ibm-plex/ibm-plex-serif.css);
+@import url(fonts/ibm-plex/ibm-plex-sans.css);
 
 /* Breakpoints */
 /*  30rem =  480px */
