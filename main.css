@@ -301,6 +301,8 @@ footer {
 	margin-right: calc(var(--elementPaddingSide) * -1);
 
 	justify-items: flex-start;
+
+	white-space: nowrap;
 }
 
 @media screen and (min-width: 60rem) {
