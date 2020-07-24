@@ -1,5 +1,6 @@
-@import url(fonts/ibm-plex/ibm-plex-serif.css);
-@import url(fonts/ibm-plex/ibm-plex-sans.css);
+@import url(fonts/IBM-Plex-Serif.css);
+@import url(fonts/IBM-Plex-Sans.css);
+@import url(fonts/IBM-Plex-Mono.css);
 
 /* Breakpoints */
 /*  30rem =  480px */
@@ -17,13 +18,14 @@
 
 	--lineHeightCopy: 1.4;
 	--lineHeightHeadline: 1.2;
+	--lineHeightLink: 1.2;
 
-	--fontCopy: "IBM Plex Serif", "Times New Roman", serif;
-	--fontHeadline: "IBM Plex Serif", "Times New Roman", serif;
+	--fontCopy: "IBM Plex Sans", "Times New Roman", serif;
+	--fontHeadline: "IBM Plex Sans", "Times New Roman", serif;
 	--fontLink: "IBM Plex Serif", "Times New Roman", serif;
 
-	--fontWeight10: 400;
-	--fontWeight20: 600;
+	--fontWeightNormal: 400;
+	--fontWeightBold: 700;
 
 	--transitionDur10: 200ms;
 	--animationDur10: 1000ms;
@@ -64,9 +66,11 @@ body {
 	background-color: var(--colorBg);
 
 	font-family: var(--fontCopy);
-	font-weight: var(--fontWeight10);
+	font-weight: var(--fontWeightNormal);
 	font-size: calc(var(--baseValue) * 1);
 	line-height: var(--lineHeightCopy);
+
+	letter-spacing: calc(8em / 1000);
 
 	overflow-wrap: break-word;
 	-moz-osx-font-smoothing: grayscale;
@@ -143,15 +147,17 @@ p {
 
 strong {
 	/* font-style: italic; */
-	font-weight: var(--fontWeight10);
+	font-weight: var(--fontWeightNormal);
 }
 
 a {
 	font-family: var(--fontLink);
+	line-height: var(--lineHeightLink);
 	font-style: italic;
 
 	position: relative;
 	display: inline-flex;
+
 	color: var(--colorTxt);
 
 	text-decoration: none;
@@ -210,13 +216,14 @@ a:focus {
 
 .copy {
 	line-height: var(--lineHeightCopy);
-	font-weight: var(--fontWeight10);
+	font-weight: var(--fontWeightNormal);
 }
 
 .headline {
 	font-family: var(--fontHeadline);
 	line-height: var(--lineHeightHeadline);
-	font-weight: var(--fontWeight20);
+	font-weight: var(--fontWeightBold);
+	letter-spacing: calc(-8em / 1000);
 }
 
 .copy,
@@ -313,5 +320,8 @@ footer {
 }
 
 footer a {
-	margin: var(--elementPaddingTop) var(--elementPaddingSide) 0 0;
+	margin-top: var(--elementPaddingTop);
+	margin-right: var(--elementPaddingTop);
+	margin-bottom: 0;
+	margin-left: 0;
 }
