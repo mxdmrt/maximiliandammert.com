@@ -276,7 +276,7 @@ header {
 
 .logo {
 	fill: currentColor;
-	height: calc(var(--baseValue) * 1.35);
+	height: calc(var(--baseValue) * var(--lineHeightHeadline));
 	width: auto;
 	animation: var(--animationDur10) ease var(--animationDel10) 3 jiggle;
 }
