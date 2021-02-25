@@ -1,13 +1,10 @@
 {
-	"editor.fontSize": 16,
-	"editor.fontFamily": "'IBM Plex Mono', 'Operator Mono', 'Fira Code', Consolas, 'Courier New', monospace",
 	"editor.tabSize": 4,
 	"editor.insertSpaces": false,
 	"editor.defaultFormatter": "esbenp.prettier-vscode",
 	"editor.detectIndentation": false,
 	"editor.formatOnSave": true,
 	"files.insertFinalNewline": true,
-	"workbench.colorTheme": "GitHub Light",
 	"html.format.endWithNewline": true,
 	"prettier.printWidth": 80,
 	"prettier.tabWidth": 4,
