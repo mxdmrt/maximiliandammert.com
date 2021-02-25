@@ -67,6 +67,7 @@ body {
 
 	font-family: var(--fontCopy);
 	font-weight: var(--fontWeightNormal);
+
 	font-size: calc(var(--baseValue) * 1);
 	line-height: var(--lineHeightCopy);
 
@@ -146,7 +147,6 @@ p {
 }
 
 strong {
-	/* font-style: italic; */
 	font-weight: var(--fontWeightNormal);
 }
 
@@ -160,36 +160,23 @@ a {
 
 	color: var(--colorTxt);
 
-	text-decoration: none;
+	text-decoration: underline;
+	text-underline-offset: calc(1em / 8);
+	text-decoration-thickness: calc(1em / 16);
+
 	transition: color var(--transitionDur10) ease,
 		opacity var(--transitionDur10) ease;
 }
 
-a::before {
-	position: absolute;
-	content: "";
-	bottom: 0;
-	right: 0;
-	width: 100%;
-	height: calc(1em / 24);
-	background-color: var(--colorTxt);
-	transition: background-color var(--transitionDur10) ease,
-		bottom var(--transitionDur10) ease;
-}
-
-a:hover::before {
-	bottom: calc(1em / 16);
+a:hover {
+	opacity: 0.5;
+	transition: color var(--transitionDur10) ease,
+		opacity var(--transitionDur10) ease;
 }
 
 a:not([title="Legal notice"])::after {
 	content: "↗";
-	padding-left: calc(1em / 8);
 	display: inline;
-}
-
-a:hover {
-	opacity: 0.5;
-	transition: opacity var(--transitionDur10) ease;
 }
 
 a:focus {
