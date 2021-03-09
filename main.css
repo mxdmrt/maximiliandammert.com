@@ -18,14 +18,19 @@
 
 	--lineHeightCopy: 1.4;
 	--lineHeightHeadline: 1.2;
-	--lineHeightLink: 1.2;
+	--lineHeightCaption: 1.2;
 
-	--fontCopy: "IBM Plex Sans", "Times New Roman", serif;
-	--fontHeadline: "IBM Plex Sans", "Times New Roman", serif;
-	--fontLink: "IBM Plex Serif", "Times New Roman", serif;
+	--fontFamilyCopy: "IBM Plex Sans", "Times New Roman", serif;
+	--fontFamilyHeadline: "IBM Plex Sans", "Times New Roman", serif;
+	--fontFamilyCaption: "IBM Plex Serif", "Times New Roman", serif;
 
-	--fontWeightNormal: 400;
-	--fontWeightBold: 700;
+	--fontWeightCopy: 400;
+	--fontWeightHeadline: 700;
+	--fontWeightCaption: 400;
+
+	--fontStyleCopy: normal;
+	--fontStyleHeadline: normal;
+	--fontStyleCaption: italic;
 
 	--transitionDur10: 200ms;
 	--animationDur10: 1000ms;
@@ -65,8 +70,9 @@ body {
 	color: var(--colorTxt);
 	background-color: var(--colorBg);
 
-	font-family: var(--fontCopy);
-	font-weight: var(--fontWeightNormal);
+	font-family: var(--fontFamilyCopy);
+	font-weight: var(--fontWeightCopy);
+	font-style: var(--fontStyleCopy);
 
 	font-size: calc(var(--baseValue) * 1);
 	line-height: var(--lineHeightCopy);
@@ -84,10 +90,6 @@ body {
 		color var(--transitionDur10) ease;
 
 	display: grid;
-	grid-template-areas:
-		"header header"
-		"main main"
-		"footer footer";
 	grid-template-rows: auto 1fr auto;
 	gap: var(--paddingBody);
 
@@ -104,9 +106,6 @@ body {
 	body {
 		grid-template-rows: auto 1fr;
 		grid-template-columns: auto 1fr;
-		grid-template-areas:
-			"header header"
-			"main footer";
 	}
 }
 
@@ -147,16 +146,16 @@ p {
 }
 
 strong {
-	font-weight: var(--fontWeightNormal);
+	font-weight: var(--fontWeightCopy);
 }
 
 a {
-	font-family: var(--fontLink);
-	line-height: var(--lineHeightLink);
-	font-style: italic;
+	font-family: var(--fontFamilyCaption);
+	line-height: var(--lineHeightCaption);
+	font-weight: var(--fontWeightCaption);
+	font-style: var(--fontStyleCaption);
 
-	position: relative;
-	display: inline-flex;
+	display: inline;
 
 	color: var(--colorTxt);
 
@@ -202,14 +201,17 @@ a:focus {
 }
 
 .copy {
+	font-family: var(--fontFamilyCopy);
 	line-height: var(--lineHeightCopy);
-	font-weight: var(--fontWeightNormal);
+	font-weight: var(--fontWeightCopy);
+	font-style: var(--fontStyleCopy);
 }
 
 .headline {
-	font-family: var(--fontHeadline);
+	font-family: var(--fontFamilyHeadline);
 	line-height: var(--lineHeightHeadline);
-	font-weight: var(--fontWeightBold);
+	font-weight: var(--fontWeightHeadline);
+	font-style: var(--fontStyleHeadline);
 	letter-spacing: calc(-8em / 1000);
 }
 
@@ -235,8 +237,13 @@ a:focus {
 
 header {
 	display: inline-flex;
-	grid-area: header;
 	align-self: flex-start;
+}
+
+@media screen and (min-width: 60rem) {
+	header {
+		grid-column: span 2;
+	}
 }
 
 @keyframes jiggle {
@@ -273,15 +280,12 @@ header {
 }
 
 main {
-	grid-area: main;
 	align-self: flex-end;
 }
 
 footer {
 	--elementPaddingTop: calc(var(--baseValue) * 1);
 	--elementPaddingSide: calc(var(--baseValue) * 1);
-
-	grid-area: footer;
 
 	display: flex;
 	flex-direction: row;
