@@ -8,7 +8,7 @@
 /*  60rem =  960px */
 /*  80rem = 1280px */
 /*  90rem = 1440px */
-/* 120rem = 1920px */
+/* 110rem = 1760px */
 
 :root {
 	--colorBackground: rgba(255, 255, 255, 0.9);
@@ -212,6 +212,12 @@ body {
 	}
 }
 
+@media screen and (min-width: 110rem) {
+	body {
+		--paddingBody: calc(var(--baseValue) * 4);
+	}
+}
+
 /* COMPONENTS */
 
 header {
@@ -263,30 +269,17 @@ main {
 }
 
 footer {
-	--elementPaddingTop: calc(var(--baseValue) * 1);
-	--elementPaddingSide: calc(var(--baseValue) * 1);
+	align-self: end;
 
-	align-self: flex-end;
-	justify-self: flex-start;
-	display: flex;
-	flex-wrap: wrap;
-	flex-direction: row;
-	justify-items: flex-start;
-	margin-top: calc(var(--elementPaddingTop) * -1);
-	margin-right: calc(var(--elementPaddingSide) * -1);
-	white-space: nowrap;
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(10ch, 1fr));
+	gap: calc(var(--baseValue) * 1);
+	hyphens: auto;
+	word-break: break-word;
 }
 
 @media screen and (min-width: 60rem) {
 	footer {
-		flex-direction: column;
-		/* justify-self: flex-end; */
+		grid-template-columns: unset;
 	}
-}
-
-footer a {
-	margin-top: var(--elementPaddingTop);
-	margin-right: var(--elementPaddingTop);
-	margin-bottom: 0;
-	margin-left: 0;
 }
