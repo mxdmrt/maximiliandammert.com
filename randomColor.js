@@ -31,9 +31,9 @@ function getCorrectTextColor(hex) {
 
 	cBrightness = (hRed * 299 + hGreen * 587 + hBlue * 114) / 1000;
 	if (cBrightness > threshold) {
-		return "rgba(0,0,0, 0.9)";
+		return "rgba(0,0,0, 0.94)";
 	} else {
-		return "rgba(255, 255, 255, 0.9)";
+		return "rgba(255, 255, 255, 0.94)";
 	}
 }
 
