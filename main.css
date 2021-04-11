@@ -297,6 +297,7 @@ footer {
 	display: grid;
 	grid-template-columns: repeat(auto-fill, minmax(10ch, 1fr));
 	gap: calc(var(--baseValue) * 1);
+	justify-items: start;
 	hyphens: auto;
 	word-break: break-word;
 }
