@@ -15,7 +15,11 @@
 	--colorCopy: rgba(0, 0, 0, 0.9);
 	--colorLink: rgba(0, 0, 0, 0.9);
 
-	--baseValue: 1.2rem;
+	--baseValue: 1.3rem;
+
+	--fontSize10: calc(var(--baseValue) * 2.7);
+	--fontSize20: calc(var(--baseValue) * 1.6);
+	--fontSize30: calc(var(--baseValue) * 1);
 
 	--lineHeightCopy: 1.4;
 	--lineHeightHeadline: 1.2;
@@ -40,14 +44,14 @@
 
 @media screen and (min-width: 48rem) {
 	:root {
-		--baseValue: 1.4rem;
-		--lineHeightCopy: 1.6;
+		--baseValue: 1.5rem;
+		--lineHeightCopy: 1.5;
 	}
 }
 
 @media screen and (min-width: 90rem) {
 	:root {
-		--baseValue: 1.6rem;
+		--baseValue: 1.7rem;
 	}
 }
 
@@ -71,16 +75,16 @@ p {
 }
 
 .copy30 {
-	font-size: calc(var(--baseValue) * 1);
+	font-size: var(--fontSize30);
 	font-family: var(--fontFamilyCopy);
 	line-height: var(--lineHeightCopy);
 	font-weight: var(--fontWeightCopy);
 	font-style: var(--fontStyleCopy);
-	max-width: 60ch;
+	max-width: 55ch;
 }
 
 .headline10 {
-	font-size: calc(var(--baseValue) * 3);
+	font-size: var(--fontSize10);
 	font-family: var(--fontFamilyHeadline);
 	line-height: var(--lineHeightHeadline);
 	font-weight: var(--fontWeightHeadline);
@@ -90,7 +94,7 @@ p {
 }
 
 .headline20 {
-	font-size: calc(var(--baseValue) * 2);
+	font-size: var(--fontSize20);
 	font-family: var(--fontFamilyHeadline);
 	line-height: var(--lineHeightHeadline);
 	font-weight: var(--fontWeightHeadline);
@@ -100,7 +104,7 @@ p {
 }
 
 .headline30 {
-	font-size: calc(var(--baseValue) * 1);
+	font-size: var(--fontSize30);
 	font-family: var(--fontFamilyHeadline);
 	line-height: var(--lineHeightHeadline);
 	font-weight: var(--fontWeightHeadline);
@@ -110,7 +114,7 @@ p {
 }
 
 .link30 {
-	font-size: calc(var(--baseValue) * 1);
+	font-size: var(--fontSize30);
 	line-height: var(--lineHeightLink);
 	max-width: 60ch;
 }
@@ -190,7 +194,7 @@ body {
 	transition: background-color var(--transitionDur10) ease,
 		color var(--transitionDur10) ease;
 	display: grid;
-	grid-template-rows: auto 1fr auto;
+	grid-template-rows: max-content 1fr max-content;
 	gap: var(--paddingBody);
 	min-height: calc((var(--vh, 1vh) * 100) - (var(--paddingBody) * 2));
 }
@@ -203,8 +207,8 @@ body {
 
 @media screen and (min-width: 60rem) {
 	body {
-		grid-template-rows: auto 1fr;
-		grid-template-columns: auto 1fr;
+		grid-template-rows: max-content 1fr;
+		grid-template-columns: 3fr 1fr;
 	}
 }
 
@@ -276,7 +280,7 @@ footer {
 @media screen and (min-width: 60rem) {
 	footer {
 		flex-direction: column;
-		justify-self: flex-end;
+		/* justify-self: flex-end; */
 	}
 }
 
