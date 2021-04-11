@@ -142,13 +142,14 @@ a:hover {
 		opacity var(--transitionDur10) ease;
 }
 
-a:not([title="Legal notice"])::after {
+a:not([title="Legal notice"]):not([title="Back"])::after {
 	content: "↗";
 	display: inline;
 }
 
 a:focus {
-	outline: none;
+	outline: calc(1em / 4) solid var(--colorCopy);
+	outline-offset: 0;
 	background-color: var(--colorCopy);
 	color: var(--colorBackground);
 }
@@ -157,16 +158,19 @@ a:focus {
 
 .stackS {
 	display: grid;
+	justify-items: start;
 	row-gap: calc(var(--baseValue) * 1);
 }
 
 .stackM {
 	display: grid;
+	justify-items: start;
 	row-gap: calc(var(--baseValue) * 3);
 }
 
 .stackL {
 	display: grid;
+	justify-items: start;
 	row-gap: calc(var(--baseValue) * 5);
 }
 
@@ -194,7 +198,7 @@ body {
 	transition: background-color var(--transitionDur10) ease,
 		color var(--transitionDur10) ease;
 	display: grid;
-	grid-template-rows: max-content 1fr max-content;
+	align-items: start;
 	gap: var(--paddingBody);
 	min-height: calc((var(--vh, 1vh) * 100) - (var(--paddingBody) * 2));
 }
@@ -207,7 +211,6 @@ body {
 
 @media screen and (min-width: 60rem) {
 	body {
-		grid-template-rows: max-content 1fr;
 		grid-template-columns: 3fr 1fr;
 	}
 }
@@ -253,15 +256,31 @@ header {
 	}
 }
 
-.logo {
+.logoButton {
+	display: inline-flex;
+	appearance: none;
+	background-color: unset;
+	border: none;
+	padding: 0;
+	border-radius: unset;
+}
+
+.logoButton:hover {
+	cursor: pointer;
+}
+
+.logoButton:focus {
+	outline: calc(1em / 4) solid var(--colorCopy);
+	outline-offset: 0;
+	background-color: var(--colorCopy);
+	color: var(--colorBackground);
+}
+
+.logoSvg {
 	fill: currentColor;
 	height: calc(var(--baseValue) * var(--lineHeightHeadline));
 	width: auto;
 	animation: var(--animationDur10) ease var(--animationDel10) 3 jiggle;
-}
-
-.logo:hover {
-	cursor: pointer;
 }
 
 main {
@@ -281,5 +300,8 @@ footer {
 @media screen and (min-width: 60rem) {
 	footer {
 		grid-template-columns: unset;
+
+		position: sticky;
+		bottom: var(--paddingBody);
 	}
 }
