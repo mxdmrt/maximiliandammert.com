@@ -39,7 +39,8 @@ function getCorrectTextColor(hex) {
 
 function setRandomColor() {
 	bgColor = randomHex();
-	$(":root").css("--colorBg", bgColor);
-	$(":root").css("--colorTxt", getCorrectTextColor(bgColor));
+	$(":root").css("--colorBackground", bgColor);
+	$(":root").css("--colorCopy", getCorrectTextColor(bgColor));
+	$(":root").css("--colorLink", getCorrectTextColor(bgColor));
 	$("meta[name=theme-color]").attr("content", bgColor);
 }
