@@ -11,9 +11,9 @@
 /* 110rem = 1760px */
 
 :root {
-	--colorBackground: rgba(255, 255, 255, 0.9);
-	--colorCopy: rgba(0, 0, 0, 0.9);
-	--colorLink: rgba(0, 0, 0, 0.9);
+	--colorBackground: rgba(255, 255, 255, 0.94);
+	--colorCopy: rgba(0, 0, 0, 0.94);
+	--colorLink: var(--colorCopy);
 
 	--baseValue: 1.3rem;
 
@@ -57,9 +57,8 @@
 
 @media (prefers-color-scheme: dark) {
 	:root {
-		--colorBackground: rgba(0, 0, 0, 0.9);
-		--colorCopy: rgba(255, 255, 255, 0.9);
-		--colorLink: #00ff66;
+		--colorBackground: rgba(0, 0, 0, 0.94);
+		--colorCopy: rgba(255, 255, 255, 0.94);
 	}
 }
 
@@ -200,7 +199,6 @@ body {
 	display: grid;
 	align-items: start;
 	gap: var(--paddingBody);
-	min-height: calc((var(--vh, 1vh) * 100) - (var(--paddingBody) * 2));
 }
 
 @media screen and (min-width: 30rem) {
@@ -211,6 +209,7 @@ body {
 
 @media screen and (min-width: 60rem) {
 	body {
+		min-height: calc((var(--vh, 1vh) * 100) - (var(--paddingBody) * 2));
 		grid-template-columns: 3fr 1fr;
 	}
 }
@@ -272,6 +271,9 @@ header {
 .logoButton:focus {
 	outline: calc(1em / 4) solid var(--colorCopy);
 	outline-offset: 0;
+}
+
+.logoButton:focus .logoSvg {
 	background-color: var(--colorCopy);
 	color: var(--colorBackground);
 }
@@ -281,6 +283,8 @@ header {
 	height: calc(var(--baseValue) * var(--lineHeightHeadline));
 	width: auto;
 	animation: var(--animationDur10) ease var(--animationDel10) 3 jiggle;
+	background-color: var(--colorBackground);
+	color: var(--colorCopy);
 }
 
 main {
