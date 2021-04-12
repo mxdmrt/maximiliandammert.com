@@ -217,6 +217,7 @@ body {
 	body {
 		min-height: calc((var(--vh, 1vh) * 100) - (var(--paddingBody) * 2));
 		grid-template-columns: 1fr max-content;
+		gap: var(--paddingBody);
 	}
 }
 
