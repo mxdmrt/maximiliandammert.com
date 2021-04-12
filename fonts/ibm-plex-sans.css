@@ -25,6 +25,30 @@
 @font-face {
 	font-family: "IBM Plex Sans";
 	font-style: normal;
+	font-weight: 450;
+	src: local("IBM Plex Sans"), local("IBMPlexSans"),
+		url("IBM-Plex-Sans/woff2/IBMPlexSans-Text.woff2") format("woff2"),
+		url("IBM-Plex-Sans/woff/IBMPlexSans-Text.woff") format("woff"),
+		url("IBM-Plex-Sans/ttf/IBMPlexSans-Text.ttf") format("ttf"),
+		url("IBM-Plex-Sans/otf/IBMPlexSans-Text.otf") format("otf");
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "IBM Plex Sans";
+	font-style: italic;
+	font-weight: 450;
+	src: local("IBM Plex Sans Italic"), local("IBMPlexSans-Italic"),
+		url("IBM-Plex-Sans/woff2/IBMPlexSans-TextItalic.woff2") format("woff2"),
+		url("IBM-Plex-Sans/woff/IBMPlexSans-TextItalic.woff") format("woff"),
+		url("IBM-Plex-Sans/ttf/IBMPlexSans-TextItalic.ttf") format("ttf"),
+		url("IBM-Plex-Sans/otf/IBMPlexSans-TextItalic.otf") format("otf");
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "IBM Plex Sans";
+	font-style: normal;
 	font-weight: 600;
 	src: local("IBM Plex Sans SemiBold"), local("IBMPlexSans-SemiBold"),
 		url("IBM-Plex-Sans/woff2/IBMPlexSans-SemiBold.woff2") format("woff2"),

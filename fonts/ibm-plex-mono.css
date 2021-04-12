@@ -25,6 +25,30 @@
 @font-face {
 	font-family: "IBM Plex Mono";
 	font-style: normal;
+	font-weight: 450;
+	src: local("IBM Plex Mono"), local("IBMPlexMono"),
+		url("IBM-Plex-Mono/woff2/IBMPlexMono-Text.woff2") format("woff2"),
+		url("IBM-Plex-Mono/woff/IBMPlexMono-Text.woff") format("woff"),
+		url("IBM-Plex-Mono/ttf/IBMPlexMono-Text.ttf") format("ttf"),
+		url("IBM-Plex-Mono/otf/IBMPlexMono-Text.otf") format("otf");
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "IBM Plex Mono";
+	font-style: italic;
+	font-weight: 450;
+	src: local("IBM Plex Mono Italic"), local("IBMPlexMono-Italic"),
+		url("IBM-Plex-Mono/woff2/IBMPlexMono-TextItalic.woff2") format("woff2"),
+		url("IBM-Plex-Mono/woff/IBMPlexMono-TextItalic.woff") format("woff"),
+		url("IBM-Plex-Mono/ttf/IBMPlexMono-TextItalic.ttf") format("ttf"),
+		url("IBM-Plex-Mono/otf/IBMPlexMono-TextItalic.otf") format("otf");
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "IBM Plex Mono";
+	font-style: normal;
 	font-weight: 600;
 	src: local("IBM Plex Mono SemiBold"), local("IBMPlexMono-SemiBold"),
 		url("IBM-Plex-Mono/woff2/IBMPlexMono-SemiBold.woff2") format("woff2"),
