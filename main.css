@@ -1,6 +1,6 @@
-@import url(fonts/ibm-plex-serif.css);
-@import url(fonts/ibm-plex-sans.css);
 @import url(fonts/ibm-plex-mono.css);
+@import url(fonts/ibm-plex-sans.css);
+@import url(fonts/ibm-plex-serif.css);
 
 /* Breakpoints */
 /*  30rem =  480px */
@@ -20,18 +20,19 @@
 	--fontSize10: calc(var(--baseValue) * 2.7);
 	--fontSize20: calc(var(--baseValue) * 1.6);
 	--fontSize30: calc(var(--baseValue) * 1);
+	--fontSize40: calc(var(--baseValue) * 0.75);
 
 	--lineHeightCopy: 1.4;
 	--lineHeightHeadline: 1.2;
 	--lineHeightLink: 1.2;
 
-	--fontFamilyCopy: "IBM Plex Sans", "Times New Roman", serif;
-	--fontFamilyHeadline: "IBM Plex Sans", "Times New Roman", serif;
+	--fontFamilyCopy: "IBM Plex Sans", "Helvetica", sans-serif;
+	--fontFamilyHeadline: "IBM Plex Sans", "Helvetica", sans-serif;
 	--fontFamilyLink: "IBM Plex Serif", "Times New Roman", serif;
 
-	--fontWeightCopy: 400;
+	--fontWeightCopy: 450;
 	--fontWeightHeadline: 700;
-	--fontWeightLink: 400;
+	--fontWeightLink: 450;
 
 	--fontStyleCopy: normal;
 	--fontStyleHeadline: normal;
@@ -45,7 +46,6 @@
 @media screen and (min-width: 48rem) {
 	:root {
 		--baseValue: 1.5rem;
-		--lineHeightCopy: 1.5;
 	}
 }
 
@@ -114,6 +114,12 @@ p {
 
 .link30 {
 	font-size: var(--fontSize30);
+	line-height: var(--lineHeightLink);
+	max-width: 60ch;
+}
+
+.link40 {
+	font-size: var(--fontSize40);
 	line-height: var(--lineHeightLink);
 	max-width: 60ch;
 }
@@ -198,7 +204,7 @@ body {
 		color var(--transitionDur10) ease;
 	display: grid;
 	align-items: start;
-	gap: var(--paddingBody);
+	gap: calc(var(--paddingBody) * 2);
 }
 
 @media screen and (min-width: 30rem) {
@@ -210,7 +216,7 @@ body {
 @media screen and (min-width: 60rem) {
 	body {
 		min-height: calc((var(--vh, 1vh) * 100) - (var(--paddingBody) * 2));
-		grid-template-columns: 3fr 1fr;
+		grid-template-columns: 1fr max-content;
 	}
 }
 
@@ -280,7 +286,7 @@ header {
 
 .logoSvg {
 	fill: currentColor;
-	height: calc(var(--baseValue) * var(--lineHeightHeadline));
+	height: calc(var(--fontSize40) * var(--lineHeightHeadline));
 	width: auto;
 	animation: var(--animationDur10) ease var(--animationDel10) 3 jiggle;
 	background-color: var(--colorBackground);
@@ -295,8 +301,8 @@ footer {
 	align-self: end;
 
 	display: grid;
-	grid-template-columns: repeat(auto-fill, minmax(10ch, 1fr));
-	gap: calc(var(--baseValue) * 1);
+	grid-template-columns: repeat(auto-fill, minmax(8ch, 1fr));
+	gap: calc(var(--baseValue) * 0.9);
 	justify-items: start;
 	hyphens: auto;
 	word-break: break-word;
