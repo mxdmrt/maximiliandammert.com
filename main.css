@@ -183,6 +183,7 @@ a:focus {
 
 body {
 	--paddingBody: calc(var(--baseValue) * 1);
+	--gap: calc(var(--baseValue) * 2);
 
 	margin: 0;
 	padding: var(--paddingBody);
@@ -204,20 +205,21 @@ body {
 		color var(--transitionDur10) ease;
 	display: grid;
 	align-items: start;
-	gap: calc(var(--paddingBody) * 2);
+	gap: var(--gap);
 }
 
 @media screen and (min-width: 30rem) {
 	body {
-		--paddingBody: calc(var(--baseValue) * 2);
+		--paddingBody: calc(var(--baseValue) * 3);
 	}
 }
 
 @media screen and (min-width: 60rem) {
 	body {
+		--gap: calc(var(--baseValue) * 1);
+
 		min-height: calc((var(--vh, 1vh) * 100) - (var(--paddingBody) * 2));
 		grid-template-columns: 1fr max-content;
-		gap: var(--paddingBody);
 	}
 }
 
