@@ -1,14 +1,17 @@
-on: workflow_dispatch
+on:
+  push:
+    branches:
+      - main
 name: 🚀 Deploy website to Strato
 jobs:
     deploy_job:
         runs-on: ubuntu-latest
-        name: deploy
+        name: Deploy website to Strato
         steps:
             - name: 🚚 Get latest code
               uses: actions/checkout@v2
 
-            - name: 📂 Sync files
+            - name: 📂 Upload files
               uses: AbleLincoln/push-to-sftp@v1.0
               with:
                   host: 'ssh.strato.de'
@@ -16,4 +19,4 @@ jobs:
                   username: 'mad_207@maximiliandammert.com'
                   password: ${{ secrets.STRATO_FTP_PASSWORD }}
                   sourceDir: './'
-                  targetDir: '/test/'
+                  targetDir: '/'
