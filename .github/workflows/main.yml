@@ -15,7 +15,7 @@ jobs:
                   username: mad_207@maximiliandammert.com
                   password: ${{ secrets.STRATO_FTP_PASSWORD }}
                   port: 22
-                  local-dir: ./test/
-                  server-dir: /
+                  local-dir: ./mxdmrt.github.io/
+                  server-dir: /test/
                   exclude: "[**/.git*/**, **/node_modules/**, **/build/, .babelrc, .editorconfig, .eslintrc, .prettierrc, .stylelintrc]"
                   dry-run: true
