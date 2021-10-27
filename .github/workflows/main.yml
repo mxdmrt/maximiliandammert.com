@@ -1,5 +1,5 @@
 on: workflow_dispatch
-name: 🚀 Deploy website on push
+name: 🚀 Deploy website to Strato
 jobs:
     deploy_job:
         runs-on: ubuntu-latest
@@ -17,4 +17,3 @@ jobs:
                   port: 22
                   localDir: './'
                   remoteDir: '/test/'
-                  dryRun: true
