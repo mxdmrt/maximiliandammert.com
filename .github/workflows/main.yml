@@ -9,7 +9,7 @@ jobs:
               uses: actions/checkout@v2
 
             - name: 📂 Sync files
-              uses: wangyucode/sftp-upload-action@1.1
+              uses: wangyucode/sftp-upload-action@v1.1
               with:
                   host: 'ssh.strato.de'
                   username: 'mad_207@maximiliandammert.com'
