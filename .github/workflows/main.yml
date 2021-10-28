@@ -16,7 +16,7 @@ jobs:
               with:
                   host: 'ssh.strato.de'
                   port: 22
-                  username: 'mad_207@maximiliandammert.com'
+                  username: ${{ secrets.STRATO_FTP_USERNAME }}
                   password: ${{ secrets.STRATO_FTP_PASSWORD }}
                   sourceDir: './'
                   targetDir: '/'
