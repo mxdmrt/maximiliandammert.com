@@ -1,13 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-
 <url>
-	<loc>http://maximiliandammert.com/</loc>
+  <loc>http://maximiliandammert.com/</loc>
 <lastmod>2020-02-11T22:25:00+00:00</lastmod>
 </url>
 <url>
-	<loc>http://maximiliandammert.com/imprint.html</loc>
-	<lastmod>2019-05-16T22:25:00+00:00</lastmod>
+  <loc>http://maximiliandammert.com/legal-notice.html</loc>
+  <lastmod>2019-05-16T22:25:00+00:00</lastmod>
 </url>
-
 </urlset>
