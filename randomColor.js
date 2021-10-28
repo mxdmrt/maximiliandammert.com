@@ -13,10 +13,6 @@ const randomHex = () => {
 const getCorrectTextColor = (hex) => {
   const threshold = 128; /* about half of 256. Lower threshold equals more dark text on dark background  */
 
-  const hRed = hexToR(hex);
-  const hGreen = hexToG(hex);
-  const hBlue = hexToB(hex);
-
   const hexToR = (h) => {
     return parseInt(cutHex(h).substring(0, 2), 16);
   };
@@ -30,20 +26,23 @@ const getCorrectTextColor = (hex) => {
     return h.charAt(0) == '#' ? h.substring(1, 7) : h;
   };
 
+  const hRed = hexToR(hex);
+  const hGreen = hexToG(hex);
+  const hBlue = hexToB(hex);
+
   const cBrightness = (hRed * 299 + hGreen * 587 + hBlue * 114) / 1000;
-  if (cBrightness > threshold) {
-    return 'rgba(0,0,0, 0.94)';
-  } else {
-    return 'rgba(255, 255, 255, 0.94)';
-  }
+
+  return cBrightness > threshold ? 'rgba(0,0,0, 0.94)' : 'rgba(255, 255, 255, 0.94)';
 };
 
 // eslint-disable-next-line no-unused-vars
 const setRandomColor = () => {
   const bgColor = randomHex();
 
-  $(':root').css('--colorBackground', bgColor);
-  $(':root').css('--colorCopy', getCorrectTextColor(bgColor));
-  $(':root').css('--colorLink', getCorrectTextColor(bgColor));
-  $('meta[name=theme-color]').attr('content', bgColor);
+  return [
+    $(':root').css('--colorBackground', bgColor),
+    $(':root').css('--colorCopy', getCorrectTextColor(bgColor)),
+    $(':root').css('--colorLink', getCorrectTextColor(bgColor)),
+    $('meta[name=theme-color]').attr('content', bgColor),
+  ];
 };

@@ -11,55 +11,55 @@
 /* 110rem = 1760px */
 
 :root {
-	--colorBackground: rgba(255, 255, 255, 0.94);
-	--colorCopy: rgba(0, 0, 0, 0.94);
-	--colorLink: var(--colorCopy);
+  --colorBackground: rgba(255, 255, 255, 0.94);
+  --colorCopy: rgba(0, 0, 0, 0.94);
+  --colorLink: var(--colorCopy);
 
-	--baseValue: 1.3rem;
+  --baseValue: 1.3rem;
 
-	--fontSize10: calc(var(--baseValue) * 2.7);
-	--fontSize20: calc(var(--baseValue) * 1.6);
-	--fontSize30: calc(var(--baseValue) * 1);
-	--fontSize40: calc(var(--baseValue) * 0.75);
+  --fontSize10: calc(var(--baseValue) * 2.7);
+  --fontSize20: calc(var(--baseValue) * 1.6);
+  --fontSize30: calc(var(--baseValue) * 1);
+  --fontSize40: calc(var(--baseValue) * 0.75);
 
-	--lineHeightCopy: 1.4;
-	--lineHeightHeadline: 1.2;
-	--lineHeightLink: 1.2;
+  --lineHeightCopy: 1.5;
+  --lineHeightHeadline: 1.2;
+  --lineHeightLink: 1.2;
 
-	--fontFamilyCopy: "IBM Plex Sans", "Helvetica", sans-serif;
-	--fontFamilyHeadline: "IBM Plex Sans", "Helvetica", sans-serif;
-	--fontFamilyLink: "IBM Plex Serif", "Times New Roman", serif;
+  --fontFamilyCopy: 'IBM Plex Sans', 'Helvetica', sans-serif;
+  --fontFamilyHeadline: 'IBM Plex Sans', 'Helvetica', sans-serif;
+  --fontFamilyLink: 'IBM Plex Serif', 'Times New Roman', serif;
 
-	--fontWeightCopy: 450;
-	--fontWeightHeadline: 700;
-	--fontWeightLink: 450;
+  --fontWeightCopy: 450;
+  --fontWeightHeadline: 700;
+  --fontWeightLink: 450;
 
-	--fontStyleCopy: normal;
-	--fontStyleHeadline: normal;
-	--fontStyleLink: italic;
+  --fontStyleCopy: normal;
+  --fontStyleHeadline: normal;
+  --fontStyleLink: italic;
 
-	--transitionDur10: 200ms;
-	--animationDur10: 1000ms;
-	--animationDel10: 10000ms;
+  --transitionDur10: 200ms;
+  --animationDur10: 1000ms;
+  --animationDel10: 10000ms;
 }
 
 @media screen and (min-width: 48rem) {
-	:root {
-		--baseValue: 1.5rem;
-	}
+  :root {
+    --baseValue: 1.5rem;
+  }
 }
 
 @media screen and (min-width: 90rem) {
-	:root {
-		--baseValue: 1.7rem;
-	}
+  :root {
+    /* --baseValue: 1.7rem; */
+  }
 }
 
 @media (prefers-color-scheme: dark) {
-	:root {
-		--colorBackground: rgba(0, 0, 0, 0.94);
-		--colorCopy: rgba(255, 255, 255, 0.94);
-	}
+  :root {
+    --colorBackground: rgba(0, 0, 0, 0.94);
+    --colorCopy: rgba(255, 255, 255, 0.94);
+  }
 }
 
 /* TEXT STYLES */
@@ -70,252 +70,249 @@ h3,
 h4,
 h5,
 p {
-	margin: 0;
+  margin: 0;
 }
 
 .copy30 {
-	font-size: var(--fontSize30);
-	font-family: var(--fontFamilyCopy);
-	line-height: var(--lineHeightCopy);
-	font-weight: var(--fontWeightCopy);
-	font-style: var(--fontStyleCopy);
-	max-width: 55ch;
+  font-size: var(--fontSize30);
+  font-family: var(--fontFamilyCopy);
+  line-height: var(--lineHeightCopy);
+  font-weight: var(--fontWeightCopy);
+  font-style: var(--fontStyleCopy);
+  max-width: 55ch;
 }
 
 .headline10 {
-	font-size: var(--fontSize10);
-	font-family: var(--fontFamilyHeadline);
-	line-height: var(--lineHeightHeadline);
-	font-weight: var(--fontWeightHeadline);
-	font-style: var(--fontStyleHeadline);
-	letter-spacing: calc(-32em / 1000);
-	max-width: 60ch;
+  font-size: var(--fontSize10);
+  font-family: var(--fontFamilyHeadline);
+  line-height: var(--lineHeightHeadline);
+  font-weight: var(--fontWeightHeadline);
+  font-style: var(--fontStyleHeadline);
+  letter-spacing: calc(-32em / 1000);
+  max-width: 60ch;
 }
 
 .headline20 {
-	font-size: var(--fontSize20);
-	font-family: var(--fontFamilyHeadline);
-	line-height: var(--lineHeightHeadline);
-	font-weight: var(--fontWeightHeadline);
-	font-style: var(--fontStyleHeadline);
-	letter-spacing: calc(-16em / 1000);
-	max-width: 60ch;
+  font-size: var(--fontSize20);
+  font-family: var(--fontFamilyHeadline);
+  line-height: var(--lineHeightHeadline);
+  font-weight: var(--fontWeightHeadline);
+  font-style: var(--fontStyleHeadline);
+  letter-spacing: calc(-16em / 1000);
+  max-width: 60ch;
 }
 
 .headline30 {
-	font-size: var(--fontSize30);
-	font-family: var(--fontFamilyHeadline);
-	line-height: var(--lineHeightHeadline);
-	font-weight: var(--fontWeightHeadline);
-	font-style: var(--fontStyleHeadline);
-	letter-spacing: calc(-8em / 1000);
-	max-width: 60ch;
+  font-size: var(--fontSize30);
+  font-family: var(--fontFamilyHeadline);
+  line-height: var(--lineHeightHeadline);
+  font-weight: var(--fontWeightHeadline);
+  font-style: var(--fontStyleHeadline);
+  letter-spacing: calc(-8em / 1000);
+  max-width: 60ch;
 }
 
 .link30 {
-	font-size: var(--fontSize30);
-	line-height: var(--lineHeightLink);
-	max-width: 60ch;
+  font-size: var(--fontSize30);
+  line-height: var(--lineHeightLink);
+  max-width: 60ch;
 }
 
 .link40 {
-	font-size: var(--fontSize40);
-	line-height: var(--lineHeightLink);
-	max-width: 60ch;
+  font-size: var(--fontSize40);
+  line-height: var(--lineHeightLink);
+  max-width: 60ch;
 }
 
 strong {
-	font-weight: var(--fontWeightCopy);
+  font-weight: var(--fontWeightCopy);
 }
 
 a {
-	display: inline-block;
-	font-family: var(--fontFamilyLink);
-	font-weight: var(--fontWeightLink);
-	font-style: var(--fontStyleLink);
-	color: var(--colorLink);
-	text-decoration: underline;
-	text-underline-offset: calc(1em / 8);
-	text-decoration-thickness: calc(1em / 16);
-	transition: color var(--transitionDur10) ease,
-		opacity var(--transitionDur10) ease;
+  display: inline-block;
+  font-family: var(--fontFamilyLink);
+  font-weight: var(--fontWeightLink);
+  font-style: var(--fontStyleLink);
+  color: var(--colorLink);
+  text-decoration: underline;
+  text-underline-offset: calc(1em / 8);
+  text-decoration-thickness: calc(1em / 16);
+  transition: color var(--transitionDur10) ease, opacity var(--transitionDur10) ease;
 }
 
 a:hover {
-	opacity: 0.5;
-	transition: color var(--transitionDur10) ease,
-		opacity var(--transitionDur10) ease;
+  opacity: 0.5;
+  transition: color var(--transitionDur10) ease, opacity var(--transitionDur10) ease;
 }
 
-a:not([title="Legal notice"]):not([title="Back"])::after {
-	content: "↗";
-	display: inline;
+a:not([title='Legal notice']):not([title='Back'])::after {
+  content: '↗';
+  display: inline;
 }
 
 a:focus {
-	outline: calc(1em / 4) solid var(--colorCopy);
-	outline-offset: 0;
-	background-color: var(--colorCopy);
-	color: var(--colorBackground);
+  outline: calc(1em / 4) solid var(--colorCopy);
+  outline-offset: 0;
+  background-color: var(--colorCopy);
+  color: var(--colorBackground);
 }
 
 /* LAYOUT */
 
 .stackS {
-	display: grid;
-	justify-items: start;
-	row-gap: calc(var(--baseValue) * 1);
+  display: grid;
+  justify-items: start;
+  row-gap: calc(var(--baseValue) * 1);
 }
 
 .stackM {
-	display: grid;
-	justify-items: start;
-	row-gap: calc(var(--baseValue) * 3);
+  display: grid;
+  justify-items: start;
+  row-gap: calc(var(--baseValue) * 3);
 }
 
 .stackL {
-	display: grid;
-	justify-items: start;
-	row-gap: calc(var(--baseValue) * 5);
+  display: grid;
+  justify-items: start;
+  row-gap: calc(var(--baseValue) * 5);
 }
 
 /* BASIC */
 
 body {
-	--paddingBody: calc(var(--baseValue) * 1);
-	--gap: calc(var(--baseValue) * 2);
+  --paddingBody: calc(var(--baseValue) * 1);
+  --gap: calc(var(--baseValue) * 2);
 
-	margin: 0;
-	padding: var(--paddingBody);
-	color: var(--colorCopy);
-	background-color: var(--colorBackground);
-	font-family: var(--fontFamilyCopy);
-	font-weight: var(--fontWeightCopy);
-	font-style: var(--fontStyleCopy);
-	font-size: calc(var(--baseValue) * 1);
-	line-height: var(--lineHeightCopy);
-	letter-spacing: calc(8em / 1000);
-	overflow-wrap: break-word;
-	-moz-osx-font-smoothing: grayscale;
-	-webkit-font-smoothing: antialiased;
-	-webkit-font-feature-settings: "liga" 1, "dlig" 1, "onum" 1;
-	-moz-font-feature-settings: "liga" 1, "dlig" 1, "onum" 1;
-	font-feature-settings: "liga" 1, "dlig" 1, "onum" 1;
-	transition: background-color var(--transitionDur10) ease,
-		color var(--transitionDur10) ease;
-	display: grid;
-	align-items: start;
-	gap: var(--gap);
+  margin: 0;
+  padding: var(--paddingBody);
+  color: var(--colorCopy);
+  background-color: var(--colorBackground);
+  font-family: var(--fontFamilyCopy);
+  font-weight: var(--fontWeightCopy);
+  font-style: var(--fontStyleCopy);
+  font-size: calc(var(--baseValue) * 1);
+  line-height: var(--lineHeightCopy);
+  letter-spacing: calc(8em / 1000);
+  overflow-wrap: break-word;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  -webkit-font-feature-settings: 'liga' 1, 'dlig' 1, 'onum' 1;
+  -moz-font-feature-settings: 'liga' 1, 'dlig' 1, 'onum' 1;
+  font-feature-settings: 'liga' 1, 'dlig' 1, 'onum' 1;
+  transition: background-color var(--transitionDur10) ease, color var(--transitionDur10) ease;
+  display: grid;
+  align-items: start;
+  gap: var(--gap);
 }
 
 @media screen and (min-width: 30rem) {
-	body {
-		--paddingBody: calc(var(--baseValue) * 3);
-	}
+  body {
+    --paddingBody: calc(var(--baseValue) * 3);
+  }
 }
 
 @media screen and (min-width: 60rem) {
-	body {
-		--gap: calc(var(--baseValue) * 1);
+  body {
+    --gap: calc(var(--baseValue) * 1);
 
-		min-height: calc((var(--vh, 1vh) * 100) - (var(--paddingBody) * 2));
-		grid-template-columns: 1fr max-content;
-	}
+    min-height: calc((var(--vh, 1vh) * 100) - (var(--paddingBody) * 2));
+    grid-template-columns: 1fr max-content;
+  }
 }
 
 @media screen and (min-width: 110rem) {
-	body {
-		--paddingBody: calc(var(--baseValue) * 4);
-	}
+  body {
+    --paddingBody: calc(var(--baseValue) * 4);
+  }
 }
 
 /* COMPONENTS */
 
 header {
-	display: inline-flex;
-	align-self: flex-start;
+  display: inline-flex;
+  align-self: flex-start;
 }
 
 @media screen and (min-width: 60rem) {
-	header {
-		grid-column: span 2;
-	}
+  header {
+    grid-column: span 2;
+  }
 }
 
 @keyframes jiggle {
-	0% {
-		transform: rotate(0);
-	}
+  0% {
+    transform: rotate(0);
+  }
 
-	15% {
-		transform: rotate(-5deg);
-	}
+  15% {
+    transform: rotate(-5deg);
+  }
 
-	30% {
-		transform: rotate(5deg);
-	}
+  30% {
+    transform: rotate(5deg);
+  }
 
-	45% {
-		transform: rotate(-5deg);
-	}
+  45% {
+    transform: rotate(-5deg);
+  }
 
-	60% {
-		transform: rotate(0);
-	}
+  60% {
+    transform: rotate(0);
+  }
 }
 
 .logoButton {
-	display: inline-flex;
-	appearance: none;
-	background-color: unset;
-	border: none;
-	padding: 0;
-	border-radius: unset;
+  display: inline-flex;
+  appearance: none;
+  background-color: unset;
+  border: none;
+  padding: 0;
+  border-radius: unset;
 }
 
 .logoButton:hover {
-	cursor: pointer;
+  cursor: pointer;
 }
 
 .logoButton:focus {
-	outline: calc(1em / 4) solid var(--colorCopy);
-	outline-offset: 0;
+  outline: calc(1em / 4) solid var(--colorCopy);
+  outline-offset: 0;
 }
 
 .logoButton:focus .logoSvg {
-	background-color: var(--colorCopy);
-	color: var(--colorBackground);
+  background-color: var(--colorCopy);
+  color: var(--colorBackground);
 }
 
 .logoSvg {
-	fill: currentColor;
-	height: calc(var(--fontSize40) * var(--lineHeightHeadline));
-	width: auto;
-	animation: var(--animationDur10) ease var(--animationDel10) 3 jiggle;
-	background-color: var(--colorBackground);
-	color: var(--colorCopy);
+  fill: currentColor;
+  height: calc(var(--fontSize40) * var(--lineHeightHeadline));
+  width: auto;
+  animation: var(--animationDur10) ease var(--animationDel10) 3 jiggle;
+  background-color: var(--colorBackground);
+  color: var(--colorCopy);
 }
 
 main {
-	align-self: flex-end;
+  align-self: flex-end;
 }
 
 footer {
-	align-self: end;
+  align-self: end;
 
-	display: grid;
-	grid-template-columns: repeat(auto-fill, minmax(8ch, 1fr));
-	gap: calc(var(--baseValue) * 0.9);
-	justify-items: start;
-	hyphens: auto;
-	word-break: break-word;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(8ch, 1fr));
+  gap: calc(var(--baseValue) * 1);
+  justify-items: start;
+  hyphens: auto;
+  word-break: break-word;
 }
 
 @media screen and (min-width: 60rem) {
-	footer {
-		grid-template-columns: unset;
+  footer {
+    grid-template-columns: unset;
 
-		position: sticky;
-		bottom: var(--paddingBody);
-	}
+    position: sticky;
+    bottom: var(--paddingBody);
+  }
 }
