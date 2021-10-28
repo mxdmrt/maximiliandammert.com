@@ -1,7 +1,6 @@
-/* TEAM */                        
+/* TEAM */
 Maximilian A. Dammert
 
 /* SITE */
-Last update: 2021/09/06
 Standards: HTML5, CSS3
 Software: Visual Studio Code
