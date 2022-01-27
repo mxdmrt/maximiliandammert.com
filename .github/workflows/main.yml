@@ -12,7 +12,7 @@ jobs:
               uses: actions/checkout@v2
 
             - name: 📂 Upload files
-              uses: AbleLincoln/push-to-sftp@v1.0
+              uses: AbleLincoln/push-to-sftp@v1.2
               with:
                   host: 'ssh.strato.de'
                   port: 22
