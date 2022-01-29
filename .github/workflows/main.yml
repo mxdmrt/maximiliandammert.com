@@ -19,4 +19,4 @@ jobs:
                   username: ${{ secrets.STRATO_FTP_USERNAME }}
                   password: ${{ secrets.STRATO_FTP_PASSWORD }}
                   sourceDir: './'
-                  targetDir: '/'
+                  targetDir: '/mxdmrt/'
