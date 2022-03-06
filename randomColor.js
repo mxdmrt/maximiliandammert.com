@@ -35,14 +35,13 @@ const getCorrectTextColor = (hex) => {
   return cBrightness > threshold ? 'rgba(0,0,0, 0.94)' : 'rgba(255, 255, 255, 0.94)';
 };
 
-// eslint-disable-next-line no-unused-vars
 const setRandomColor = () => {
   const bgColor = randomHex();
 
   return [
-    $(':root').css('--colorBackground', bgColor),
-    $(':root').css('--colorCopy', getCorrectTextColor(bgColor)),
-    $(':root').css('--colorLink', getCorrectTextColor(bgColor)),
-    $('meta[name=theme-color]').attr('content', bgColor),
+    document.querySelector(':root').style.setProperty('--colorBackground', bgColor),
+    document.querySelector(':root').style.setProperty('--colorCopy', getCorrectTextColor(bgColor)),
+    document.querySelector(':root').style.setProperty('--colorLink', getCorrectTextColor(bgColor)),
+    document.querySelector('meta[name=theme-color]').style.setProperty('content', bgColor),
   ];
 };
