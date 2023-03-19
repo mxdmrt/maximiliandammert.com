@@ -213,7 +213,6 @@ body {
 
   margin: 0;
   padding: var(--paddingBody);
-  padding-top: calc(var(--paddingBody) - 2rem);
   color: hsl(var(--colorCopy), 94%);
   background-color: hsl(var(--colorBackground), 94%);
   font-family: var(--fontFamilyCopy);
@@ -245,13 +244,14 @@ body {
     'ccmp', 'kern', 'liga', 'onum';
 }
 
-body:not(.imprint) {
-  padding-bottom: calc(var(--paddingBody) / 3);
-}
-
 @media screen and (min-width: 30rem) {
   body {
     --paddingBody: calc(var(--baseValue) * 3);
+    padding-top: calc(var(--paddingBody) - 2rem);
+  }
+
+  body:not(.imprint) {
+    padding-bottom: calc(var(--paddingBody) / 3);
   }
 }
 
