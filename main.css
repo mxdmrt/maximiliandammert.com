@@ -176,7 +176,7 @@ a:hover {
   text-decoration-color: hsl(var(--colorLink), 100%);
 }
 
-a:not([title='Legal notice']):not([title='Back'])::after {
+a:not([title='Imprint']):not([title='Back'])::after {
   content: '\002197';
   display: inline;
 }
