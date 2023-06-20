@@ -131,8 +131,10 @@ p {
   transition: background-color var(--transitionDur10) ease;
 }
 
-:is(.link30, .link40):hover::before {
-  background-color: hsl(var(--colorLink), 5%);
+@media (hover: hover) {
+  :is(.link30, .link40):hover::before {
+    background-color: hsl(var(--colorLink), 5%);
+  }
 }
 
 .link40 {
@@ -172,8 +174,10 @@ a {
   transition: color var(--transitionDur10) ease, text-decoration-color var(--transitionDur10) ease;
 }
 
-a:hover {
-  text-decoration-color: hsl(var(--colorLink), 100%);
+@media (hover: hover) {
+  a:hover {
+    text-decoration-color: hsl(var(--colorLink), 100%);
+  }
 }
 
 a:not([title='Imprint']):not([title='Back'])::after {
@@ -395,9 +399,11 @@ footer {
   transition: background-color var(--transitionDur10) ease;
 }
 
-.themeToggle button:hover {
-  background-color: hsl(var(--colorCopy), 5%);
-  cursor: pointer;
+@media (hover: hover) {
+  .themeToggle button:hover {
+    background-color: hsl(var(--colorCopy), 5%);
+    cursor: pointer;
+  }
 }
 
 .themeToggle button svg {
