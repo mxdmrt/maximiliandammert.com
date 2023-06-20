@@ -259,9 +259,7 @@ body {
   body {
     --gap: calc(var(--baseValue) * 3);
 
-    min-height: calc(
-      (var(--vh, 1vh) * 100) - ((var(--paddingBody) - 2rem) + (var(--paddingBody) / 3))
-    );
+    min-height: calc((1dvh * 100) - ((var(--paddingBody) - 2rem) + (var(--paddingBody) / 3)));
     grid-template-columns: 1fr max-content;
   }
 
