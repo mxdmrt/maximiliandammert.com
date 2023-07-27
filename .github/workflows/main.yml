@@ -8,17 +8,14 @@ jobs:
     runs-on: ubuntu-latest
     name: Deploy website to Strato
     steps:
+      - name: 🚚 Checkout
+        uses: actions/checkout@v3.5.3
+
       - name: 💾 Copy to build folder
         run: |
           rm -rf ./build/
           mkdir build
           rsync -r ./ build/ --exclude ".git" --exclude "build"
-
-      - name: 🚚 Checkout
-        uses: actions/checkout@v3.5.3
-        with:
-          sparse-checkout: |
-            fonts
 
       - name: 📂 Upload files
         uses: AbleLincoln/push-to-sftp@v2.1
