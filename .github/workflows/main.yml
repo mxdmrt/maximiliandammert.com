@@ -4,19 +4,22 @@ on:
       - main
 name: 🚀 Deploy website to Strato
 jobs:
-    deploy_job:
-        runs-on: ubuntu-latest
-        name: Deploy website to Strato
-        steps:
-            - name: 🚚 Get latest code
-              uses: actions/checkout@v2
+  deploy_job:
+    runs-on: ubuntu-latest
+    name: Deploy website to Strato
+    steps:
+      - name: 🚚 Checkout
+        uses: actions/checkout@v3.5.3
+        with:
+          sparse-checkout: |
+            fonts
 
-            - name: 📂 Upload files
-              uses: AbleLincoln/push-to-sftp@v1.2
-              with:
-                  host: ssh.strato.de
-                  port: 22
-                  username: ${{ secrets.STRATO_FTP_USERNAME }}
-                  password: ${{ secrets.STRATO_FTP_PASSWORD }}
-                  sourceDir: ./
-                  targetDir: ./mxdmrt/
+      - name: 📂 Upload files
+        uses: AbleLincoln/push-to-sftp@v2.1
+        with:
+          host: ssh.strato.de
+          port: 22
+          username: ${{ secrets.STRATO_FTP_USERNAME }}
+          password: ${{ secrets.STRATO_FTP_PASSWORD }}
+          sourceDir: ./
+          targetDir: ./mxdmrt/
