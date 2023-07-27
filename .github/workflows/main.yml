@@ -16,7 +16,7 @@ jobs:
         run: |
           rm -rf ./build/
           mkdir build
-          rsync -r ./ build/ --exclude ".git" --exclude "build"
+          rsync -r ./ build/ --exclude ".git" --exclude-from={"buildignore.txt"}
 
       - name: 📂 Upload files
         uses: AbleLincoln/push-to-sftp@v2.1
