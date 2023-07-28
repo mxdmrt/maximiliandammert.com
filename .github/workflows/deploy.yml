@@ -1,23 +1,25 @@
-on:
-  workflow_dispatch:
-  push:
-    branches:
-      - main
 name: 🚀 Deploy website to Strato
+
+on:
+  push:
+    branches: ['main']
+  workflow_dispatch:
+
+concurrency:
+  group: 'strato'
+  cancel-in-progress: true
+
 jobs:
-  deploy_job:
+  deploy:
     runs-on: ubuntu-latest
-    name: Deploy website to Strato
     steps:
       - name: 🚚 Checkout
         uses: actions/checkout@v3.5.3
-
       - name: 💾 Copy to build folder
         run: |
           rm -rf ./build/
           mkdir build
           rsync -r ./ build/ --exclude ".git" --exclude-from "./buildignore.txt"
-
       - name: 📂 Upload files
         uses: AbleLincoln/push-to-sftp@v2.1
         with:
