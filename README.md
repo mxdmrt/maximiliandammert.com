@@ -4,7 +4,8 @@ My personal website
 
 ## Available Scripts
 
-1. `npm run dev` start dev server
-2. `npm run build` build for production
-3. `npm run preview` locally preview production build
-4. `npm run prettier-format` format files
+- `npm run dev` start dev server
+- `npm run host` start dev server with --host
+- `npm run build` build for production
+- `npm run preview` locally preview production build
+- `npm run prettier-format` format files
