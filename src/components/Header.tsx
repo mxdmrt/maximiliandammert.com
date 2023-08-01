@@ -20,21 +20,21 @@ const StyledHeader = styled.header<{ isScrolled: boolean }>`
     transition:
       box-shadow 300ms ease-out,
       background-color 300ms ease-out;
-    box-shadow: 0 1px 0 0 oklch(var(--colorForeground) / 0%);
+    box-shadow: 0 1px 0 0 hsl(var(--colorForeground) / 0%);
     position: absolute;
     content: "";
     top: calc(var(--pagePadding) * -1 + 1rem);
     right: calc(var(--pagePadding) * -1);
     bottom: calc(var(--pagePadding) * -1 + 1rem);
     left: calc(var(--pagePadding) * -1);
-    background-color: oklch(var(--colorBackground) / 0%);
+    background-color: hsl(var(--colorBackground) / 0%);
 
     ${({ isScrolled }) =>
       isScrolled &&
       css`
-        background-color: oklch(var(--colorBackground) / 50%);
+        background-color: hsl(var(--colorBackground) / 50%);
         backdrop-filter: blur(0.8rem);
-        box-shadow: 0 1px 0 0 oklch(var(--colorForeground) / 10%);
+        box-shadow: 0 1px 0 0 hsl(var(--colorForeground) / 10%);
       `}
   }
 `;
@@ -59,33 +59,33 @@ const StyledLogo = styled(NavLink)<{ theme: Theme }>`
     content: "";
     position: absolute;
     inset: -1.15rem -0.87rem;
-    background-color: oklch(var(--colorForeground) / 0%);
+    background-color: hsl(var(--colorForeground) / 0%);
     border-radius: var(--borderRadius);
     transition: background-color 0.3s ease;
   }
 
   @media (hover: hover) {
     &:hover {
-      text-decoration-color: oklch(var(--colorForeground));
+      text-decoration-color: hsl(var(--colorForeground));
 
       &::before {
         ${({ theme }) => {
           switch (theme.type) {
             case "light":
               return css`
-                background-color: oklch(var(--colorForeground) / 5%);
+                background-color: hsl(var(--colorForeground) / 5%);
               `;
             case "dark":
               return css`
-                background-color: oklch(var(--colorForeground) / 10%);
+                background-color: hsl(var(--colorForeground) / 10%);
               `;
             case "random":
-              return theme.background[0] > 49.9
+              return theme.background.lightness > 45
                 ? css`
-                    background-color: oklch(var(--colorForeground) / 5%);
+                    background-color: hsl(var(--colorForeground) / 5%);
                   `
                 : css`
-                    background-color: oklch(var(--colorForeground) / 10%);
+                    background-color: hsl(var(--colorForeground) / 10%);
                   `;
           }
         }}

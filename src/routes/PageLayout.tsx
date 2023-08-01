@@ -84,10 +84,10 @@ export default function Root() {
 
   const globalCss = css`
     :root {
-      --colorBackground: ${theme.background[0]}% ${theme.background[1]}
-        ${theme.background[2]};
-      --colorForeground: ${theme.foreground[0]}% ${theme.foreground[1]}
-        ${theme.foreground[2]};
+      --colorBackground: ${theme.background.hue} ${theme.background.saturation}%
+        ${theme.background.lightness}%;
+      --colorForeground: ${theme.foreground.hue} ${theme.foreground.saturation}%
+        ${theme.foreground.lightness}%;
 
       color-scheme: ${theme.type};
     }

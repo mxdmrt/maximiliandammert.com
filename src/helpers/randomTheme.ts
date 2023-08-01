@@ -1,29 +1,36 @@
-import { Theme } from "../@types/theme";
+import { HslColor, Theme } from "../@types/theme";
 
-const randomOklch = (): [number, number, number] => {
+const randomHsl = (): HslColor => {
+  const hueMax = 359;
+  const saturationMax = 100;
   const lightnessMax = 100;
-  const chromaMax = 0.37;
-  const hueMax = 359.9;
 
-  return [
-    Math.floor(Math.random() * lightnessMax * 10) / 10,
-    Math.floor(Math.random() * chromaMax * 100) / 100,
-    Math.floor(Math.random() * hueMax * 10) / 10,
-  ];
+  return {
+    hue: Math.floor(Math.random() * hueMax),
+    saturation: Math.floor(Math.random() * saturationMax),
+    lightness: Math.floor(Math.random() * lightnessMax),
+  };
 };
 
-const getForegroundColor = (
-  bgColor: Theme["background"],
-): [number, number, number] => {
-  const threshold = 49;
-  const lightness = bgColor[0];
+const getForegroundColor = (bgColor: Theme["background"]): HslColor => {
+  const threshold = 45;
+  const lightness = bgColor.lightness;
 
-  return lightness > threshold ? [0, 0, 0] : [100, 0, 0];
+  return lightness > threshold
+    ? {
+        hue: 0,
+        saturation: 0,
+        lightness: 12,
+      }
+    : {
+        hue: 0,
+        saturation: 0,
+        lightness: 94,
+      };
 };
 
 export const createRandomTheme = (): Theme => {
-  const oklch = randomOklch();
-  const bgColor = oklch;
+  const bgColor = randomHsl();
 
   return {
     type: "random",

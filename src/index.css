@@ -36,8 +36,8 @@ html {
 body {
   margin: 0;
 
-  color: oklch(var(--colorForeground) / 94%);
-  background-color: oklch(var(--colorBackground));
+  color: hsl(var(--colorForeground) / 94%);
+  background-color: hsl(var(--colorBackground));
 
   padding: var(--pagePadding);
   padding-top: calc(var(--pagePadding) - 1rem);

@@ -7,7 +7,7 @@ const StyledFooter = styled.footer`
   grid-template-columns: 1fr max-content;
   align-self: flex-start;
 
-  color: oklch(var(--colorForeground) / 60%);
+  color: hsl(var(--colorForeground) / 60%);
   transition: color 0.1s ease;
 `;
 
@@ -29,8 +29,8 @@ const StyledHotkey = styled.span`
   font-size: 0.75rem;
   font-weight: 600;
   border-radius: calc(var(--borderRadius) / 3);
-  background-color: oklch(var(--colorForeground) / 5%);
-  box-shadow: 0 0 0 1px oklch(var(--colorForeground) / 20%);
+  background-color: hsl(var(--colorForeground) / 5%);
+  box-shadow: 0 0 0 1px hsl(var(--colorForeground) / 20%);
   line-height: 1;
   margin: 0 0.2em;
 
