@@ -1,31 +1,37 @@
-name: 🚀 Deploy website to Strato
+name: Deploy to production
 
 on:
   push:
-    branches: ['main']
+    branches: ["main"]
   workflow_dispatch:
 
 concurrency:
-  group: 'strato'
+  group: "production"
   cancel-in-progress: true
 
 jobs:
   deploy:
+    environment:
+      name: production
     runs-on: ubuntu-latest
     steps:
-      - name: 🚚 Checkout
+      - name: Checkout
         uses: actions/checkout@v3.5.3
-      - name: 💾 Copy to build folder
-        run: |
-          rm -rf ./build/
-          mkdir build
-          rsync -r ./ build/ --exclude ".git" --exclude-from "./buildignore.txt"
-      - name: 📂 Upload files
+      - name: Set up Node
+        uses: actions/setup-node@v3.7.0
+        with:
+          node-version: 18
+          cache: "npm"
+      - name: Install dependencies
+        run: npm install
+      - name: Build
+        run: npm run build
+      - name: Upload files
         uses: AbleLincoln/push-to-sftp@v2.1
         with:
           host: ssh.strato.de
           port: 22
           username: ${{ secrets.STRATO_FTP_USERNAME }}
           password: ${{ secrets.STRATO_FTP_PASSWORD }}
-          sourceDir: ./build/
-          targetDir: ./mxdmrt/
+          sourceDir: ./dist/
+          targetDir: ./root/

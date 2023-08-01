@@ -1,4 +1,0 @@
-# robots.txt zu https://www.maximiliandammert.com/
-
-User-agent: *
-Disallow: ../_archive/
