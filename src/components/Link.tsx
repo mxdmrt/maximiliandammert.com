@@ -53,7 +53,7 @@ const StyledLink = styled.a<{ theme: Theme; contentAfter?: string }>`
                 background-color: oklch(var(--colorForeground) / 10%);
               `;
             case "random":
-              return theme.background[0] > 49
+              return theme.background[0] > 49.9
                 ? css`
                     background-color: oklch(var(--colorForeground) / 5%);
                   `

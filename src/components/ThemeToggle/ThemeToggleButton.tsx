@@ -24,6 +24,7 @@ const StyledThemeToggleButton = styled.button<{ theme: Theme }>`
   @media (hover: hover) {
     &:hover {
       cursor: pointer;
+
       ${({ theme }) => {
         switch (theme.type) {
           case "light":
@@ -35,7 +36,7 @@ const StyledThemeToggleButton = styled.button<{ theme: Theme }>`
               background-color: oklch(var(--colorForeground) / 10%);
             `;
           case "random":
-            return theme.background[0] > 49
+            return theme.background[0] > 49.9
               ? css`
                   background-color: oklch(var(--colorForeground) / 5%);
                 `
