@@ -1,5 +1,6 @@
 import { css } from "@emotion/react";
 import styled from "@emotion/styled";
+import { useEffect } from "react";
 import Link from "../components/Link";
 import Typography from "../components/Typography";
 
@@ -19,6 +20,10 @@ const StyledImprintStack = styled.section<{ gap?: number }>`
 `;
 
 export default function Imprint() {
+  useEffect(() => {
+    document.title = "Maximilian Dammert · Imprint";
+  }, []);
+
   return (
     <StyledImprintMain>
       <Typography type="h1" size="l">

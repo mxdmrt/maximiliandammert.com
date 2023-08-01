@@ -1,4 +1,5 @@
 import styled from "@emotion/styled";
+import { useEffect } from "react";
 import Link from "../components/Link";
 import Typography from "../components/Typography";
 
@@ -11,6 +12,10 @@ const StyledErrorMain = styled.main`
 `;
 
 export default function Error() {
+  useEffect(() => {
+    document.title = "Maximilian Dammert · 404";
+  }, []);
+
   return (
     <StyledErrorMain>
       <Typography type="h1" size="l">

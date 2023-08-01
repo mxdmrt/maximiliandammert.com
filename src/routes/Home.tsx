@@ -1,4 +1,5 @@
 import styled from "@emotion/styled";
+import { useEffect } from "react";
 import Link from "../components/Link";
 import LinkList from "../components/LinkList";
 import Typography from "../components/Typography";
@@ -24,6 +25,10 @@ const StyledCopyWrapper = styled.section`
 
 export default function Home() {
   const { greeting } = useStore();
+
+  useEffect(() => {
+    document.title = "Maximilian Dammert · Digital Product Designer";
+  }, []);
 
   return (
     <StyledMainWrapper>
