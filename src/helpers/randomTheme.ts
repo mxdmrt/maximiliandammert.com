@@ -2,13 +2,13 @@ import { Theme } from "../@types/theme";
 
 const randomOklch = (): [number, number, number] => {
   const lightnessMax = 100;
-  const chromaMax = 0.4;
-  const hueMax = 359;
+  const chromaMax = 0.37;
+  const hueMax = 359.9;
 
   return [
-    Math.floor(Math.random() * lightnessMax),
+    Math.floor(Math.random() * lightnessMax * 10) / 10,
     Math.floor(Math.random() * chromaMax * 100) / 100,
-    Math.floor(Math.random() * hueMax),
+    Math.floor(Math.random() * hueMax * 10) / 10,
   ];
 };
 
