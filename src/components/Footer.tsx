@@ -4,18 +4,47 @@ import Typography from "./Typography";
 
 const StyledFooter = styled.footer`
   display: grid;
-  grid-template-columns: 1fr max-content;
+  gap: 1rem;
   align-self: flex-start;
 
   color: hsl(var(--colorForeground) / 60%);
   transition: color 0.1s ease;
+
+  @media (min-width: 700px) {
+    grid-template-columns: 1fr 1fr;
+    order: reverse;
+  }
+`;
+
+const StyledHintWrapper = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+
+  @media (min-width: 700px) {
+    justify-self: end;
+  }
+
+  & svg {
+    fill: currentColor;
+    height: 0.9rem;
+    transform: translateY(7%);
+  }
 `;
 
 const StyledHotkeyHint = styled(Typography)`
   display: none;
 
-  @media (min-width: 600px) {
+  @media (hover: hover) {
     display: inline-block;
+  }
+`;
+
+const StyledSwipeHint = styled(Typography)`
+  display: inline-block;
+
+  @media (hover: hover) {
+    display: none;
   }
 `;
 
@@ -48,10 +77,15 @@ export default function Footer() {
           Imprint
         </Link>
       </Typography>
-      <StyledHotkeyHint type="p" size="s">
-        Use <StyledHotkey>A</StyledHotkey>, <StyledHotkey>S</StyledHotkey> and{" "}
-        <StyledHotkey>D</StyledHotkey> to toggle the theme
-      </StyledHotkeyHint>
+      <StyledHintWrapper>
+        <StyledHotkeyHint type="p" size="s">
+          Use <StyledHotkey>A</StyledHotkey>, <StyledHotkey>S</StyledHotkey> and{" "}
+          <StyledHotkey>D</StyledHotkey> to toggle the theme
+        </StyledHotkeyHint>
+        <StyledSwipeHint type="p" size="s">
+          Swipe left or right to toggle the theme
+        </StyledSwipeHint>
+      </StyledHintWrapper>
     </StyledFooter>
   );
 }
