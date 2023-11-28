@@ -12,6 +12,8 @@ const StyledLinkList = styled.aside`
   @media (min-width: 840px) {
     grid-template-columns: unset;
     gap: 4rem;
+    position: sticky;
+    bottom: 4rem;
   }
 `;
 
