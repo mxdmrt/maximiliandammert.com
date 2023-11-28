@@ -45,19 +45,27 @@ export default function Home() {
           with agile working environments.
         </Typography>
         <Typography type="p">
-          From 2016 to 2021 I’ve been working at{" "}
+          From 2016 to 2021 I’ve been crafting digital products at{" "}
           <Link
-            href="https://sinnerschrader.com/"
+            href="https://en.wikipedia.org/wiki/SinnerSchrader"
             title="SinnerSchrader"
             target="_self"
           >
             SinnerSchrader
+          </Link>{" "}
+          and{" "}
+          <Link
+            href="https://www.accenture.com/"
+            title="Accenture Interactive"
+            target="_self"
+          >
+            Accenture Interactive
           </Link>
           .
         </Typography>
         <Typography type="p">
-          Currently I’m striving to build the best user experience for software
-          aimed at retail and healthcare at{" "}
+          For the duration of 2021 to 2023, I’ve been employed as a UX designer
+          at{" "}
           <Link
             href="https://www.oak.tt/"
             title="Oaktree Technologies"
@@ -65,8 +73,16 @@ export default function Home() {
           >
             Oaktree Technologies
           </Link>
+          , shaping user experiences and enhancing digital interfaces aimed at
+          retail and healthcare.
+        </Typography>
+        <Typography type="p">
+          Since November 2023 I’m supporting digital transformation at{" "}
+          <Link href="https://www.fielmann.de/" title="Fielmann" target="_self">
+            Fielmann
+          </Link>
           .
-        </Typography>{" "}
+        </Typography>
       </StyledCopyWrapper>
       <LinkList />
     </StyledMainWrapper>
