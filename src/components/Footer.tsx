@@ -69,10 +69,13 @@ const StyledHotkey = styled.span`
 `;
 
 export default function Footer() {
+  const currentDate = new Date();
+
   return (
     <StyledFooter>
       <Typography type="p" size="s">
-        © 2023&emsp;&#11825;&emsp;All Rights Reserved&emsp;&#11825;&emsp;
+        © {currentDate.getFullYear()}&emsp;&#11825;&emsp;All Rights
+        Reserved&emsp;&#11825;&emsp;
         <Link linkType="routerLink" title="Imprint" to="imprint">
           Imprint
         </Link>
