@@ -1,4 +1,3 @@
-import { css } from "@emotion/react";
 import styled from "@emotion/styled";
 import { ThemeType } from "../../@types/theme";
 import { createRandomTheme } from "../../helpers/randomTheme";
@@ -15,7 +14,6 @@ const StyledThemeToggle = styled.div`
 
 const StyledSelectionIndicator = styled.div<{
   selected: ThemeType;
-  isScrolled: boolean;
 }>`
   content: "";
   position: absolute;
@@ -31,31 +29,16 @@ const StyledSelectionIndicator = styled.div<{
   }};
   background-color: currentColor;
   transform: translateX(-50%);
-  transition:
-    left 0.3s ease-out 0.1s,
-    width 0.3s ease-out,
-    bottom 0.3s ease-out,
-    border 0.3s ease-out;
+  transition: left 0.2s ease-out 0.1s;
 
   width: 0.25rem;
   height: 0.25rem;
   border-radius: 999px;
-  bottom: -0.4rem;
-
-  ${({ isScrolled }) =>
-    isScrolled &&
-    css`
-      @media (max-width: 839px) {
-        width: 2.5rem;
-        height: 0.125rem;
-        border-radius: 999px 999px 0 0;
-        bottom: calc(var(--pagePadding) * -1 + 1rem);
-      }
-    `}
+  top: calc(2 * 0.25rem * -1);
 `;
 
 export default function ThemeToggle() {
-  const { theme, setTheme, isScrolled } = useStore();
+  const { theme, setTheme } = useStore();
 
   return (
     <StyledThemeToggle className="themeToggle">
@@ -117,7 +100,7 @@ export default function ThemeToggle() {
           </svg>
         )}
       </ThemeToggleButton>
-      <StyledSelectionIndicator selected={theme.type} isScrolled={isScrolled} />
+      <StyledSelectionIndicator selected={theme.type} />
     </StyledThemeToggle>
   );
 }

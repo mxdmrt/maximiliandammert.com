@@ -20,20 +20,19 @@ const StyledHeader = styled.header<{ isScrolled: boolean }>`
     transition:
       box-shadow 300ms ease-out,
       background-color 300ms ease-out;
-    box-shadow: 0 1px 0 0 hsl(var(--colorForeground) / 0%);
     position: absolute;
     content: "";
     top: calc(var(--pagePadding) * -1 + 1rem);
     right: calc(var(--pagePadding) * -1);
     bottom: calc(var(--pagePadding) * -1 + 1rem);
     left: calc(var(--pagePadding) * -1);
-    background-color: hsl(var(--colorBackground) / 0%);
+    mask-image: linear-gradient(rgba(0, 0, 0, 1) 65%, transparent);
 
     ${({ isScrolled }) =>
       isScrolled &&
       css`
         background-color: hsl(var(--colorBackground) / 50%);
-        backdrop-filter: blur(0.8rem);
+        backdrop-filter: blur(0.4rem);
         box-shadow: 0 1px 0 0 hsl(var(--colorForeground) / 10%);
       `}
   }
