@@ -43,7 +43,7 @@ const StyledHeadline1 = styled.h1<{ size: Size }>`
           font-size: 0.8rem;
           font-weight: 700;
           letter-spacing: calc(56em / 1000);
-          color: hsl(var(--colorForeground) / 60%);
+          color: oklch(var(--colorForeground) / 0.6);
         `;
       case "m":
         return css`

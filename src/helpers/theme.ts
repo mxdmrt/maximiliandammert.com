@@ -3,27 +3,27 @@ import { Theme } from "../@types/theme";
 export const lightTheme: Theme = {
   type: "light",
   background: {
-    hue: 0,
-    saturation: 0,
     lightness: 94,
+    chroma: 0,
+    hue: 0,
   },
   foreground: {
-    hue: 0,
-    saturation: 0,
     lightness: 12,
+    chroma: 0,
+    hue: 0,
   },
 };
 
 export const darkTheme: Theme = {
   type: "dark",
   background: {
-    hue: 0,
-    saturation: 0,
     lightness: 12,
+    chroma: 0,
+    hue: 0,
   },
   foreground: {
-    hue: 0,
-    saturation: 0,
     lightness: 94,
+    chroma: 0,
+    hue: 0,
   },
 };

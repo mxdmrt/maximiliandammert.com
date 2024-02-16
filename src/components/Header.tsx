@@ -31,9 +31,9 @@ const StyledHeader = styled.header<{ isScrolled: boolean }>`
     ${({ isScrolled }) =>
       isScrolled &&
       css`
-        background-color: hsl(var(--colorBackground) / 50%);
+        background-color: oklch(var(--colorBackground) / 0.5);
         backdrop-filter: blur(0.4rem);
-        box-shadow: 0 1px 0 0 hsl(var(--colorForeground) / 10%);
+        box-shadow: 0 1px 0 0 oklch(var(--colorForeground) / 0.1);
       `}
   }
 `;
@@ -58,33 +58,33 @@ const StyledLogo = styled(NavLink)<{ theme: Theme }>`
     content: "";
     position: absolute;
     inset: -1.15rem -0.87rem;
-    background-color: hsl(var(--colorForeground) / 0%);
+    background-color: oklch(var(--colorForeground) / 0);
     border-radius: var(--borderRadius);
     transition: background-color 0.3s ease;
   }
 
   @media (hover: hover) {
     &:hover {
-      text-decoration-color: hsl(var(--colorForeground));
+      text-decoration-color: oklch(var(--colorForeground));
 
       &::before {
         ${({ theme }) => {
           switch (theme.type) {
             case "light":
               return css`
-                background-color: hsl(var(--colorForeground) / 5%);
+                background-color: oklch(var(--colorForeground) / 0.05);
               `;
             case "dark":
               return css`
-                background-color: hsl(var(--colorForeground) / 10%);
+                background-color: oklch(var(--colorForeground) / 0.1);
               `;
             case "random":
               return theme.background.lightness > 45
                 ? css`
-                    background-color: hsl(var(--colorForeground) / 5%);
+                    background-color: oklch(var(--colorForeground) / 0.05);
                   `
                 : css`
-                    background-color: hsl(var(--colorForeground) / 10%);
+                    background-color: oklch(var(--colorForeground) / 0.1);
                   `;
           }
         }}
