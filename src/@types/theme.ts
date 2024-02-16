@@ -1,13 +1,13 @@
 export type ThemeType = "light" | "dark" | "random";
 
-export type HslColor = {
-  hue: number;
-  saturation: number;
+export type OklchColor = {
   lightness: number;
+  chroma: number;
+  hue: number;
 };
 
 export type Theme = {
   type: ThemeType;
-  background: HslColor;
-  foreground: HslColor;
+  background: OklchColor;
+  foreground: OklchColor;
 };

@@ -1,6 +1,7 @@
 import { Global, css } from "@emotion/react";
 import styled from "@emotion/styled";
 import { useEffect } from "react";
+import { Helmet } from "react-helmet";
 import { useHotkeys } from "react-hotkeys-hook";
 import { Outlet, ScrollRestoration } from "react-router-dom";
 import { useSwipeable } from "react-swipeable";
@@ -84,17 +85,23 @@ export default function Root() {
 
   const globalCss = css`
     :root {
-      --colorBackground: ${theme.background.hue} ${theme.background.saturation}%
-        ${theme.background.lightness}%;
-      --colorForeground: ${theme.foreground.hue} ${theme.foreground.saturation}%
-        ${theme.foreground.lightness}%;
+      --colorBackground: ${theme.background.lightness}%
+        ${theme.background.chroma} ${theme.background.hue};
+      --colorForeground: ${theme.foreground.lightness}%
+        ${theme.foreground.chroma} ${theme.foreground.hue};
 
       color-scheme: ${theme.type};
     }
   `;
 
+  const themeBgColor = `oklch(${theme.background.lightness}%
+    ${theme.background.chroma} ${theme.background.hue})`;
+
   return (
     <>
+      <Helmet>
+        <meta name="theme-color" content={themeBgColor} />
+      </Helmet>
       <Global styles={globalCss} />
       <StyledPageLayout {...swipeHandlers}>
         <Header />

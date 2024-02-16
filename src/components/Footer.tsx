@@ -7,7 +7,7 @@ const StyledFooter = styled.footer`
   gap: 1rem;
   align-self: flex-start;
 
-  color: hsl(var(--colorForeground) / 60%);
+  color: oklch(var(--colorForeground) / 0.6);
   transition: color 0.1s ease;
 
   @media (min-width: 700px) {
@@ -58,8 +58,8 @@ const StyledHotkey = styled.span`
   font-size: 0.75rem;
   font-weight: 600;
   border-radius: calc(var(--borderRadius) / 3);
-  background-color: hsl(var(--colorForeground) / 5%);
-  box-shadow: 0 0 0 1px hsl(var(--colorForeground) / 20%);
+  background-color: oklch(var(--colorForeground) / 0.05);
+  box-shadow: 0 0 0 1px oklch(var(--colorForeground) / 0.2);
   line-height: 1;
   margin: 0 0.2em;
 

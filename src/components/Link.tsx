@@ -21,7 +21,7 @@ const StyledLink = styled.a<{ theme: Theme; contentAfter?: string }>`
   text-decoration: underline;
   text-underline-offset: calc(1em / 4);
   text-decoration-thickness: calc(1em / 16);
-  text-decoration-color: hsl(var(--colorForeground) / 20%);
+  text-decoration-color: oklch(var(--colorForeground) / 0.2);
   transition: text-decoration-color 0.3s ease;
   position: relative;
 
@@ -32,33 +32,33 @@ const StyledLink = styled.a<{ theme: Theme; contentAfter?: string }>`
     right: -0.6em;
     bottom: -0.4em;
     left: -0.6em;
-    background-color: hsl(var(--colorForeground) / 0%);
+    background-color: oklch(var(--colorForeground) / 0);
     border-radius: var(--borderRadius);
     transition: background-color 0.3s ease;
   }
 
   @media (hover: hover) {
     &:hover {
-      text-decoration-color: hsl(var(--colorForeground) / 0%);
+      text-decoration-color: oklch(var(--colorForeground) / 0);
 
       &::before {
         ${({ theme }) => {
           switch (theme.type) {
             case "light":
               return css`
-                background-color: hsl(var(--colorForeground) / 5%);
+                background-color: oklch(var(--colorForeground) / 0.05);
               `;
             case "dark":
               return css`
-                background-color: hsl(var(--colorForeground) / 10%);
+                background-color: oklch(var(--colorForeground) / 0.1);
               `;
             case "random":
               return theme.background.lightness > 45
                 ? css`
-                    background-color: hsl(var(--colorForeground) / 5%);
+                    background-color: oklch(var(--colorForeground) / 0.05);
                   `
                 : css`
-                    background-color: hsl(var(--colorForeground) / 10%);
+                    background-color: oklch(var(--colorForeground) / 0.1);
                   `;
           }
         }}

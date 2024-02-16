@@ -29,19 +29,19 @@ const StyledThemeToggleButton = styled.button<{ theme: Theme }>`
         switch (theme.type) {
           case "light":
             return css`
-              background-color: hsl(var(--colorForeground) / 5%);
+              background-color: oklch(var(--colorForeground) / 0.05);
             `;
           case "dark":
             return css`
-              background-color: hsl(var(--colorForeground) / 10%);
+              background-color: oklch(var(--colorForeground) / 0.1);
             `;
           case "random":
             return theme.background.lightness > 45
               ? css`
-                  background-color: hsl(var(--colorForeground) / 5%);
+                  background-color: oklch(var(--colorForeground) / 0.05);
                 `
               : css`
-                  background-color: hsl(var(--colorForeground) / 10%);
+                  background-color: oklch(var(--colorForeground) / 0.1);
                 `;
         }
       }}
