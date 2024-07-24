@@ -1,5 +1,4 @@
 @import url(assets/Inter-Web/inter.css);
-@import url(assets/InnovatorGrotesk/innovator-grotesk.css);
 
 :root {
   --pagePadding: 2rem;
@@ -48,7 +47,6 @@ body {
     color 0.3s ease;
 
   font-family:
-    "InnovatorGrotesk",
     "Inter",
     system-ui,
     -apple-system,
