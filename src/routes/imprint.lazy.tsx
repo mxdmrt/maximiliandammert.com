@@ -1,5 +1,6 @@
 import { css } from "@emotion/react";
 import styled from "@emotion/styled";
+import { createLazyFileRoute } from "@tanstack/react-router";
 import { useEffect } from "react";
 import Link from "../components/Link";
 import Typography from "../components/Typography";
@@ -150,3 +151,7 @@ export default function Imprint() {
     </StyledImprintMain>
   );
 }
+
+export const Route = createLazyFileRoute("/imprint")({
+  component: Imprint,
+});

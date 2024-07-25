@@ -1,6 +1,6 @@
 import { css } from "@emotion/react";
 import styled from "@emotion/styled";
-import { NavLink } from "react-router-dom";
+import { Link } from "@tanstack/react-router";
 import { Theme } from "../@types/theme";
 import { useStore } from "../store/Store";
 import ThemeToggle from "./ThemeToggle/ThemeToggle";
@@ -38,7 +38,7 @@ const StyledHeader = styled.header<{ isScrolled: boolean }>`
   }
 `;
 
-const StyledLogo = styled(NavLink)<{ theme: Theme }>`
+const StyledLogo = styled(Link)<{ theme: Theme }>`
   display: inline-flex;
   appearance: none;
   background-color: unset;

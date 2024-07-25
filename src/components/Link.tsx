@@ -1,18 +1,19 @@
 import { css } from "@emotion/react";
 import styled from "@emotion/styled";
+import {
+  Link as RouterLink,
+  LinkProps as RouterLinkProps,
+} from "@tanstack/react-router";
 import { ReactNode } from "react";
-import { Link as RouterLink } from "react-router-dom";
 import { Theme } from "../@types/theme";
 import { useStore } from "../store/Store";
 
-interface LinkProps {
+interface LinkProps extends RouterLinkProps {
   children: ReactNode;
   href?: string;
-  target?: "_blank" | "_self";
   title: string;
   onClick?: () => void;
   linkType?: "a" | "button" | "routerLink";
-  to?: string;
 }
 
 const StyledLink = styled.a<{ theme: Theme; contentAfter?: string }>`
@@ -107,11 +108,11 @@ const StyledRouterLink = styled(StyledLink.withComponent(RouterLink))`
 export default function Link({
   children,
   href,
-  target,
   title,
   onClick,
   linkType = "a",
-  to = "",
+  target,
+  ...props
 }: LinkProps) {
   const { theme } = useStore();
 
@@ -120,10 +121,10 @@ export default function Link({
       return (
         <StyledLink
           href={href}
-          target={target}
           title={title}
           theme={theme}
           contentAfter="&#8599;"
+          target={target}
         >
           {children}
         </StyledLink>
@@ -141,9 +142,11 @@ export default function Link({
       );
     case "routerLink":
       return (
-        <StyledRouterLink theme={theme} to={to}>
-          {children}
-        </StyledRouterLink>
+        <>
+          <StyledRouterLink theme={theme} {...props}>
+            {children}
+          </StyledRouterLink>
+        </>
       );
   }
 }

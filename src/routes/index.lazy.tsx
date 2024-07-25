@@ -1,4 +1,5 @@
 import styled from "@emotion/styled";
+import { createLazyFileRoute } from "@tanstack/react-router";
 import { useEffect } from "react";
 import Link from "../components/Link";
 import LinkList from "../components/LinkList";
@@ -23,7 +24,7 @@ const StyledCopyWrapper = styled.section`
   max-width: 55ch;
 `;
 
-export default function Home() {
+export default function Index() {
   const { greeting } = useStore();
 
   useEffect(() => {
@@ -88,3 +89,7 @@ export default function Home() {
     </StyledMainWrapper>
   );
 }
+
+export const Route = createLazyFileRoute("/")({
+  component: Index,
+});
