@@ -1,5 +1,6 @@
 import { css } from "@emotion/react";
 import styled from "@emotion/styled";
+import { createLazyFileRoute } from "@tanstack/react-router";
 import { useEffect } from "react";
 import Link from "../components/Link";
 import Typography from "../components/Typography";
@@ -10,16 +11,16 @@ const StyledImprintMain = styled.main`
   justify-items: start;
 `;
 
-const StyledImprintStack = styled.section<{ gap?: number }>`
-  ${({ gap = 1 }) => css`
+const StyledImprintStack = styled.section<{ gap?: number }>(({ gap = 1 }) => {
+  return css`
     display: grid;
     gap: ${gap}rem;
     justify-items: start;
     max-width: 55ch;
-  `}
-`;
+  `;
+});
 
-export default function Imprint() {
+const Imprint = () => {
   useEffect(() => {
     document.title = "Maximilian Dammert · Imprint";
   }, []);
@@ -149,4 +150,10 @@ export default function Imprint() {
       </Link>
     </StyledImprintMain>
   );
-}
+};
+
+export const Route = createLazyFileRoute("/imprint")({
+  component: Imprint,
+});
+
+export default Imprint;

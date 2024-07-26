@@ -29,7 +29,7 @@ const getForegroundColor = (bgColor: Theme["background"]): OklchColor => {
       };
 };
 
-export const createRandomTheme = (): Theme => {
+const createRandomTheme = (): Theme => {
   const bgColor = randomOklch();
 
   return {
@@ -38,3 +38,5 @@ export const createRandomTheme = (): Theme => {
     foreground: getForegroundColor(bgColor),
   };
 };
+
+export default createRandomTheme;

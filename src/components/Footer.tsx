@@ -76,7 +76,7 @@ export default function Footer() {
       <Typography type="p" size="s">
         © {currentDate.getFullYear()}&emsp;&#11825;&emsp;All Rights
         Reserved&emsp;&#11825;&emsp;
-        <Link linkType="routerLink" title="Imprint" to="imprint">
+        <Link linkType="routerLink" title="Imprint" to="/imprint">
           Imprint
         </Link>
       </Typography>
