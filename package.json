@@ -14,7 +14,7 @@
   "dependencies": {
     "@emotion/react": "^11.13.0",
     "@emotion/styled": "^11.13.0",
-    "@tanstack/react-router": "^1.45.10",
+    "@tanstack/react-router": "^1.45.11",
     "localforage": "^1.10.0",
     "luxon": "^3.4.4",
     "match-sorter": "^6.3.4",
