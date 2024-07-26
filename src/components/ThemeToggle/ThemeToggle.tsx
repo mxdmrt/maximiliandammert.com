@@ -1,7 +1,7 @@
 import { css } from "@emotion/react";
 import styled from "@emotion/styled";
 import { ThemeType } from "../../@types/theme";
-import { createRandomTheme } from "../../helpers/randomTheme";
+import createRandomTheme from "../../helpers/randomTheme";
 import { darkTheme, lightTheme } from "../../helpers/theme";
 import { useStore } from "../../store/Store";
 import ThemeToggleButton from "./ThemeToggleButton";
