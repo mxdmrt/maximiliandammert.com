@@ -24,7 +24,7 @@ const StyledCopyWrapper = styled.section`
   max-width: 55ch;
 `;
 
-export default function Index() {
+const Index = () => {
   const { greeting } = useStore();
 
   useEffect(() => {
@@ -88,8 +88,10 @@ export default function Index() {
       <LinkList />
     </StyledMainWrapper>
   );
-}
+};
 
 export const Route = createLazyFileRoute("/")({
   component: Index,
 });
+
+export default Index;

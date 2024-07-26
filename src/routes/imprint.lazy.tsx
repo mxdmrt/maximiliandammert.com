@@ -20,7 +20,7 @@ const StyledImprintStack = styled.section<{ gap?: number }>`
   `}
 `;
 
-export default function Imprint() {
+const Imprint = () => {
   useEffect(() => {
     document.title = "Maximilian Dammert · Imprint";
   }, []);
@@ -150,8 +150,10 @@ export default function Imprint() {
       </Link>
     </StyledImprintMain>
   );
-}
+};
 
 export const Route = createLazyFileRoute("/imprint")({
   component: Imprint,
 });
+
+export default Imprint;

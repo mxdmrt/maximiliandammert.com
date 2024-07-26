@@ -11,8 +11,6 @@ import { useHotkeys } from "react-hotkeys-hook";
 import { useSwipeable } from "react-swipeable";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
-import Link from "../components/Link";
-import Typography from "../components/Typography";
 import { createRandomTheme } from "../helpers/randomTheme";
 import { darkTheme, lightTheme } from "../helpers/theme";
 import { useStore } from "../store/Store";
@@ -24,7 +22,7 @@ const StyledPageLayout = styled.div`
   grid-template-rows: max-content 1fr max-content;
 `;
 
-export default function Root() {
+const Root = () => {
   const { theme, setTheme, setIsScrolled } = useStore();
 
   useEffect(() => {
@@ -117,35 +115,10 @@ export default function Root() {
       <ScrollRestoration />
     </HelmetProvider>
   );
-}
-
-const StyledErrorMain = styled.main`
-  display: grid;
-  gap: 2rem;
-  align-self: start;
-  align-items: start;
-  justify-items: start;
-`;
-
-function Error({}) {
-  useEffect(() => {
-    document.title = "Maximilian Dammert · 404";
-  }, []);
-
-  return (
-    <StyledErrorMain>
-      <Typography type="h1" size="l">
-        Oops!
-      </Typography>
-      <Typography type="p">404 · This page doesn’t exist</Typography>
-      <Link linkType="routerLink" title="Back" to="../">
-        Start over &rarr;
-      </Link>
-    </StyledErrorMain>
-  );
-}
+};
 
 export const Route = createRootRoute({
   component: Root,
-  notFoundComponent: Error,
 });
+
+export default Root;
