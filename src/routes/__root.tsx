@@ -11,7 +11,7 @@ import { useHotkeys } from "react-hotkeys-hook";
 import { useSwipeable } from "react-swipeable";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
-import { createRandomTheme } from "../helpers/randomTheme";
+import createRandomTheme from "../helpers/randomTheme";
 import { darkTheme, lightTheme } from "../helpers/theme";
 import { useStore } from "../store/Store";
 
