@@ -1,6 +1,7 @@
 import { createRouter, RouterProvider } from "@tanstack/react-router";
 import React from "react";
 import ReactDOM from "react-dom/client";
+import LoadingSpinner from "./components/LoadingSpinner";
 import PageNotFound from "./components/PageNotFound";
 import "./index.css";
 import { routeTree } from "./routeTree.gen";
@@ -14,6 +15,7 @@ declare module "@tanstack/react-router" {
 const router = createRouter({
   routeTree,
   defaultNotFoundComponent: PageNotFound,
+  defaultPendingComponent: LoadingSpinner,
 });
 
 ReactDOM.createRoot(document.getElementById("root")!).render(

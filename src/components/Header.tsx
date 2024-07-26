@@ -2,6 +2,7 @@ import { css } from "@emotion/react";
 import styled from "@emotion/styled";
 import { Link } from "@tanstack/react-router";
 import { Theme } from "../@types/theme";
+import LogoIcon from "../assets/icons/logo.svg";
 import { useStore } from "../store/Store";
 import ThemeToggle from "./ThemeToggle/ThemeToggle";
 
@@ -71,7 +72,7 @@ const StyledLogo = styled(Link)<{ theme: Theme }>(({ theme }) => {
     justify-self: start;
 
     & svg {
-      fill: currentColor;
+      color: inherit;
       height: 1.2rem;
       width: auto;
     }
@@ -103,14 +104,7 @@ export default function Header() {
   return (
     <StyledHeader isScrolled={isScrolled}>
       <StyledLogo to="/" title="Home" theme={theme}>
-        <svg
-          className="logoSvg"
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 25 17"
-        >
-          <path d="M0,0V17H25V0ZM24,16H1V1H24Z" />
-          <path d="M12,7l4,8h.5a6.5,6.5,0,0,0,0-13H11L8.5,7,6,2H2V15H8Z" />
-        </svg>
+        <LogoIcon />
       </StyledLogo>
       <ThemeToggle />
     </StyledHeader>
