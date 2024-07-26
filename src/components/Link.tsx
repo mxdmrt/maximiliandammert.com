@@ -16,66 +16,73 @@ interface LinkProps extends RouterLinkProps {
   linkType?: "a" | "button" | "routerLink";
 }
 
-const StyledLink = styled.a<{ theme: Theme; contentAfter?: string }>`
-  display: inline-flex;
-  color: inherit;
-  text-decoration: underline;
-  text-underline-offset: calc(1em / 4);
-  text-decoration-thickness: calc(1em / 16);
-  text-decoration-color: oklch(var(--colorForeground) / 0.2);
-  transition: text-decoration-color 0.3s ease;
-  position: relative;
-
-  &::before {
-    content: "";
-    position: absolute;
-    top: -0.4em;
-    right: -0.6em;
-    bottom: -0.4em;
-    left: -0.6em;
-    background-color: oklch(var(--colorForeground) / 0);
-    border-radius: var(--borderRadius);
-    transition: background-color 0.3s ease;
-  }
-
-  @media (hover: hover) {
-    &:hover {
-      text-decoration-color: oklch(var(--colorForeground) / 0);
-
-      &::before {
-        ${({ theme }) => {
-          switch (theme.type) {
-            case "light":
-              return css`
+const StyledLink = styled.a<{ theme: Theme; contentAfter?: string }>(
+  ({ theme, contentAfter }) => {
+    const themeBgColor = () => {
+      switch (theme.type) {
+        case "light":
+          return css`
+            background-color: oklch(var(--colorForeground) / 0.05);
+          `;
+        case "dark":
+          return css`
+            background-color: oklch(var(--colorForeground) / 0.1);
+          `;
+        case "random":
+          return theme.background.lightness > 45
+            ? css`
                 background-color: oklch(var(--colorForeground) / 0.05);
-              `;
-            case "dark":
-              return css`
+              `
+            : css`
                 background-color: oklch(var(--colorForeground) / 0.1);
               `;
-            case "random":
-              return theme.background.lightness > 45
-                ? css`
-                    background-color: oklch(var(--colorForeground) / 0.05);
-                  `
-                : css`
-                    background-color: oklch(var(--colorForeground) / 0.1);
-                  `;
-          }
-        }}
       }
-    }
-  }
+    };
+    const afterElement =
+      contentAfter &&
+      css`
+        &::after {
+          content: "${contentAfter}";
+          display: inline;
+        }
+      `;
 
-  ${({ contentAfter }) =>
-    contentAfter &&
-    css`
-      &::after {
-        content: "${contentAfter}";
-        display: inline;
+    return css`
+      display: inline-flex;
+      color: inherit;
+      text-decoration: underline;
+      text-underline-offset: calc(1em / 4);
+      text-decoration-thickness: calc(1em / 16);
+      text-decoration-color: oklch(var(--colorForeground) / 0.2);
+      transition: text-decoration-color 0.3s ease;
+      position: relative;
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: -0.4em;
+        right: -0.6em;
+        bottom: -0.4em;
+        left: -0.6em;
+        background-color: oklch(var(--colorForeground) / 0);
+        border-radius: var(--borderRadius);
+        transition: background-color 0.3s ease;
       }
-    `}
-`;
+
+      @media (hover: hover) {
+        &:hover {
+          text-decoration-color: oklch(var(--colorForeground) / 0);
+
+          &::before {
+            ${themeBgColor()}
+          }
+        }
+      }
+
+      ${afterElement}
+    `;
+  },
+);
 
 const StyledButton = styled(StyledLink.withComponent("button"))`
   appearance: unset;
@@ -107,8 +114,8 @@ const StyledRouterLink = styled(StyledLink.withComponent(RouterLink))`
 
 export default function Link({
   children,
-  href,
   title,
+  href,
   onClick,
   linkType = "a",
   target,
@@ -120,9 +127,9 @@ export default function Link({
     case "a":
       return (
         <StyledLink
-          href={href}
           title={title}
           theme={theme}
+          href={href}
           contentAfter="&#8599;"
           target={target}
         >
