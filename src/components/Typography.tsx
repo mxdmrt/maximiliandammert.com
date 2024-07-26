@@ -13,8 +13,8 @@ interface TypographyProps {
   className?: string;
 }
 
-const StyledParagraph = styled.p<{ size: Size }>`
-  ${({ size }) => {
+const StyledParagraph = styled.p<{ size: Size }>(({ size }) => {
+  const fontSize = () => {
     switch (size) {
       case "s":
         return css`
@@ -29,13 +29,16 @@ const StyledParagraph = styled.p<{ size: Size }>`
           font-size: 3.75rem;
         `;
     }
-  }}
+  };
 
-  line-height: 1.6;
-`;
+  return css`
+    ${fontSize()}
+    line-height: 1.6;
+  `;
+});
 
-const StyledHeadline1 = styled.h1<{ size: Size }>`
-  ${({ size }) => {
+const StyledHeadline1 = styled.h1<{ size: Size }>(({ size }) => {
+  const fontSize = () => {
     switch (size) {
       case "s":
         return css`
@@ -56,10 +59,13 @@ const StyledHeadline1 = styled.h1<{ size: Size }>`
           font-weight: 800;
         `;
     }
-  }}
+  };
 
-  line-height: 1.1;
-`;
+  return css`
+    ${fontSize()}
+    line-height: 1.1;
+  `;
+});
 
 const StyledHeadline2 = styled(StyledHeadline1.withComponent("h2"))``;
 

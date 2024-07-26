@@ -1,3 +1,4 @@
+import { css } from "@emotion/react";
 import styled from "@emotion/styled";
 import { ThemeType } from "../../@types/theme";
 import { createRandomTheme } from "../../helpers/randomTheme";
@@ -14,10 +15,8 @@ const StyledThemeToggle = styled.div`
 
 const StyledSelectionIndicator = styled.div<{
   selected: ThemeType;
-}>`
-  content: "";
-  position: absolute;
-  left: ${({ selected }) => {
+}>(({ selected }) => {
+  const leftPosition = () => {
     switch (selected) {
       case "random":
         return "calc(100% / 6 * 1)";
@@ -26,18 +25,24 @@ const StyledSelectionIndicator = styled.div<{
       case "dark":
         return "calc(100% / 6 * 5)";
     }
-  }};
-  background-color: currentColor;
-  transform: translateX(-50%);
-  transition: left 0.2s ease-out 0.1s;
+  };
 
-  width: 0.25rem;
-  height: 0.25rem;
-  border-radius: 999px;
-  top: calc(2 * 0.25rem * -1);
-`;
+  return css`
+    content: "";
+    position: absolute;
+    left: ${leftPosition()};
+    background-color: currentColor;
+    transform: translateX(-50%);
+    transition: left 0.2s ease-out 0.1s;
 
-export default function ThemeToggle() {
+    width: 0.25rem;
+    height: 0.25rem;
+    border-radius: 999px;
+    top: calc(2 * 0.25rem * -1);
+  `;
+});
+
+const ThemeToggle = () => {
   const { theme, setTheme } = useStore();
 
   return (
@@ -103,4 +108,6 @@ export default function ThemeToggle() {
       <StyledSelectionIndicator selected={theme.type} />
     </StyledThemeToggle>
   );
-}
+};
+
+export default ThemeToggle;

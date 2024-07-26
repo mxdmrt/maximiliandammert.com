@@ -11,14 +11,14 @@ const StyledImprintMain = styled.main`
   justify-items: start;
 `;
 
-const StyledImprintStack = styled.section<{ gap?: number }>`
-  ${({ gap = 1 }) => css`
+const StyledImprintStack = styled.section<{ gap?: number }>(({ gap = 1 }) => {
+  return css`
     display: grid;
     gap: ${gap}rem;
     justify-items: start;
     max-width: 55ch;
-  `}
-`;
+  `;
+});
 
 const Imprint = () => {
   useEffect(() => {

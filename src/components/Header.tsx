@@ -38,60 +38,64 @@ const StyledHeader = styled.header<{ isScrolled: boolean }>`
   }
 `;
 
-const StyledLogo = styled(Link)<{ theme: Theme }>`
-  display: inline-flex;
-  appearance: none;
-  background-color: unset;
-  border: none;
-  border-radius: unset;
-  position: relative;
-  align-self: center;
-  justify-self: start;
+const StyledLogo = styled(Link)<{ theme: Theme }>(({ theme }) => {
+  const themeBgColor = () => {
+    switch (theme.type) {
+      case "light":
+        return css`
+          background-color: oklch(var(--colorForeground) / 0.05);
+        `;
+      case "dark":
+        return css`
+          background-color: oklch(var(--colorForeground) / 0.1);
+        `;
+      case "random":
+        return theme.background.lightness > 45
+          ? css`
+              background-color: oklch(var(--colorForeground) / 0.05);
+            `
+          : css`
+              background-color: oklch(var(--colorForeground) / 0.1);
+            `;
+    }
+  };
 
-  & svg {
-    fill: currentColor;
-    height: 1.2rem;
-    width: auto;
-  }
+  return css`
+    display: inline-flex;
+    appearance: none;
+    background-color: unset;
+    border: none;
+    border-radius: unset;
+    position: relative;
+    align-self: center;
+    justify-self: start;
 
-  &::before {
-    content: "";
-    position: absolute;
-    inset: -1.15rem -0.87rem;
-    background-color: oklch(var(--colorForeground) / 0);
-    border-radius: var(--borderRadius);
-    transition: background-color 0.3s ease;
-  }
+    & svg {
+      fill: currentColor;
+      height: 1.2rem;
+      width: auto;
+    }
 
-  @media (hover: hover) {
-    &:hover {
-      text-decoration-color: oklch(var(--colorForeground));
+    &::before {
+      content: "";
+      position: absolute;
+      inset: -1.15rem -0.87rem;
+      background-color: oklch(var(--colorForeground) / 0);
+      border-radius: var(--borderRadius);
+      transition: background-color 0.3s ease;
+    }
 
-      &::before {
-        ${({ theme }) => {
-          switch (theme.type) {
-            case "light":
-              return css`
-                background-color: oklch(var(--colorForeground) / 0.05);
-              `;
-            case "dark":
-              return css`
-                background-color: oklch(var(--colorForeground) / 0.1);
-              `;
-            case "random":
-              return theme.background.lightness > 45
-                ? css`
-                    background-color: oklch(var(--colorForeground) / 0.05);
-                  `
-                : css`
-                    background-color: oklch(var(--colorForeground) / 0.1);
-                  `;
-          }
-        }}
+    @media (hover: hover) {
+      &:hover {
+        text-decoration-color: oklch(var(--colorForeground));
+
+        &::before {
+          ${themeBgColor()}
+        }
       }
     }
-  }
-`;
+  `;
+});
 
 export default function Header() {
   const { theme, isScrolled } = useStore();
