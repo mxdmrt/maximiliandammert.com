@@ -1,7 +1,7 @@
 import styled from "@emotion/styled";
 import { useEffect } from "react";
-import Link from "../components/Link";
-import Typography from "../components/Typography";
+import Link from "./Link";
+import Typography from "./Typography";
 
 const StyledErrorMain = styled.main`
   display: grid;
@@ -11,7 +11,7 @@ const StyledErrorMain = styled.main`
   justify-items: start;
 `;
 
-export default function Error() {
+const PageNotFound = () => {
   useEffect(() => {
     document.title = "Maximilian Dammert · 404";
   }, []);
@@ -22,9 +22,11 @@ export default function Error() {
         Oops!
       </Typography>
       <Typography type="p">404 · This page doesn’t exist</Typography>
-      <Link linkType="routerLink" title="Back" to="/">
+      <Link linkType="routerLink" title="Back" to="../">
         Start over &rarr;
       </Link>
     </StyledErrorMain>
   );
-}
+};
+
+export default PageNotFound;

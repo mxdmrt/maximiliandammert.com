@@ -1,13 +1,17 @@
-import { Global, css } from "@emotion/react";
+import { css, Global } from "@emotion/react";
 import styled from "@emotion/styled";
+import {
+  createRootRoute,
+  Outlet,
+  ScrollRestoration,
+} from "@tanstack/react-router";
 import { useEffect } from "react";
 import { Helmet, HelmetProvider } from "react-helmet-async";
 import { useHotkeys } from "react-hotkeys-hook";
-import { Outlet, ScrollRestoration } from "react-router-dom";
 import { useSwipeable } from "react-swipeable";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
-import { createRandomTheme } from "../helpers/randomTheme";
+import createRandomTheme from "../helpers/randomTheme";
 import { darkTheme, lightTheme } from "../helpers/theme";
 import { useStore } from "../store/Store";
 
@@ -18,7 +22,7 @@ const StyledPageLayout = styled.div`
   grid-template-rows: max-content 1fr max-content;
 `;
 
-export default function Root() {
+const Root = () => {
   const { theme, setTheme, setIsScrolled } = useStore();
 
   useEffect(() => {
@@ -111,4 +115,10 @@ export default function Root() {
       <ScrollRestoration />
     </HelmetProvider>
   );
-}
+};
+
+export const Route = createRootRoute({
+  component: Root,
+});
+
+export default Root;
