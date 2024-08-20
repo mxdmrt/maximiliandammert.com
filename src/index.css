@@ -42,9 +42,7 @@ body {
   padding: var(--pagePadding);
   padding-top: calc(var(--pagePadding) - 1rem);
 
-  transition:
-    background-color 0.3s ease,
-    color 0.3s ease;
+  transition: background-color 500ms ease;
 
   font-family:
     "Inter",

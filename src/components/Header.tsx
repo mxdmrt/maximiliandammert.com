@@ -18,9 +18,6 @@ const StyledHeader = styled.header<{ isScrolled: boolean }>`
   top: calc(var(--pagePadding) - 1rem);
 
   &::before {
-    transition:
-      box-shadow 300ms ease-out,
-      background-color 300ms ease-out;
     position: absolute;
     content: "";
     top: calc(var(--pagePadding) * -1 + 1rem);
@@ -34,7 +31,6 @@ const StyledHeader = styled.header<{ isScrolled: boolean }>`
       css`
         background-color: oklch(var(--colorBackground) / 0.5);
         backdrop-filter: blur(0.4rem);
-        box-shadow: 0 1px 0 0 oklch(var(--colorForeground) / 0.1);
       `}
   }
 `;
@@ -83,7 +79,6 @@ const StyledLogo = styled(Link)<{ theme: Theme }>(({ theme }) => {
       inset: -1.15rem -0.87rem;
       background-color: oklch(var(--colorForeground) / 0);
       border-radius: var(--borderRadius);
-      transition: background-color 0.3s ease;
     }
 
     @media (hover: hover) {

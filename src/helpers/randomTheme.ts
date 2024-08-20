@@ -23,7 +23,7 @@ const getForegroundColor = (bgColor: Theme["background"]): OklchColor => {
         hue: 0,
       }
     : {
-        lightness: 94,
+        lightness: 97,
         chroma: 0,
         hue: 0,
       };

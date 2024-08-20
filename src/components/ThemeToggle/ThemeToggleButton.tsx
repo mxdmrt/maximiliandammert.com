@@ -41,7 +41,6 @@ const StyledThemeToggleButton = styled.button<{ theme: Theme }>(({ theme }) => {
     color: inherit;
     border-radius: var(--borderRadius);
     position: relative;
-    transition: background-color 0.3s ease;
 
     @media (hover: hover) {
       &:hover {

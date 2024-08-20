@@ -8,7 +8,6 @@ const StyledFooter = styled.footer`
   align-self: flex-start;
 
   color: oklch(var(--colorForeground) / 0.6);
-  transition: color 0.1s ease;
 
   @media (min-width: 700px) {
     grid-template-columns: 1fr 1fr;
