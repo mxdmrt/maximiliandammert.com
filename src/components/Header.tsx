@@ -25,11 +25,12 @@ const StyledHeader = styled.header<{ isScrolled: boolean }>`
     bottom: calc(var(--pagePadding) * -1 + 1rem);
     left: calc(var(--pagePadding) * -1);
     mask-image: linear-gradient(rgba(0, 0, 0, 1) 65%, transparent);
+    background-color: oklch(var(--colorBackground) / 0.5);
+    transition: background-color 500ms ease;
 
     ${({ isScrolled }) =>
       isScrolled &&
       css`
-        background-color: oklch(var(--colorBackground) / 0.5);
         backdrop-filter: blur(0.4rem);
       `}
   }
