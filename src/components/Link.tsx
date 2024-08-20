@@ -1,19 +1,19 @@
 import { css } from "@emotion/react";
 import styled from "@emotion/styled";
 import {
-  Link as RouterLink,
+  createLink,
   LinkProps as RouterLinkProps,
 } from "@tanstack/react-router";
-import { ReactNode } from "react";
+import { AnchorHTMLAttributes, ButtonHTMLAttributes, ReactNode } from "react";
 import { Theme } from "../@types/theme";
 import { useStore } from "../store/Store";
 
-interface LinkProps extends RouterLinkProps {
+interface LinkProps {
   children: ReactNode;
-  href?: string;
-  title: string;
-  onClick?: () => void;
   linkType?: "a" | "button" | "routerLink";
+  linkProps?: AnchorHTMLAttributes<HTMLAnchorElement>;
+  buttonProps?: ButtonHTMLAttributes<HTMLButtonElement>;
+  routerLinkProps?: RouterLinkProps;
 }
 
 const StyledLink = styled.a<{ theme: Theme; contentAfter?: string }>(
@@ -54,7 +54,6 @@ const StyledLink = styled.a<{ theme: Theme; contentAfter?: string }>(
       text-underline-offset: calc(1em / 4);
       text-decoration-thickness: calc(1em / 16);
       text-decoration-color: oklch(var(--colorForeground) / 0.2);
-      transition: text-decoration-color 0.3s ease;
       position: relative;
 
       &::before {
@@ -66,12 +65,12 @@ const StyledLink = styled.a<{ theme: Theme; contentAfter?: string }>(
         left: -0.6em;
         background-color: oklch(var(--colorForeground) / 0);
         border-radius: var(--borderRadius);
-        transition: background-color 0.3s ease;
       }
 
       @media (hover: hover) {
         &:hover {
           text-decoration-color: oklch(var(--colorForeground) / 0);
+          cursor: pointer;
 
           &::before {
             ${themeBgColor()}
@@ -98,62 +97,35 @@ const StyledButton = styled(StyledLink.withComponent("button"))`
   }
 `;
 
-const StyledRouterLink = styled(StyledLink.withComponent(RouterLink))`
-  appearance: unset;
-  background-color: unset;
-  padding: unset;
-  border: unset;
-  font: inherit;
-
-  @media (hover: hover) {
-    &:hover {
-      cursor: pointer;
-    }
-  }
-`;
+const StyledRouterLink = createLink(StyledLink);
 
 export default function Link({
   children,
-  title,
-  href,
-  onClick,
   linkType = "a",
-  target,
-  ...props
+  linkProps,
+  buttonProps,
+  routerLinkProps,
 }: LinkProps) {
   const { theme } = useStore();
 
   switch (linkType) {
     case "a":
       return (
-        <StyledLink
-          title={title}
-          theme={theme}
-          href={href}
-          contentAfter="&#8599;"
-          target={target}
-        >
+        <StyledLink theme={theme} contentAfter="&#8599;" {...linkProps}>
           {children}
         </StyledLink>
       );
     case "button":
       return (
-        <StyledButton
-          theme={theme}
-          title={title}
-          onClick={onClick}
-          contentAfter="&#8599;"
-        >
+        <StyledButton theme={theme} contentAfter="&#8599;" {...buttonProps}>
           {children}
         </StyledButton>
       );
     case "routerLink":
       return (
-        <>
-          <StyledRouterLink theme={theme} {...props}>
-            {children}
-          </StyledRouterLink>
-        </>
+        <StyledRouterLink theme={theme} {...routerLinkProps}>
+          {children}
+        </StyledRouterLink>
       );
   }
 }

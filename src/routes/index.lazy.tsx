@@ -48,17 +48,21 @@ const Index = () => {
         <Typography type="p">
           From 2016 to 2021 I’ve been crafting digital products at{" "}
           <Link
-            href="https://en.wikipedia.org/wiki/SinnerSchrader"
-            title="SinnerSchrader"
-            target="_self"
+            linkProps={{
+              href: "https://en.wikipedia.org/wiki/SinnerSchrader",
+              title: "SinnerSchrader",
+              target: "_self",
+            }}
           >
             SinnerSchrader
           </Link>{" "}
           and{" "}
           <Link
-            href="https://www.accenture.com/"
-            title="Accenture Interactive"
-            target="_self"
+            linkProps={{
+              href: "https://www.accenture.com/",
+              title: "Accenture Interactive",
+              target: "_self",
+            }}
           >
             Accenture Interactive
           </Link>
@@ -68,9 +72,11 @@ const Index = () => {
           For the duration of 2021 to 2023, I’ve been employed as a UX designer
           at{" "}
           <Link
-            href="https://www.oak.tt/"
-            title="Oaktree Technologies"
-            target="_self"
+            linkProps={{
+              href: "https://www.oak.tt/",
+              title: "Oaktree Technologies",
+              target: "_self",
+            }}
           >
             Oaktree Technologies
           </Link>
@@ -79,7 +85,13 @@ const Index = () => {
         </Typography>
         <Typography type="p">
           Since November 2023 I’m supporting digital transformation at{" "}
-          <Link href="https://www.fielmann.de/" title="Fielmann" target="_self">
+          <Link
+            linkProps={{
+              href: "https://www.fielmann.de/",
+              title: "Fielmann",
+              target: "_self",
+            }}
+          >
             Fielmann
           </Link>
           .

@@ -30,20 +30,29 @@ export default function LinkList() {
         <Typography type="h2" size="s">
           Get in touch
         </Typography>
-        <Link title="E-Mail" href="mailto:mail@maximiliandammert.com">
+        <Link
+          linkProps={{
+            title: "E-Mail",
+            href: "mailto:mail@maximiliandammert.com",
+          }}
+        >
           E-Mail
         </Link>
         <Link
-          href="https://www.xing.com/profile/Maximilian_Dammert"
-          target="_self"
-          title="Xing"
+          linkProps={{
+            href: "https://www.xing.com/profile/Maximilian_Dammert",
+            target: "_self",
+            title: "Xing",
+          }}
         >
           Xing
         </Link>
         <Link
-          href="https://de.linkedin.com/in/maximilian-dammert"
-          target="_self"
-          title="LinkedIn"
+          linkProps={{
+            href: "https://de.linkedin.com/in/maximilian-dammert",
+            target: "_self",
+            title: "LinkedIn",
+          }}
         >
           LinkedIn
         </Link>
@@ -53,13 +62,21 @@ export default function LinkList() {
           More
         </Typography>
         <Link
-          href="https://dribbble.com/mxdmrt"
-          target="_self"
-          title="Dribbble"
+          linkProps={{
+            href: "https://dribbble.com/mxdmrt",
+            target: "_self",
+            title: "Dribbble",
+          }}
         >
           Dribbble
         </Link>
-        <Link href="https://github.com/mxdmrt" target="_self" title="GitHub">
+        <Link
+          linkProps={{
+            href: "https://github.com/mxdmrt",
+            target: "_self",
+            title: "GitHub",
+          }}
+        >
           GitHub
         </Link>
       </StyledLinkStack>

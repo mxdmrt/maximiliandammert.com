@@ -47,8 +47,10 @@ const Imprint = () => {
           Contact
         </Typography>
         <Link
-          href="mailto:mail@maximiliandammert.com"
-          title="mail@maximiliandammert.com"
+          linkProps={{
+            href: "mailto:mail@maximiliandammert.com",
+            title: "mail@maximiliandammert.com",
+          }}
         >
           mail@maximilian&shy;dammert.com
         </Link>
@@ -134,8 +136,10 @@ const Imprint = () => {
           You can prevent Google’s collection and use of data (cookies and IP
           address) by downloading and installing the{" "}
           <Link
-            href="https://tools.google.com/dlpage/gaoptout?hl=en"
-            title="browser plug-in"
+            linkProps={{
+              href: "https://tools.google.com/dlpage/gaoptout?hl=en",
+              title: "browser plug-in",
+            }}
           >
             browser plug-in
           </Link>
@@ -145,7 +149,10 @@ const Imprint = () => {
           masking the last part of your IP address.
         </Typography>
       </StyledImprintStack>
-      <Link linkType="routerLink" to="/" title="Back">
+      <Link
+        linkType="routerLink"
+        routerLinkProps={{ to: "/", inactiveProps: { title: "Back" } }}
+      >
         &larr; Back
       </Link>
     </StyledImprintMain>

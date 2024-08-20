@@ -8,7 +8,6 @@ const StyledFooter = styled.footer`
   align-self: flex-start;
 
   color: oklch(var(--colorForeground) / 0.6);
-  transition: color 0.1s ease;
 
   @media (min-width: 700px) {
     grid-template-columns: 1fr 1fr;
@@ -76,7 +75,13 @@ export default function Footer() {
       <Typography type="p" size="s">
         © {currentDate.getFullYear()}&emsp;&#11825;&emsp;All Rights
         Reserved&emsp;&#11825;&emsp;
-        <Link linkType="routerLink" title="Imprint" to="/imprint">
+        <Link
+          linkType="routerLink"
+          routerLinkProps={{
+            to: "/imprint",
+            inactiveProps: { title: "Imprint" },
+          }}
+        >
           Imprint
         </Link>
       </Typography>
