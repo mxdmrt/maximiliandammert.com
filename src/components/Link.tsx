@@ -2,17 +2,14 @@ import { css } from "@emotion/react";
 import styled from "@emotion/styled";
 import {
   createLink,
-  LinkProps as RouterLinkProps,
+  LinkOptions as RouterLinkProps,
 } from "@tanstack/react-router";
-import { AnchorHTMLAttributes, ButtonHTMLAttributes, ReactNode } from "react";
+import { AnchorHTMLAttributes, ReactNode } from "react";
 import { Theme } from "../@types/theme";
 import { useStore } from "../store/Store";
 
-interface LinkProps {
+interface LinkProps extends AnchorHTMLAttributes<HTMLAnchorElement> {
   children: ReactNode;
-  linkType?: "a" | "button" | "routerLink";
-  linkProps?: AnchorHTMLAttributes<HTMLAnchorElement>;
-  buttonProps?: ButtonHTMLAttributes<HTMLButtonElement>;
   routerLinkProps?: RouterLinkProps;
 }
 
@@ -83,49 +80,26 @@ const StyledLink = styled.a<{ theme: Theme; contentAfter?: string }>(
   },
 );
 
-const StyledButton = styled(StyledLink.withComponent("button"))`
-  appearance: unset;
-  background-color: unset;
-  padding: unset;
-  border: unset;
-  font: inherit;
-
-  @media (hover: hover) {
-    &:hover {
-      cursor: pointer;
-    }
-  }
-`;
-
-const StyledRouterLink = createLink(StyledLink);
+const CustomRouterLink = createLink(StyledLink);
 
 export default function Link({
   children,
-  linkType = "a",
-  linkProps,
-  buttonProps,
   routerLinkProps,
+  ...props
 }: LinkProps) {
   const { theme } = useStore();
 
-  switch (linkType) {
-    case "a":
-      return (
-        <StyledLink theme={theme} contentAfter="&#8599;" {...linkProps}>
-          {children}
-        </StyledLink>
-      );
-    case "button":
-      return (
-        <StyledButton theme={theme} contentAfter="&#8599;" {...buttonProps}>
-          {children}
-        </StyledButton>
-      );
-    case "routerLink":
-      return (
-        <StyledRouterLink theme={theme} {...routerLinkProps}>
-          {children}
-        </StyledRouterLink>
-      );
+  if (routerLinkProps) {
+    return (
+      <CustomRouterLink theme={theme} {...routerLinkProps} {...props}>
+        {children}
+      </CustomRouterLink>
+    );
   }
+
+  return (
+    <StyledLink theme={theme} contentAfter="&#8599;" {...props}>
+      {children}
+    </StyledLink>
+  );
 }

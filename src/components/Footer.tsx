@@ -76,10 +76,9 @@ export default function Footer() {
         © {currentDate.getFullYear()}&emsp;&#11825;&emsp;All Rights
         Reserved&emsp;&#11825;&emsp;
         <Link
-          linkType="routerLink"
+          title="Imprint"
           routerLinkProps={{
             to: "/imprint",
-            inactiveProps: { title: "Imprint" },
           }}
         >
           Imprint

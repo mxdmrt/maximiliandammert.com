@@ -22,10 +22,7 @@ const PageNotFound = () => {
         Oops!
       </Typography>
       <Typography type="p">404 · This page doesn’t exist</Typography>
-      <Link
-        linkType="routerLink"
-        routerLinkProps={{ to: "../", inactiveProps: { title: "Start over" } }}
-      >
+      <Link title="Start over" routerLinkProps={{ to: ".." }}>
         Start over &rarr;
       </Link>
     </StyledErrorMain>
