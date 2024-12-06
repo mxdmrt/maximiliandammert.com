@@ -1,5 +1,6 @@
 import { css } from "@emotion/react";
 import styled from "@emotion/styled";
+import ThemeToggleButton from "./ThemeToggleButton";
 import { ThemeType } from "../../@types/theme";
 import DarkModeFilledIcon from "../../assets/icons/dark-mode-filled.svg";
 import DarkModeIcon from "../../assets/icons/dark-mode.svg";
@@ -9,7 +10,6 @@ import ShuffleIcon from "../../assets/icons/shuffle.svg";
 import createRandomTheme from "../../helpers/randomTheme";
 import { darkTheme, lightTheme } from "../../helpers/theme";
 import { useStore } from "../../store/Store";
-import ThemeToggleButton from "./ThemeToggleButton";
 
 const StyledThemeToggle = styled.div`
   position: relative;
