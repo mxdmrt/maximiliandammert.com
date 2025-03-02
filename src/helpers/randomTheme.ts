@@ -1,4 +1,4 @@
-import { OklchColor, Theme } from "../@types/theme";
+import { OklchColor, Theme } from '../@types/theme';
 
 const randomOklch = (): OklchColor => {
   const lightnessMax = 100;
@@ -12,7 +12,7 @@ const randomOklch = (): OklchColor => {
   };
 };
 
-const getForegroundColor = (bgColor: Theme["background"]): OklchColor => {
+const getForegroundColor = (bgColor: Theme['background']): OklchColor => {
   const threshold = 45;
   const lightness = bgColor.lightness;
 
@@ -33,7 +33,7 @@ const createRandomTheme = (): Theme => {
   const bgColor = randomOklch();
 
   return {
-    type: "random",
+    type: 'random',
     background: bgColor,
     foreground: getForegroundColor(bgColor),
   };

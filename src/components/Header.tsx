@@ -1,10 +1,11 @@
-import { css } from "@emotion/react";
-import styled from "@emotion/styled";
-import { Link } from "@tanstack/react-router";
-import { Theme } from "../@types/theme";
-import LogoIcon from "../assets/icons/logo.svg";
-import { useStore } from "../store/Store";
-import ThemeToggle from "./ThemeToggle/ThemeToggle";
+import { css } from '@emotion/react';
+import styled from '@emotion/styled';
+import { Link } from '@tanstack/react-router';
+
+import { Theme } from '../@types/theme';
+import LogoIcon from '../assets/icons/logo.svg';
+import { useStore } from '../store/Store';
+import ThemeToggle from './ThemeToggle/ThemeToggle';
 
 const StyledHeader = styled.header<{ isScrolled: boolean }>`
   display: grid;
@@ -12,20 +13,16 @@ const StyledHeader = styled.header<{ isScrolled: boolean }>`
   align-self: flex-start;
   gap: 1rem;
   align-items: center;
-  position: relative;
   z-index: 1;
   position: sticky;
-  top: calc(var(--pagePadding) - 1rem);
+  top: calc(var(--page-padding) - 1rem);
 
   &::before {
     position: absolute;
-    content: "";
-    top: calc(var(--pagePadding) * -1 + 1rem);
-    right: calc(var(--pagePadding) * -1);
-    bottom: calc(var(--pagePadding) * -1 + 1rem);
-    left: calc(var(--pagePadding) * -1);
-    mask-image: linear-gradient(rgba(0, 0, 0, 1) 65%, transparent);
-    background-color: oklch(var(--colorBackground) / 0.5);
+    content: '';
+    inset: calc(var(--page-padding) * -1 + 1rem) calc(var(--page-padding) * -1);
+    mask-image: linear-gradient(rgb(0 0 0 / 100%) 65%, transparent);
+    background-color: oklch(var(--color-background) / 50%);
     transition: background-color 500ms ease;
 
     ${({ isScrolled }) =>
@@ -39,21 +36,21 @@ const StyledHeader = styled.header<{ isScrolled: boolean }>`
 const StyledLogo = styled(Link)<{ theme: Theme }>(({ theme }) => {
   const themeBgColor = () => {
     switch (theme.type) {
-      case "light":
+      case 'light':
         return css`
-          background-color: oklch(var(--colorForeground) / 0.05);
+          background-color: oklch(var(--color-foreground) / 5%);
         `;
-      case "dark":
+      case 'dark':
         return css`
-          background-color: oklch(var(--colorForeground) / 0.1);
+          background-color: oklch(var(--color-foreground) / 10%);
         `;
-      case "random":
+      case 'random':
         return theme.background.lightness > 45
           ? css`
-              background-color: oklch(var(--colorForeground) / 0.05);
+              background-color: oklch(var(--color-foreground) / 5%);
             `
           : css`
-              background-color: oklch(var(--colorForeground) / 0.1);
+              background-color: oklch(var(--color-foreground) / 10%);
             `;
     }
   };
@@ -65,8 +62,7 @@ const StyledLogo = styled(Link)<{ theme: Theme }>(({ theme }) => {
     border: none;
     border-radius: unset;
     position: relative;
-    align-self: center;
-    justify-self: start;
+    place-self: center start;
 
     & svg {
       color: inherit;
@@ -75,16 +71,16 @@ const StyledLogo = styled(Link)<{ theme: Theme }>(({ theme }) => {
     }
 
     &::before {
-      content: "";
+      content: '';
       position: absolute;
       inset: -1.15rem -0.87rem;
-      background-color: oklch(var(--colorForeground) / 0);
-      border-radius: var(--borderRadius);
+      background-color: oklch(var(--color-foreground) / 0%);
+      border-radius: var(--border-radius);
     }
 
     @media (hover: hover) {
       &:hover {
-        text-decoration-color: oklch(var(--colorForeground));
+        text-decoration-color: oklch(var(--color-foreground));
 
         &::before {
           ${themeBgColor()}

@@ -1,10 +1,10 @@
-import { css } from "@emotion/react";
-import styled from "@emotion/styled";
-import { ReactNode } from "react";
+import { css } from '@emotion/react';
+import styled from '@emotion/styled';
+import { ReactNode } from 'react';
 
-type Size = "s" | "m" | "l";
+type Size = 's' | 'm' | 'l';
 
-type Type = "p" | "h1" | "h2" | "h3";
+type Type = 'p' | 'h1' | 'h2' | 'h3';
 
 interface TypographyProps {
   children: ReactNode;
@@ -16,15 +16,15 @@ interface TypographyProps {
 const StyledParagraph = styled.p<{ size: Size }>(({ size }) => {
   const fontSize = () => {
     switch (size) {
-      case "s":
+      case 's':
         return css`
           font-size: 0.8rem;
         `;
-      case "m":
+      case 'm':
         return css`
           font-size: 1.25rem;
         `;
-      case "l":
+      case 'l':
         return css`
           font-size: 3.75rem;
         `;
@@ -37,23 +37,23 @@ const StyledParagraph = styled.p<{ size: Size }>(({ size }) => {
   `;
 });
 
-const StyledHeadline1 = styled.h1<{ size: Size }>(({ size }) => {
+const StyledHeadline = styled.h1<{ size: Size }>(({ size }) => {
   const fontSize = () => {
     switch (size) {
-      case "s":
+      case 's':
         return css`
           text-transform: uppercase;
           font-size: 0.8rem;
           font-weight: 700;
           letter-spacing: calc(56em / 1000);
-          color: oklch(var(--colorForeground) / 0.6);
+          color: oklch(var(--color-foreground) / 60%);
         `;
-      case "m":
+      case 'm':
         return css`
           font-size: 1.25rem;
           font-weight: 800;
         `;
-      case "l":
+      case 'l':
         return css`
           font-size: 3.75rem;
           font-weight: 800;
@@ -67,40 +67,31 @@ const StyledHeadline1 = styled.h1<{ size: Size }>(({ size }) => {
   `;
 });
 
-const StyledHeadline2 = styled(StyledHeadline1.withComponent("h2"))``;
-
-const StyledHeadline3 = styled(StyledHeadline1.withComponent("h3"))``;
-
-export default function Typography({
-  children,
-  type,
-  size = "m",
-  className,
-}: TypographyProps) {
+export default function Typography({ children, type, size = 'm', className }: TypographyProps) {
   switch (type) {
-    case "p":
+    case 'p':
       return (
         <StyledParagraph size={size} className={className}>
           {children}
         </StyledParagraph>
       );
-    case "h1":
+    case 'h1':
       return (
-        <StyledHeadline1 size={size} className={className}>
+        <StyledHeadline size={size} className={className}>
           {children}
-        </StyledHeadline1>
+        </StyledHeadline>
       );
-    case "h2":
+    case 'h2':
       return (
-        <StyledHeadline2 size={size} className={className}>
+        <StyledHeadline size={size} className={className} as="h2">
           {children}
-        </StyledHeadline2>
+        </StyledHeadline>
       );
-    case "h3":
+    case 'h3':
       return (
-        <StyledHeadline3 size={size} className={className}>
+        <StyledHeadline size={size} className={className} as="h3">
           {children}
-        </StyledHeadline3>
+        </StyledHeadline>
       );
   }
 }

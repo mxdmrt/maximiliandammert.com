@@ -1,4 +1,4 @@
-export type ThemeType = "light" | "dark" | "random";
+export type ThemeType = 'light' | 'dark' | 'random';
 
 export interface OklchColor {
   lightness: number;

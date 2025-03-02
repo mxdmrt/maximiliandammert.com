@@ -1,17 +1,16 @@
-import styled from "@emotion/styled";
-import Link from "./Link";
-import Typography from "./Typography";
+import styled from '@emotion/styled';
+
+import Link from './Link';
+import Typography from './Typography';
 
 const StyledFooter = styled.footer`
   display: grid;
   gap: 1rem;
   align-self: flex-start;
+  color: oklch(var(--color-foreground) / 60%);
 
-  color: oklch(var(--colorForeground) / 0.6);
-
-  @media (min-width: 700px) {
+  @media (width >= 700px) {
     grid-template-columns: 1fr 1fr;
-    order: reverse;
   }
 `;
 
@@ -20,12 +19,12 @@ const StyledHintWrapper = styled.div`
   align-items: center;
   gap: 0.25rem;
 
-  @media (min-width: 700px) {
+  @media (width >= 700px) {
     justify-self: end;
   }
 
   & svg {
-    fill: currentColor;
+    fill: currentcolor;
     height: 0.9rem;
     transform: translateY(7%);
   }
@@ -51,14 +50,13 @@ const StyledHotkey = styled.span`
   width: 1rem;
   aspect-ratio: 1;
   display: inline-flex;
-  align-items: center;
-  justify-items: center;
+  place-items: center center;
   justify-content: center;
   font-size: 0.75rem;
   font-weight: 600;
-  border-radius: calc(var(--borderRadius) / 3);
-  background-color: oklch(var(--colorForeground) / 0.05);
-  box-shadow: 0 0 0 1px oklch(var(--colorForeground) / 0.2);
+  border-radius: calc(var(--border-radius) / 3);
+  background-color: oklch(var(--color-foreground) / 5%);
+  box-shadow: 0 0 0 1px oklch(var(--color-foreground) / 20%);
   line-height: 1;
   margin: 0 0.2em;
 
@@ -73,12 +71,11 @@ export default function Footer() {
   return (
     <StyledFooter>
       <Typography type="p" size="s">
-        © {currentDate.getFullYear()}&emsp;&#11825;&emsp;All Rights
-        Reserved&emsp;&#11825;&emsp;
+        © {currentDate.getFullYear()}&emsp;&#11825;&emsp;All Rights Reserved&emsp;&#11825;&emsp;
         <Link
           title="Imprint"
           routerLinkProps={{
-            to: "/imprint",
+            to: '/imprint',
           }}
         >
           Imprint
@@ -86,7 +83,7 @@ export default function Footer() {
       </Typography>
       <StyledHintWrapper>
         <StyledHotkeyHint type="p" size="s">
-          Use <StyledHotkey>A</StyledHotkey>, <StyledHotkey>S</StyledHotkey> and{" "}
+          Use <StyledHotkey>A</StyledHotkey>, <StyledHotkey>S</StyledHotkey> and{' '}
           <StyledHotkey>D</StyledHotkey> to toggle the theme
         </StyledHotkeyHint>
         <StyledSwipeHint type="p" size="s">

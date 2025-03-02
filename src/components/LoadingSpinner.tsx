@@ -1,6 +1,7 @@
-import { css } from "@emotion/react";
-import styled from "@emotion/styled";
-import LoadingSvg from "../assets/icons/bouncing-ball.svg";
+import { css } from '@emotion/react';
+import styled from '@emotion/styled';
+
+import LoadingSvg from '../assets/icons/bouncing-ball.svg';
 
 const StyledLoadingSpinnerWrapper = styled.div(() => {
   return css`
