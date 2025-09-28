@@ -1,26 +1,27 @@
-import eslint from '@eslint/js';
+import eslintJs from '@eslint/js';
+import eslintReact from '@eslint-react/eslint-plugin';
+import { defineConfig, globalIgnores } from 'eslint/config';
 import eslintPluginPrettier from 'eslint-plugin-prettier/recommended';
-import reactPlugin from 'eslint-plugin-react';
 import reactHooksPlugin from 'eslint-plugin-react-hooks';
 import reactRefreshPlugin from 'eslint-plugin-react-refresh';
 import simpleImportSort from 'eslint-plugin-simple-import-sort';
 import globals from 'globals';
 import tseslint from 'typescript-eslint';
 
-export default tseslint.config(
+export default defineConfig([
+  globalIgnores(['dist']),
   {
-    ignores: ['*.config.js', 'dist'],
-  },
-  {
-    files: ['**/*.{js,jsx,ts,tsx}'],
+    files: ['**/*.{js,jsx}', '**/*.{ts,tsx}'],
+    plugins: {
+      'simple-import-sort': simpleImportSort,
+    },
     extends: [
-      eslint.configs.recommended,
-      reactHooksPlugin.configs['recommended-latest'],
-      reactPlugin.configs.flat.recommended,
-      reactPlugin.configs.flat['jsx-runtime'],
-      reactRefreshPlugin.configs.vite,
+      eslintJs.configs.recommended,
       tseslint.configs.recommendedTypeChecked,
       tseslint.configs.stylisticTypeChecked,
+      eslintReact.configs['recommended-typescript'],
+      reactHooksPlugin.configs['recommended-latest'],
+      reactRefreshPlugin.configs.vite,
       eslintPluginPrettier,
     ],
     languageOptions: {
@@ -31,17 +32,9 @@ export default tseslint.config(
         tsconfigRootDir: import.meta.dirname,
       },
     },
-    plugins: {
-      'simple-import-sort': simpleImportSort,
-    },
     rules: {
       'simple-import-sort/imports': 'error',
       'simple-import-sort/exports': 'error',
     },
-    settings: {
-      react: {
-        version: 'detect',
-      },
-    },
   },
-);
+]);
