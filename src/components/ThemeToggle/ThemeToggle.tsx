@@ -1,7 +1,7 @@
 import { css } from '@emotion/react';
 import styled from '@emotion/styled';
 
-import { ThemeType } from '../../@types/theme';
+import type { ThemeType } from '../../@types/theme';
 import DarkModeIcon from '../../assets/icons/dark-mode.svg';
 import DarkModeFilledIcon from '../../assets/icons/dark-mode-filled.svg';
 import LightModeIcon from '../../assets/icons/light-mode.svg';

@@ -23,20 +23,15 @@ const Root = () => {
   const { theme, setTheme, setIsScrolled } = useStore();
 
   useEffect(() => {
-    const onMediaQueryListChange = () =>
-      setTheme(window.matchMedia('(prefers-color-scheme: dark)').matches ? darkTheme : lightTheme);
+    const mediaQueryList = window.matchMedia('(prefers-color-scheme: dark)');
+    const onMediaQueryListChange = () => {
+      setTheme(mediaQueryList.matches ? darkTheme : lightTheme);
+    };
 
-    window
-      .matchMedia('(prefers-color-scheme: dark)')
-      .removeEventListener('change', onMediaQueryListChange);
-    window
-      .matchMedia('(prefers-color-scheme: dark)')
-      .addEventListener('change', onMediaQueryListChange);
+    mediaQueryList.addEventListener('change', onMediaQueryListChange);
 
     return () => {
-      window
-        .matchMedia('(prefers-color-scheme: dark)')
-        .removeEventListener('change', onMediaQueryListChange);
+      mediaQueryList.removeEventListener('change', onMediaQueryListChange);
     };
   }, [setTheme]);
 

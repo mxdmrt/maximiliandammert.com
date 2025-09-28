@@ -1,9 +1,9 @@
 import { css } from '@emotion/react';
 import styled from '@emotion/styled';
-import { createLink, LinkOptions as RouterLinkProps } from '@tanstack/react-router';
-import { AnchorHTMLAttributes, ReactNode } from 'react';
+import { createLink, type LinkOptions as RouterLinkProps } from '@tanstack/react-router';
+import type { AnchorHTMLAttributes, ReactNode } from 'react';
 
-import { Theme } from '../@types/theme';
+import type { Theme } from '../@types/theme';
 import { useStore } from '../store/Store';
 
 interface LinkProps extends AnchorHTMLAttributes<HTMLAnchorElement> {

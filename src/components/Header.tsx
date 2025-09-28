@@ -2,7 +2,7 @@ import { css } from '@emotion/react';
 import styled from '@emotion/styled';
 import { Link } from '@tanstack/react-router';
 
-import { Theme } from '../@types/theme';
+import type { Theme } from '../@types/theme';
 import LogoIcon from '../assets/icons/logo.svg';
 import { useStore } from '../store/Store';
 import ThemeToggle from './ThemeToggle/ThemeToggle';

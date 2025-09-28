@@ -1,7 +1,7 @@
 import { DateTime } from 'luxon';
 import { create } from 'zustand';
 
-import { Theme } from '../@types/theme';
+import type { Theme } from '../@types/theme';
 import { darkTheme, lightTheme } from '../helpers/theme';
 
 interface Store {

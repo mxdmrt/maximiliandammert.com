@@ -1,4 +1,4 @@
-import { OklchColor, Theme } from '../@types/theme';
+import type { OklchColor, Theme } from '../@types/theme';
 
 const randomOklch = (): OklchColor => {
   const lightnessMax = 100;
