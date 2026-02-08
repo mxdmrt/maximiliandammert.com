@@ -85,7 +85,7 @@ export default function Link({
   routerLinkProps,
   ...props
 }: LinkProps) {
-  const { theme } = useStore();
+  const theme = useStore((state) => state.theme);
 
   if (routerLinkProps) {
     return (
@@ -96,7 +96,7 @@ export default function Link({
   }
 
   return (
-    <StyledLink theme={theme} contentAfter="&#8599;" {...props}>
+    <StyledLink theme={theme} contentAfter="↗" {...props}>
       {children}
     </StyledLink>
   );
