@@ -1,5 +1,0 @@
-# Ignore artifacts:
-dist
-coverage
-*.gen.ts
-pnpm-lock.yaml

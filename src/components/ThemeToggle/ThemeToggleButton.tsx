@@ -1,9 +1,9 @@
-import { css } from '@emotion/react';
-import styled from '@emotion/styled';
-import type { ReactNode } from 'react';
+import { css } from "@emotion/react";
+import styled from "@emotion/styled";
+import type { ReactNode } from "react";
 
-import type { Theme } from '../../@types/theme';
-import { useStore } from '../../store/Store';
+import type { Theme } from "../../@types/theme";
+import { useStore } from "../../store/Store";
 
 interface ThemeToggleButtonProps {
   children: ReactNode;
@@ -14,15 +14,15 @@ interface ThemeToggleButtonProps {
 const StyledThemeToggleButton = styled.button<{ theme: Theme }>(({ theme }) => {
   const themeBgColor = () => {
     switch (theme.type) {
-      case 'light':
+      case "light":
         return css`
           background-color: oklch(var(--color-foreground) / 5%);
         `;
-      case 'dark':
+      case "dark":
         return css`
           background-color: oklch(var(--color-foreground) / 10%);
         `;
-      case 'random':
+      case "random":
         return theme.background.lightness > 45
           ? css`
               background-color: oklch(var(--color-foreground) / 5%);
@@ -62,7 +62,12 @@ const ThemeToggle = ({ children, onClick, title }: ThemeToggleButtonProps) => {
   const { theme } = useStore();
 
   return (
-    <StyledThemeToggleButton title={title} type="button" onClick={onClick} theme={theme}>
+    <StyledThemeToggleButton
+      title={title}
+      type="button"
+      onClick={onClick}
+      theme={theme}
+    >
       {children}
     </StyledThemeToggleButton>
   );

@@ -1,7 +1,7 @@
-import { type Theme } from '../@types/theme';
+import type { Theme } from "../@types/theme";
 
 export const lightTheme: Theme = {
-  type: 'light',
+  type: "light",
   background: {
     lightness: 97,
     chroma: 0,
@@ -15,7 +15,7 @@ export const lightTheme: Theme = {
 };
 
 export const darkTheme: Theme = {
-  type: 'dark',
+  type: "dark",
   background: {
     lightness: 12,
     chroma: 0,
