@@ -42,6 +42,7 @@ export const useStore = create<Store>()((set) => ({
     : lightTheme,
   setTheme: (theme) => set(() => ({ theme: theme })),
   isScrolled: false,
-  setIsScrolled: (boolean) => set(() => ({ isScrolled: boolean })),
+  setIsScrolled: (isScrolled) =>
+    set((state) => (state.isScrolled === isScrolled ? state : { isScrolled })),
   greeting: createGreeting(),
 }));
