@@ -1,7 +1,7 @@
-import styled from '@emotion/styled';
+import styled from "@emotion/styled";
 
-import Link from './Link';
-import Typography from './Typography';
+import Link from "./Link";
+import Typography from "./Typography";
 
 const StyledFooter = styled.footer`
   display: grid;
@@ -71,11 +71,12 @@ export default function Footer() {
   return (
     <StyledFooter>
       <Typography type="p" size="s">
-        © {currentDate.getFullYear()}&emsp;&#11825;&emsp;All Rights Reserved&emsp;&#11825;&emsp;
+        © {currentDate.getFullYear()}&emsp;&#11825;&emsp;All Rights
+        Reserved&emsp;&#11825;&emsp;
         <Link
           title="Imprint"
           routerLinkProps={{
-            to: '/imprint',
+            to: "/imprint",
           }}
         >
           Imprint
@@ -83,7 +84,7 @@ export default function Footer() {
       </Typography>
       <StyledHintWrapper>
         <StyledHotkeyHint type="p" size="s">
-          Use <StyledHotkey>A</StyledHotkey>, <StyledHotkey>S</StyledHotkey> and{' '}
+          Use <StyledHotkey>A</StyledHotkey>, <StyledHotkey>S</StyledHotkey> and{" "}
           <StyledHotkey>D</StyledHotkey> to toggle the theme
         </StyledHotkeyHint>
         <StyledSwipeHint type="p" size="s">

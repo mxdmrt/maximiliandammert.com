@@ -1,16 +1,16 @@
-import { css } from '@emotion/react';
-import styled from '@emotion/styled';
+import { css } from "@emotion/react";
+import styled from "@emotion/styled";
 
-import type { ThemeType } from '../../@types/theme';
-import DarkModeIcon from '../../assets/icons/dark-mode.svg';
-import DarkModeFilledIcon from '../../assets/icons/dark-mode-filled.svg';
-import LightModeIcon from '../../assets/icons/light-mode.svg';
-import LightModeFilledIcon from '../../assets/icons/light-mode-filled.svg';
-import ShuffleIcon from '../../assets/icons/shuffle.svg';
-import createRandomTheme from '../../helpers/randomTheme';
-import { darkTheme, lightTheme } from '../../helpers/theme';
-import { useStore } from '../../store/Store';
-import ThemeToggleButton from './ThemeToggleButton';
+import type { ThemeType } from "../../@types/theme";
+import DarkModeIcon from "../../assets/icons/dark-mode.svg";
+import DarkModeFilledIcon from "../../assets/icons/dark-mode-filled.svg";
+import LightModeIcon from "../../assets/icons/light-mode.svg";
+import LightModeFilledIcon from "../../assets/icons/light-mode-filled.svg";
+import ShuffleIcon from "../../assets/icons/shuffle.svg";
+import createRandomTheme from "../../helpers/randomTheme";
+import { darkTheme, lightTheme } from "../../helpers/theme";
+import { useStore } from "../../store/Store";
+import ThemeToggleButton from "./ThemeToggleButton";
 
 const StyledThemeToggle = styled.div`
   position: relative;
@@ -24,12 +24,12 @@ const StyledSelectionIndicator = styled.div<{
 }>(({ selected }) => {
   const leftPosition = () => {
     switch (selected) {
-      case 'random':
-        return 'calc(100% / 6 * 1)';
-      case 'light':
-        return 'calc(100% / 6 * 3)';
-      case 'dark':
-        return 'calc(100% / 6 * 5)';
+      case "random":
+        return "calc(100% / 6 * 1)";
+      case "light":
+        return "calc(100% / 6 * 3)";
+      case "dark":
+        return "calc(100% / 6 * 5)";
     }
   };
 
@@ -52,14 +52,20 @@ const ThemeToggle = () => {
 
   return (
     <StyledThemeToggle className="themeToggle">
-      <ThemeToggleButton title="Random theme" onClick={() => setTheme(createRandomTheme())}>
+      <ThemeToggleButton
+        title="Random theme"
+        onClick={() => setTheme(createRandomTheme())}
+      >
         <ShuffleIcon />
       </ThemeToggleButton>
-      <ThemeToggleButton title="Light theme" onClick={() => setTheme(lightTheme)}>
-        {theme.type === 'light' ? <LightModeFilledIcon /> : <LightModeIcon />}
+      <ThemeToggleButton
+        title="Light theme"
+        onClick={() => setTheme(lightTheme)}
+      >
+        {theme.type === "light" ? <LightModeFilledIcon /> : <LightModeIcon />}
       </ThemeToggleButton>
       <ThemeToggleButton title="Dark theme" onClick={() => setTheme(darkTheme)}>
-        {theme.type === 'dark' ? <DarkModeFilledIcon /> : <DarkModeIcon />}
+        {theme.type === "dark" ? <DarkModeFilledIcon /> : <DarkModeIcon />}
       </ThemeToggleButton>
       <StyledSelectionIndicator selected={theme.type} />
     </StyledThemeToggle>

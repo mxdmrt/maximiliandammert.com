@@ -1,47 +1,51 @@
-import { css } from '@emotion/react';
-import styled from '@emotion/styled';
-import { createLink, type LinkOptions as RouterLinkProps } from '@tanstack/react-router';
-import type { AnchorHTMLAttributes, ReactNode } from 'react';
+import { css } from "@emotion/react";
+import styled from "@emotion/styled";
+import {
+  createLink,
+  type LinkOptions as RouterLinkProps,
+} from "@tanstack/react-router";
+import type { AnchorHTMLAttributes, ReactNode } from "react";
 
-import type { Theme } from '../@types/theme';
-import { useStore } from '../store/Store';
+import type { Theme } from "../@types/theme";
+import { useStore } from "../store/Store";
 
 interface LinkProps extends AnchorHTMLAttributes<HTMLAnchorElement> {
   children: ReactNode;
   routerLinkProps?: RouterLinkProps;
 }
 
-const StyledLink = styled.a<{ theme: Theme; contentAfter?: string }>(({ theme, contentAfter }) => {
-  const themeBgColor = () => {
-    switch (theme.type) {
-      case 'light':
-        return css`
+const StyledLink = styled.a<{ theme: Theme; contentAfter?: string }>(
+  ({ theme, contentAfter }) => {
+    const themeBgColor = () => {
+      switch (theme.type) {
+        case "light":
+          return css`
           background-color: oklch(var(--color-foreground) / 5%);
         `;
-      case 'dark':
-        return css`
+        case "dark":
+          return css`
           background-color: oklch(var(--color-foreground) / 10%);
         `;
-      case 'random':
-        return theme.background.lightness > 45
-          ? css`
+        case "random":
+          return theme.background.lightness > 45
+            ? css`
               background-color: oklch(var(--color-foreground) / 5%);
             `
-          : css`
+            : css`
               background-color: oklch(var(--color-foreground) / 10%);
             `;
-    }
-  };
-  const afterElement =
-    contentAfter &&
-    css`
+      }
+    };
+    const afterElement =
+      contentAfter &&
+      css`
       &::after {
         content: '${contentAfter}';
         display: inline;
       }
     `;
 
-  return css`
+    return css`
     display: inline-flex;
     color: inherit;
     text-decoration: underline;
@@ -71,11 +75,16 @@ const StyledLink = styled.a<{ theme: Theme; contentAfter?: string }>(({ theme, c
 
     ${afterElement}
   `;
-});
+  },
+);
 
 const CustomRouterLink = createLink(StyledLink);
 
-export default function Link({ children, routerLinkProps, ...props }: LinkProps) {
+export default function Link({
+  children,
+  routerLinkProps,
+  ...props
+}: LinkProps) {
   const { theme } = useStore();
 
   if (routerLinkProps) {

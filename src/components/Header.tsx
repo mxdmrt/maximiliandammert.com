@@ -1,11 +1,11 @@
-import { css } from '@emotion/react';
-import styled from '@emotion/styled';
-import { Link } from '@tanstack/react-router';
+import { css } from "@emotion/react";
+import styled from "@emotion/styled";
+import { Link } from "@tanstack/react-router";
 
-import type { Theme } from '../@types/theme';
-import LogoIcon from '../assets/icons/logo.svg';
-import { useStore } from '../store/Store';
-import ThemeToggle from './ThemeToggle/ThemeToggle';
+import type { Theme } from "../@types/theme";
+import LogoIcon from "../assets/icons/logo.svg";
+import { useStore } from "../store/Store";
+import ThemeToggle from "./ThemeToggle/ThemeToggle";
 
 const StyledHeader = styled.header<{ isScrolled: boolean }>`
   display: grid;
@@ -36,15 +36,15 @@ const StyledHeader = styled.header<{ isScrolled: boolean }>`
 const StyledLogo = styled(Link)<{ theme: Theme }>(({ theme }) => {
   const themeBgColor = () => {
     switch (theme.type) {
-      case 'light':
+      case "light":
         return css`
           background-color: oklch(var(--color-foreground) / 5%);
         `;
-      case 'dark':
+      case "dark":
         return css`
           background-color: oklch(var(--color-foreground) / 10%);
         `;
-      case 'random':
+      case "random":
         return theme.background.lightness > 45
           ? css`
               background-color: oklch(var(--color-foreground) / 5%);

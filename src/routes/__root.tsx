@@ -1,16 +1,16 @@
-import { css, Global } from '@emotion/react';
-import styled from '@emotion/styled';
-import { createRootRoute, Outlet } from '@tanstack/react-router';
-import { useEffect } from 'react';
-import { Helmet, HelmetProvider } from 'react-helmet-async';
-import { useHotkeys } from 'react-hotkeys-hook';
-import { useSwipeable } from 'react-swipeable';
+import { css, Global } from "@emotion/react";
+import styled from "@emotion/styled";
+import { createRootRoute, Outlet } from "@tanstack/react-router";
+import { useEffect } from "react";
+import { Helmet, HelmetProvider } from "react-helmet-async";
+import { useHotkeys } from "react-hotkeys-hook";
+import { useSwipeable } from "react-swipeable";
 
-import Footer from '../components/Footer';
-import Header from '../components/Header';
-import createRandomTheme from '../helpers/randomTheme';
-import { darkTheme, lightTheme } from '../helpers/theme';
-import { useStore } from '../store/Store';
+import Footer from "../components/Footer";
+import Header from "../components/Header";
+import createRandomTheme from "../helpers/randomTheme";
+import { darkTheme, lightTheme } from "../helpers/theme";
+import { useStore } from "../store/Store";
 
 const StyledPageLayout = styled.div`
   display: grid;
@@ -23,15 +23,15 @@ const Root = () => {
   const { theme, setTheme, setIsScrolled } = useStore();
 
   useEffect(() => {
-    const mediaQueryList = window.matchMedia('(prefers-color-scheme: dark)');
+    const mediaQueryList = window.matchMedia("(prefers-color-scheme: dark)");
     const onMediaQueryListChange = () => {
       setTheme(mediaQueryList.matches ? darkTheme : lightTheme);
     };
 
-    mediaQueryList.addEventListener('change', onMediaQueryListChange);
+    mediaQueryList.addEventListener("change", onMediaQueryListChange);
 
     return () => {
-      mediaQueryList.removeEventListener('change', onMediaQueryListChange);
+      mediaQueryList.removeEventListener("change", onMediaQueryListChange);
     };
   }, [setTheme]);
 
@@ -40,36 +40,36 @@ const Root = () => {
       setIsScrolled(window.scrollY > 0);
     };
 
-    window.removeEventListener('scroll', onScroll);
-    window.addEventListener('scroll', onScroll, { passive: true });
+    window.removeEventListener("scroll", onScroll);
+    window.addEventListener("scroll", onScroll, { passive: true });
 
     return () => {
-      window.removeEventListener('scroll', onScroll);
+      window.removeEventListener("scroll", onScroll);
     };
   }, [setIsScrolled]);
 
-  useHotkeys('a', () => setTheme(createRandomTheme()));
-  useHotkeys('s', () => setTheme(lightTheme));
-  useHotkeys('d', () => setTheme(darkTheme));
+  useHotkeys("a", () => setTheme(createRandomTheme()));
+  useHotkeys("s", () => setTheme(lightTheme));
+  useHotkeys("d", () => setTheme(darkTheme));
 
   const swipeHandlers = useSwipeable({
     onSwipedLeft: () => {
       switch (theme.type) {
-        case 'light':
+        case "light":
           return setTheme(darkTheme);
-        case 'dark':
+        case "dark":
           return;
-        case 'random':
+        case "random":
           return setTheme(lightTheme);
       }
     },
     onSwipedRight: () => {
       switch (theme.type) {
-        case 'light':
+        case "light":
           return setTheme(createRandomTheme());
-        case 'dark':
+        case "dark":
           return setTheme(lightTheme);
-        case 'random':
+        case "random":
           return setTheme(createRandomTheme());
       }
     },
