@@ -27,7 +27,7 @@
     "zustand": "^5.0.11"
   },
   "devDependencies": {
-    "@biomejs/biome": "^2.3.14",
+    "@biomejs/biome": "^2.4.8",
     "@tanstack/router-plugin": "^1.158.4",
     "@types/luxon": "^3.7.1",
     "@types/node": "^22.19.10",
