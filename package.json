@@ -5,11 +5,14 @@
   "type": "module",
   "scripts": {
     "build": "tsc && vite build",
+    "check:fix": "biome check . --write",
+    "check": "biome check .",
     "dev": "vite",
-    "format": "biome format --write .",
+    "format:fix": "biome format --write .",
+    "format": "biome format .",
     "host": "vite --host",
-    "lint": "biome check .",
-    "lint:fix": "biome check --write .",
+    "lint:fix": "biome lint --write .",
+    "lint": "biome lint .",
     "prepare": "husky",
     "preview": "vite preview",
     "typecheck": "tsc --noEmit"
