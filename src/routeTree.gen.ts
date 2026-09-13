@@ -12,19 +12,19 @@ import { createFileRoute } from '@tanstack/react-router'
 
 import { Route as rootRouteImport } from './routes/__root'
 
-const ImprintLazyRouteImport = createFileRoute('/imprint')()
 const IndexLazyRouteImport = createFileRoute('/')()
+const ImprintLazyRouteImport = createFileRoute('/imprint')()
 
-const ImprintLazyRoute = ImprintLazyRouteImport.update({
-  id: '/imprint',
-  path: '/imprint',
-  getParentRoute: () => rootRouteImport,
-} as any).lazy(() => import('./routes/imprint.lazy').then((d) => d.Route))
 const IndexLazyRoute = IndexLazyRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any).lazy(() => import('./routes/index.lazy').then((d) => d.Route))
+const ImprintLazyRoute = ImprintLazyRouteImport.update({
+  id: '/imprint',
+  path: '/imprint',
+  getParentRoute: () => rootRouteImport,
+} as any).lazy(() => import('./routes/imprint.lazy').then((d) => d.Route))
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexLazyRoute
@@ -54,18 +54,18 @@ export interface RootRouteChildren {
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
-    '/imprint': {
-      id: '/imprint'
-      path: '/imprint'
-      fullPath: '/imprint'
-      preLoaderRoute: typeof ImprintLazyRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/': {
       id: '/'
       path: '/'
       fullPath: '/'
       preLoaderRoute: typeof IndexLazyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/imprint': {
+      id: '/imprint'
+      path: '/imprint'
+      fullPath: '/imprint'
+      preLoaderRoute: typeof ImprintLazyRouteImport
       parentRoute: typeof rootRouteImport
     }
   }

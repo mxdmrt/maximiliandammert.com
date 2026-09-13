@@ -24,26 +24,26 @@
   "dependencies": {
     "@emotion/react": "11.14.0",
     "@emotion/styled": "11.14.1",
-    "@tanstack/react-router": "1.168.1",
+    "@tanstack/react-router": "1.170.35",
     "luxon": "3.7.2",
-    "react": "19.2.4",
-    "react-dom": "19.2.4",
+    "react": "19.3.0",
+    "react-dom": "19.3.0",
     "react-helmet-async": "3.0.0",
-    "react-hotkeys-hook": "5.2.4",
+    "react-hotkeys-hook": "5.3.3",
     "react-swipeable": "7.0.2",
-    "zustand": "5.0.12"
+    "zustand": "5.0.15"
   },
   "devDependencies": {
-    "@biomejs/biome": "2.4.8",
-    "@tanstack/router-plugin": "1.167.2",
-    "@types/luxon": "3.7.1",
-    "@types/node": "25.5.0",
-    "@types/react": "19.2.14",
-    "@types/react-dom": "19.2.3",
-    "@vitejs/plugin-react": "6.0.1",
+    "@biomejs/biome": "2.5.13",
+    "@tanstack/router-plugin": "1.168.37",
+    "@types/luxon": "3.7.5",
+    "@types/node": "26.5.1",
+    "@types/react": "19.3.0",
+    "@types/react-dom": "19.3.0",
+    "@vitejs/plugin-react": "6.1.1",
     "husky": "9.1.7",
-    "typescript": "5.9.3",
-    "vite": "8.0.1",
-    "vite-plugin-svgr": "4.5.0"
+    "typescript": "7.0.2",
+    "vite": "8.3.0",
+    "vite-plugin-svgr": "5.2.0"
   }
 }
