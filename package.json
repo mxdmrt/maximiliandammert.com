@@ -36,17 +36,17 @@
     "@vitejs/plugin-react": "6.1.1",
     "eslint-plugin-perfectionist": "5.11.0",
     "husky": "9.1.7",
-    "lint-staged": "^17.5.1",
+    "lint-staged": "17.5.1",
     "oxfmt": "0.67.0",
-    "oxlint": "^1.82.0",
+    "oxlint": "1.82.0",
     "typescript": "7.0.2",
     "vite": "8.3.0",
     "vite-plugin-svgr": "5.2.0"
   },
   "lint-staged": {
     "*": [
-      "pnpm lint",
-      "pnpm fmt:check"
+      "pnpm oxlint --no-error-on-unmatched-pattern",
+      "pnpm oxfmt --check"
     ]
   },
   "engines": {

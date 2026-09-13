@@ -64,13 +64,13 @@ importers:
         specifier: 9.1.7
         version: 9.1.7
       lint-staged:
-        specifier: ^17.5.1
+        specifier: 17.5.1
         version: 17.5.1
       oxfmt:
         specifier: 0.67.0
         version: 0.67.0
       oxlint:
-        specifier: ^1.82.0
+        specifier: 1.82.0
         version: 1.82.0
       typescript:
         specifier: 7.0.2
