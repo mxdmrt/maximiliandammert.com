@@ -3,6 +3,7 @@ import styled from "@emotion/styled";
 import { Link } from "@tanstack/react-router";
 
 import type { Theme } from "../@types/theme";
+
 import LogoIcon from "../assets/icons/logo.svg";
 import { useStore } from "../store/Store";
 import ThemeToggle from "./ThemeToggle/ThemeToggle";
@@ -19,7 +20,7 @@ const StyledHeader = styled.header<{ isScrolled: boolean }>`
 
   &::before {
     position: absolute;
-    content: '';
+    content: "";
     inset: calc(var(--page-padding) * -1 + 1rem) calc(var(--page-padding) * -1);
     mask-image: linear-gradient(rgb(0 0 0 / 100%) 65%, transparent);
     background-color: oklch(var(--color-background) / 50%);
@@ -36,13 +37,13 @@ const StyledHeader = styled.header<{ isScrolled: boolean }>`
 const StyledLogo = styled(Link)<{ theme: Theme }>(({ theme }) => {
   const themeBgColor = () => {
     switch (theme.type) {
-      case "light":
-        return css`
-          background-color: oklch(var(--color-foreground) / 5%);
-        `;
       case "dark":
         return css`
           background-color: oklch(var(--color-foreground) / 10%);
+        `;
+      case "light":
+        return css`
+          background-color: oklch(var(--color-foreground) / 5%);
         `;
       case "random":
         return theme.background.lightness > 45
@@ -71,7 +72,7 @@ const StyledLogo = styled(Link)<{ theme: Theme }>(({ theme }) => {
     }
 
     &::before {
-      content: '';
+      content: "";
       position: absolute;
       inset: -1.15rem -0.87rem;
       background-color: oklch(var(--color-foreground) / 0%);
@@ -91,11 +92,11 @@ const StyledLogo = styled(Link)<{ theme: Theme }>(({ theme }) => {
 });
 
 export default function Header() {
-  const { theme, isScrolled } = useStore();
+  const { isScrolled, theme } = useStore();
 
   return (
     <StyledHeader isScrolled={isScrolled}>
-      <StyledLogo to="/" title="Home" theme={theme}>
+      <StyledLogo theme={theme} title="Home" to="/">
         <LogoIcon />
       </StyledLogo>
       <ThemeToggle />

@@ -1,13 +1,13 @@
-export type ThemeType = "light" | "dark" | "random";
-
 export interface OklchColor {
-  lightness: number;
   chroma: number;
   hue: number;
+  lightness: number;
 }
 
 export interface Theme {
-  type: ThemeType;
   background: OklchColor;
   foreground: OklchColor;
+  type: ThemeType;
 }
+
+export type ThemeType = "dark" | "light" | "random";

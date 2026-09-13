@@ -9,13 +9,13 @@ export default defineConfig({
     tanstackRouter(),
     react(),
     svgr({
+      include: "**/*.svg",
       svgrOptions: {
         exportType: "default",
         ref: true,
         svgo: false,
         titleProp: true,
       },
-      include: "**/*.svg",
     }),
   ],
 });
