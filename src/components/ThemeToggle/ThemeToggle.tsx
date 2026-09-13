@@ -2,10 +2,11 @@ import { css } from "@emotion/react";
 import styled from "@emotion/styled";
 
 import type { ThemeType } from "../../@types/theme";
-import DarkModeIcon from "../../assets/icons/dark-mode.svg";
+
 import DarkModeFilledIcon from "../../assets/icons/dark-mode-filled.svg";
-import LightModeIcon from "../../assets/icons/light-mode.svg";
+import DarkModeIcon from "../../assets/icons/dark-mode.svg";
 import LightModeFilledIcon from "../../assets/icons/light-mode-filled.svg";
+import LightModeIcon from "../../assets/icons/light-mode.svg";
 import ShuffleIcon from "../../assets/icons/shuffle.svg";
 import createRandomTheme from "../../helpers/randomTheme";
 import { darkTheme, lightTheme } from "../../helpers/theme";
@@ -24,17 +25,17 @@ const StyledSelectionIndicator = styled.div<{
 }>(({ selected }) => {
   const leftPosition = () => {
     switch (selected) {
-      case "random":
-        return "calc(100% / 6 * 1)";
-      case "light":
-        return "calc(100% / 6 * 3)";
       case "dark":
         return "calc(100% / 6 * 5)";
+      case "light":
+        return "calc(100% / 6 * 3)";
+      case "random":
+        return "calc(100% / 6 * 1)";
     }
   };
 
   return css`
-    content: '';
+    content: "";
     position: absolute;
     left: ${leftPosition()};
     background-color: currentcolor;
@@ -48,23 +49,17 @@ const StyledSelectionIndicator = styled.div<{
 });
 
 const ThemeToggle = () => {
-  const { theme, setTheme } = useStore();
+  const { setTheme, theme } = useStore();
 
   return (
     <StyledThemeToggle className="themeToggle">
-      <ThemeToggleButton
-        title="Random theme"
-        onClick={() => setTheme(createRandomTheme())}
-      >
+      <ThemeToggleButton onClick={() => setTheme(createRandomTheme())} title="Random theme">
         <ShuffleIcon />
       </ThemeToggleButton>
-      <ThemeToggleButton
-        title="Light theme"
-        onClick={() => setTheme(lightTheme)}
-      >
+      <ThemeToggleButton onClick={() => setTheme(lightTheme)} title="Light theme">
         {theme.type === "light" ? <LightModeFilledIcon /> : <LightModeIcon />}
       </ThemeToggleButton>
-      <ThemeToggleButton title="Dark theme" onClick={() => setTheme(darkTheme)}>
+      <ThemeToggleButton onClick={() => setTheme(darkTheme)} title="Dark theme">
         {theme.type === "dark" ? <DarkModeFilledIcon /> : <DarkModeIcon />}
       </ThemeToggleButton>
       <StyledSelectionIndicator selected={theme.type} />

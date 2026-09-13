@@ -4,6 +4,7 @@
   viewBox="0 0 24 24"
   xmlns="http://www.w3.org/2000/svg"
 >
+  <title>Loading</title>
   <style>
     .spinner_rXNP {
       animation: spinner_YeBj 0.8s infinite;

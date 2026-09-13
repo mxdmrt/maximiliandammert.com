@@ -15,9 +15,9 @@ declare module "@tanstack/react-router" {
 }
 
 const router = createRouter({
-  routeTree,
   defaultNotFoundComponent: PageNotFound,
   defaultPendingComponent: LoadingSpinner,
+  routeTree,
   scrollRestoration: true,
 });
 

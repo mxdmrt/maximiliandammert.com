@@ -35,52 +35,42 @@ const Index = () => {
   return (
     <StyledMainWrapper>
       <StyledCopyWrapper>
-        <Typography type="h1" size="l">
+        <Typography size="l" type="h1">
           {greeting},<br />
           I’m Maximilian
         </Typography>
         <Typography type="p">
-          an experienced digital product designer with passion for
-          cross-functional product development and user-centered design. I offer
-          a wide creative skill set — including UI design, UX design and
-          front-end web development knowledge. In addition I’m very familiar
+          an experienced digital product designer with passion for cross-functional product
+          development and user-centered design. I offer a wide creative skill set — including UI
+          design, UX design and front-end web development knowledge. In addition I’m very familiar
           with agile working environments.
         </Typography>
         <Typography type="p">
           From 2016 to 2021 I’ve been crafting digital products at{" "}
           <Link
             href="https://en.wikipedia.org/wiki/SinnerSchrader"
-            title="SinnerSchrader"
             target="_self"
+            title="SinnerSchrader"
           >
             SinnerSchrader
           </Link>{" "}
           and{" "}
-          <Link
-            href="https://www.accenture.com/"
-            title="Accenture Interactive"
-            target="_self"
-          >
+          <Link href="https://www.accenture.com/" target="_self" title="Accenture Interactive">
             Accenture Interactive
           </Link>
           .
         </Typography>
         <Typography type="p">
-          For the duration of 2021 to 2023, I’ve been employed as a UX designer
-          at{" "}
-          <Link
-            href="https://www.oak.tt/"
-            title="Oaktree Technologies"
-            target="_self"
-          >
+          For the duration of 2021 to 2023, I’ve been employed as a UX designer at{" "}
+          <Link href="https://www.oak.tt/" target="_self" title="Oaktree Technologies">
             Oaktree Technologies
           </Link>
-          , shaping user experiences and enhancing digital interfaces aimed at
-          retail and healthcare.
+          , shaping user experiences and enhancing digital interfaces aimed at retail and
+          healthcare.
         </Typography>
         <Typography type="p">
           Since November 2023 I’m supporting digital transformation at{" "}
-          <Link href="https://www.fielmann.de/" title="Fielmann" target="_self">
+          <Link href="https://www.fielmann.de/" target="_self" title="Fielmann">
             Fielmann
           </Link>
           .

@@ -2,14 +2,15 @@ import { DateTime } from "luxon";
 import { create } from "zustand";
 
 import type { Theme } from "../@types/theme";
+
 import { darkTheme, lightTheme } from "../helpers/theme";
 
 interface Store {
-  theme: Theme;
-  setTheme: (theme: Theme) => void;
+  greeting: string;
   isScrolled: boolean;
   setIsScrolled: (boolean: boolean) => void;
-  greeting: string;
+  setTheme: (theme: Theme) => void;
+  theme: Theme;
 }
 
 const timeNow = DateTime.now().hour;
@@ -20,29 +21,21 @@ const greetStringNight = ["Greetings night owl"];
 
 const createGreeting = (): string => {
   if (0 <= timeNow && timeNow < 5) {
-    return greetStringNight[
-      Math.floor(Math.random() * greetStringNight.length)
-    ];
+    return greetStringNight[Math.floor(Math.random() * greetStringNight.length)];
   } else if (4 < timeNow && timeNow < 11) {
-    return greetStringMorning[
-      Math.floor(Math.random() * greetStringMorning.length)
-    ];
+    return greetStringMorning[Math.floor(Math.random() * greetStringMorning.length)];
   } else if (10 < timeNow && timeNow < 18) {
     return greetStringDay[Math.floor(Math.random() * greetStringDay.length)];
   } else {
-    return greetStringEvening[
-      Math.floor(Math.random() * greetStringEvening.length)
-    ];
+    return greetStringEvening[Math.floor(Math.random() * greetStringEvening.length)];
   }
 };
 
 export const useStore = create<Store>()((set) => ({
-  theme: window.matchMedia("(prefers-color-scheme: dark)").matches
-    ? darkTheme
-    : lightTheme,
-  setTheme: (theme) => set(() => ({ theme: theme })),
+  greeting: createGreeting(),
   isScrolled: false,
   setIsScrolled: (isScrolled) =>
     set((state) => (state.isScrolled === isScrolled ? state : { isScrolled })),
-  greeting: createGreeting(),
+  setTheme: (theme) => set(() => ({ theme: theme })),
+  theme: window.matchMedia("(prefers-color-scheme: dark)").matches ? darkTheme : lightTheme,
 }));

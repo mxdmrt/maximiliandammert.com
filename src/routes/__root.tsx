@@ -20,7 +20,7 @@ const StyledPageLayout = styled.div`
 `;
 
 const Root = () => {
-  const { theme, setTheme, setIsScrolled } = useStore();
+  const { setIsScrolled, setTheme, theme } = useStore();
 
   useEffect(() => {
     const mediaQueryList = window.matchMedia("(prefers-color-scheme: dark)");
@@ -55,20 +55,20 @@ const Root = () => {
   const swipeHandlers = useSwipeable({
     onSwipedLeft: () => {
       switch (theme.type) {
-        case "light":
-          return setTheme(darkTheme);
         case "dark":
           return;
+        case "light":
+          return setTheme(darkTheme);
         case "random":
           return setTheme(lightTheme);
       }
     },
     onSwipedRight: () => {
       switch (theme.type) {
-        case "light":
-          return setTheme(createRandomTheme());
         case "dark":
           return setTheme(lightTheme);
+        case "light":
+          return setTheme(createRandomTheme());
         case "random":
           return setTheme(createRandomTheme());
       }
@@ -92,7 +92,7 @@ const Root = () => {
   return (
     <HelmetProvider>
       <Helmet>
-        <meta name="theme-color" content={themeBgColor} />
+        <meta content={themeBgColor} name="theme-color" />
       </Helmet>
       <Global styles={globalCss} />
       <StyledPageLayout {...swipeHandlers}>

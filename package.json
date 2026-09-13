@@ -3,20 +3,14 @@
   "version": "2.1.0",
   "private": true,
   "type": "module",
-  "engines": {
-    "node": ">=24",
-    "pnpm": ">=12"
-  },
   "scripts": {
     "build": "tsc && vite build",
-    "check:fix": "biome check . --write",
-    "check": "biome check .",
     "dev": "vite",
-    "format:fix": "biome format --write .",
-    "format": "biome format .",
+    "format:check": "oxfmt --check",
+    "format": "oxfmt",
     "host": "vite --host",
-    "lint:fix": "biome lint --write .",
-    "lint": "biome lint .",
+    "lint:fix": "oxlint --fix",
+    "lint": "oxlint",
     "prepare": "husky",
     "preview": "vite preview",
     "typecheck": "tsc --noEmit"
@@ -34,16 +28,29 @@
     "zustand": "5.0.15"
   },
   "devDependencies": {
-    "@biomejs/biome": "2.5.13",
     "@tanstack/router-plugin": "1.168.37",
     "@types/luxon": "3.7.5",
     "@types/node": "26.5.1",
     "@types/react": "19.3.0",
     "@types/react-dom": "19.3.0",
     "@vitejs/plugin-react": "6.1.1",
+    "eslint-plugin-perfectionist": "5.11.0",
     "husky": "9.1.7",
+    "lint-staged": "^17.5.1",
+    "oxfmt": "0.67.0",
+    "oxlint": "^1.82.0",
     "typescript": "7.0.2",
     "vite": "8.3.0",
     "vite-plugin-svgr": "5.2.0"
+  },
+  "lint-staged": {
+    "*": [
+      "pnpm lint",
+      "pnpm format:check"
+    ]
+  },
+  "engines": {
+    "node": ">=24",
+    "pnpm": ">=12"
   }
 }

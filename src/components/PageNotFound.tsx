@@ -18,11 +18,11 @@ const PageNotFound = () => {
 
   return (
     <StyledErrorMain>
-      <Typography type="h1" size="l">
+      <Typography size="l" type="h1">
         Oops!
       </Typography>
       <Typography type="p">404 · This page doesn’t exist</Typography>
-      <Link title="Start over" routerLinkProps={{ to: ".." }}>
+      <Link routerLinkProps={{ to: ".." }} title="Start over">
         Start over &rarr;
       </Link>
     </StyledErrorMain>

@@ -70,24 +70,23 @@ export default function Footer() {
 
   return (
     <StyledFooter>
-      <Typography type="p" size="s">
-        © {currentDate.getFullYear()}&emsp;&#11825;&emsp;All Rights
-        Reserved&emsp;&#11825;&emsp;
+      <Typography size="s" type="p">
+        © {currentDate.getFullYear()}&emsp;&#11825;&emsp;All Rights Reserved&emsp;&#11825;&emsp;
         <Link
-          title="Imprint"
           routerLinkProps={{
             to: "/imprint",
           }}
+          title="Imprint"
         >
           Imprint
         </Link>
       </Typography>
       <StyledHintWrapper>
-        <StyledHotkeyHint type="p" size="s">
+        <StyledHotkeyHint size="s" type="p">
           Use <StyledHotkey>A</StyledHotkey>, <StyledHotkey>S</StyledHotkey> and{" "}
           <StyledHotkey>D</StyledHotkey> to toggle the theme
         </StyledHotkeyHint>
-        <StyledSwipeHint type="p" size="s">
+        <StyledSwipeHint size="s" type="p">
           Swipe left or right to toggle the theme
         </StyledSwipeHint>
       </StyledHintWrapper>

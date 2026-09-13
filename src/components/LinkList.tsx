@@ -27,36 +27,24 @@ export default function LinkList() {
   return (
     <StyledLinkList>
       <StyledLinkStack>
-        <Typography type="h2" size="s">
+        <Typography size="s" type="h2">
           Get in touch
         </Typography>
-        <Link title="E-Mail" href="mailto:mail@maximiliandammert.com">
+        <Link href="mailto:mail@maximiliandammert.com" title="E-Mail">
           E-Mail
         </Link>
-        <Link
-          href="https://www.xing.com/profile/Maximilian_Dammert"
-          target="_self"
-          title="Xing"
-        >
+        <Link href="https://www.xing.com/profile/Maximilian_Dammert" target="_self" title="Xing">
           Xing
         </Link>
-        <Link
-          href="https://de.linkedin.com/in/maximilian-dammert"
-          target="_self"
-          title="LinkedIn"
-        >
+        <Link href="https://de.linkedin.com/in/maximilian-dammert" target="_self" title="LinkedIn">
           LinkedIn
         </Link>
       </StyledLinkStack>
       <StyledLinkStack>
-        <Typography type="h2" size="s">
+        <Typography size="s" type="h2">
           More
         </Typography>
-        <Link
-          href="https://dribbble.com/mxdmrt"
-          target="_self"
-          title="Dribbble"
-        >
+        <Link href="https://dribbble.com/mxdmrt" target="_self" title="Dribbble">
           Dribbble
         </Link>
         <Link href="https://github.com/mxdmrt" target="_self" title="GitHub">
