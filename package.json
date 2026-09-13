@@ -46,7 +46,7 @@
   "lint-staged": {
     "*": [
       "pnpm oxlint --no-error-on-unmatched-pattern",
-      "pnpm oxfmt --check"
+      "pnpm oxfmt --check --no-error-on-unmatched-pattern"
     ]
   },
   "engines": {
