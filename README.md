@@ -7,11 +7,9 @@ My personal website
 - `pnpm dev` start dev server
 - `pnpm host` start dev server with --host
 - `pnpm build` build for production
-- `pnpm check` run biome checks and formatting validation
-- `pnpm check:fix` apply biome check fixes
-- `pnpm lint` run biome linter
-- `pnpm lint:fix` apply biome lint fixes
-- `pnpm format` check formatting with biome
-- `pnpm format:fix` format files with biome
+- `pnpm fmt:check` check formatting with Oxfmt
+- `pnpm fmt` format files with Oxfmt
+- `pnpm lint` run Oxlint
+- `pnpm lint:fix` apply Oxlint fixes
 - `pnpm typecheck` run TypeScript checks
 - `pnpm preview` locally preview production build
