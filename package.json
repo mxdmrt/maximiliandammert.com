@@ -6,8 +6,8 @@
   "scripts": {
     "build": "tsc && vite build",
     "dev": "vite",
-    "format:check": "oxfmt --check",
-    "format": "oxfmt",
+    "fmt:check": "oxfmt --check",
+    "fmt": "oxfmt",
     "host": "vite --host",
     "lint:fix": "oxlint --fix",
     "lint": "oxlint",
@@ -46,7 +46,7 @@
   "lint-staged": {
     "*": [
       "pnpm lint",
-      "pnpm format:check"
+      "pnpm fmt:check"
     ]
   },
   "engines": {
